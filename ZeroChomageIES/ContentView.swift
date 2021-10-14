@@ -15,30 +15,29 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
+    
+    let color = Color(red: 82 / 255, green: 84 / 255, blue: 100 / 255)
+    let colorBlue = Color(red: 32 / 255, green: 195 / 255, blue: 175 / 255)
 
+    
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
-                    }
-                }
-                .onDelete(perform: deleteItems)
+        VStack {
+            VStack{
+                Text("Zero").font(.custom("Ubuntu-Medium", size: 40)).foregroundColor(color)
+                Text("Chomeur").font(.custom("Ubuntu-Medium", size: 40)).foregroundColor(color)
+                Image("Illustration")
+                    .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                Text("Zero chomeur est creer pour aider a vous orientez").font(.custom("Ubuntu-Medium", size: 16)).foregroundColor(color).multilineTextAlignment(.center).padding()
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
+            Spacer()
+            Button(action: {
+                   //do action
+            }) {
+                Text("Suivant")
+                    .frame(width: 340 , height: 50, alignment: .center)
             }
-            Text("Select an item")
+             .background(colorBlue)
+             .foregroundColor(Color.white)
         }
     }
 
