@@ -8,11 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3FCA86962713630F00275A66 /* ZeroChomageIESApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA86952713630F00275A66 /* ZeroChomageIESApp.swift */; };
-		3FCA86982713630F00275A66 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA86972713630F00275A66 /* ContentView.swift */; };
+		3FCA86982713630F00275A66 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA86972713630F00275A66 /* OnboardingView.swift */; };
 		3FCA869A2713631000275A66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FCA86992713631000275A66 /* Assets.xcassets */; };
 		3FCA869D2713631000275A66 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FCA869C2713631000275A66 /* Preview Assets.xcassets */; };
-		3FCA869F2713631000275A66 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA869E2713631000275A66 /* Persistence.swift */; };
-		3FCA86A22713631000275A66 /* ZeroChomageIES.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA86A02713631000275A66 /* ZeroChomageIES.xcdatamodeld */; };
 		3FCA86AC2713631100275A66 /* ZeroChomageIESTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA86AB2713631100275A66 /* ZeroChomageIESTests.swift */; };
 		3FCA86B62713631100275A66 /* ZeroChomageIESUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA86B52713631100275A66 /* ZeroChomageIESUITests.swift */; };
 		3FCA86B82713631100275A66 /* ZeroChomageIESUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA86B72713631100275A66 /* ZeroChomageIESUITestsLaunchTests.swift */; };
@@ -25,6 +23,14 @@
 		3FCA86D4271367C200275A66 /* Ubuntu-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FCA86CB271367C200275A66 /* Ubuntu-Italic.ttf */; };
 		3FCA86D5271367C200275A66 /* Ubuntu-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FCA86CC271367C200275A66 /* Ubuntu-Light.ttf */; };
 		3FCA86D6271367C200275A66 /* UFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3FCA86CD271367C200275A66 /* UFL.txt */; };
+		3FCA86D927185CC200275A66 /* Color+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA86D827185CC200275A66 /* Color+Colors.swift */; };
+		3FCA86DB27185D2500275A66 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA86DA27185D2500275A66 /* MainButton.swift */; };
+		3FCA86DD2718677900275A66 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA86DC2718677900275A66 /* OnboardingViewModel.swift */; };
+		3FCA86DF2718679B00275A66 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA86DE2718679B00275A66 /* OnboardingSlide.swift */; };
+		3FCA86E227186CC900275A66 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA86E127186CC900275A66 /* RootView.swift */; };
+		3FCA86E427186CDF00275A66 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA86E327186CDF00275A66 /* RootViewModel.swift */; };
+		3FCA86E627186FA800275A66 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA86E527186FA800275A66 /* UserDefaultsManager.swift */; };
+		3FCA86E82718718800275A66 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA86E72718718800275A66 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,11 +53,9 @@
 /* Begin PBXFileReference section */
 		3FCA86922713630F00275A66 /* ZeroChomageIES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZeroChomageIES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FCA86952713630F00275A66 /* ZeroChomageIESApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroChomageIESApp.swift; sourceTree = "<group>"; };
-		3FCA86972713630F00275A66 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3FCA86972713630F00275A66 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		3FCA86992713631000275A66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FCA869C2713631000275A66 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		3FCA869E2713631000275A66 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		3FCA86A12713631000275A66 /* ZeroChomageIES.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ZeroChomageIES.xcdatamodel; sourceTree = "<group>"; };
 		3FCA86A72713631000275A66 /* ZeroChomageIESTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZeroChomageIESTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FCA86AB2713631100275A66 /* ZeroChomageIESTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroChomageIESTests.swift; sourceTree = "<group>"; };
 		3FCA86B12713631100275A66 /* ZeroChomageIESUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZeroChomageIESUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +71,14 @@
 		3FCA86CC271367C200275A66 /* Ubuntu-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Light.ttf"; sourceTree = "<group>"; };
 		3FCA86CD271367C200275A66 /* UFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UFL.txt; sourceTree = "<group>"; };
 		3FCA86D727144BE100275A66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3FCA86D827185CC200275A66 /* Color+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Colors.swift"; sourceTree = "<group>"; };
+		3FCA86DA27185D2500275A66 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
+		3FCA86DC2718677900275A66 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		3FCA86DE2718679B00275A66 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		3FCA86E127186CC900275A66 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		3FCA86E327186CDF00275A66 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		3FCA86E527186FA800275A66 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		3FCA86E72718718800275A66 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,14 +129,17 @@
 		3FCA86942713630F00275A66 /* ZeroChomageIES */ = {
 			isa = PBXGroup;
 			children = (
+				3FCA86E02718681700275A66 /* Views */,
 				3FCA86D727144BE100275A66 /* Info.plist */,
+				3FCA86E327186CDF00275A66 /* RootViewModel.swift */,
+				3FCA86DC2718677900275A66 /* OnboardingViewModel.swift */,
 				3FCA86952713630F00275A66 /* ZeroChomageIESApp.swift */,
-				3FCA86972713630F00275A66 /* ContentView.swift */,
+				3FCA86DE2718679B00275A66 /* OnboardingSlide.swift */,
 				3FCA86992713631000275A66 /* Assets.xcassets */,
-				3FCA869E2713631000275A66 /* Persistence.swift */,
-				3FCA86A02713631000275A66 /* ZeroChomageIES.xcdatamodeld */,
 				3FCA86C4271367C200275A66 /* Fonts */,
 				3FCA869B2713631000275A66 /* Preview Content */,
+				3FCA86D827185CC200275A66 /* Color+Colors.swift */,
+				3FCA86E527186FA800275A66 /* UserDefaultsManager.swift */,
 			);
 			path = ZeroChomageIES;
 			sourceTree = "<group>";
@@ -168,6 +183,17 @@
 				3FCA86CD271367C200275A66 /* UFL.txt */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		3FCA86E02718681700275A66 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3FCA86972713630F00275A66 /* OnboardingView.swift */,
+				3FCA86DA27185D2500275A66 /* MainButton.swift */,
+				3FCA86E127186CC900275A66 /* RootView.swift */,
+				3FCA86E72718718800275A66 /* LoginView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,9 +335,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FCA86A22713631000275A66 /* ZeroChomageIES.xcdatamodeld in Sources */,
-				3FCA869F2713631000275A66 /* Persistence.swift in Sources */,
-				3FCA86982713630F00275A66 /* ContentView.swift in Sources */,
+				3FCA86DB27185D2500275A66 /* MainButton.swift in Sources */,
+				3FCA86DD2718677900275A66 /* OnboardingViewModel.swift in Sources */,
+				3FCA86DF2718679B00275A66 /* OnboardingSlide.swift in Sources */,
+				3FCA86982713630F00275A66 /* OnboardingView.swift in Sources */,
+				3FCA86E227186CC900275A66 /* RootView.swift in Sources */,
+				3FCA86E627186FA800275A66 /* UserDefaultsManager.swift in Sources */,
+				3FCA86D927185CC200275A66 /* Color+Colors.swift in Sources */,
+				3FCA86E427186CDF00275A66 /* RootViewModel.swift in Sources */,
+				3FCA86E82718718800275A66 /* LoginView.swift in Sources */,
 				3FCA86962713630F00275A66 /* ZeroChomageIESApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -663,19 +695,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		3FCA86A02713631000275A66 /* ZeroChomageIES.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				3FCA86A12713631000275A66 /* ZeroChomageIES.xcdatamodel */,
-			);
-			currentVersion = 3FCA86A12713631000275A66 /* ZeroChomageIES.xcdatamodel */;
-			path = ZeroChomageIES.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 3FCA868A2713630F00275A66 /* Project object */;
 }
