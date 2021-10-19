@@ -19,6 +19,7 @@ struct MainButton: View {
         }
         .background(Color.blueHorizon)
         .foregroundColor(Color.white)
+        .transition(.slide)
     }
 }
 

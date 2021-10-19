@@ -25,19 +25,28 @@ struct OnboardingView: View {
                 .foregroundColor(.textMainColor)
                 .multilineTextAlignment(.center)
                 .padding()
-            
+                .transition(.slide)
+
             Spacer()
-            
+    
             if !viewModel.isLastSlide {
                 MainButton(title: viewModel.nextButtonTitle) {
                     viewModel.incrementSlideIndex()
                 }
             } else {
+                withAnimation
+                {
                 Button("+") {
+
                     rootViewModel.currentRootType = .login
                     viewModel.didFinishOnboarding()
                     print("should leave onboarding")
+                    }
                 }
+                .frame(width: 50, height: 50, alignment: .center)
+                .background(Color.blueHorizon)
+                .foregroundColor(.white)
+                .cornerRadius(100)
             }
         }
     }

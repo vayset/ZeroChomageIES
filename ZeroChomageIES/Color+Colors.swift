@@ -10,4 +10,7 @@ import SwiftUI
 extension Color {
     static let blueHorizon = Color("blueHorizon")
     static let textMainColor = Color("textMainColor")
+    static let textFieldBackgroundColor = Color("textFieldBackgroundColor")
+    static let placeHolderColor = Color("placeHolderColor")
+    static let passwordForgetButton = Color("passwordForgetButton")
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F5AFC91271D991F0021C0DF /* textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AFC90271D991F0021C0DF /* textField.swift */; };
 		3FCA86962713630F00275A66 /* ZeroChomageIESApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA86952713630F00275A66 /* ZeroChomageIESApp.swift */; };
 		3FCA86982713630F00275A66 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA86972713630F00275A66 /* OnboardingView.swift */; };
 		3FCA869A2713631000275A66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FCA86992713631000275A66 /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F5AFC90271D991F0021C0DF /* textField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textField.swift; sourceTree = "<group>"; };
 		3FCA86922713630F00275A66 /* ZeroChomageIES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZeroChomageIES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FCA86952713630F00275A66 /* ZeroChomageIESApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroChomageIESApp.swift; sourceTree = "<group>"; };
 		3FCA86972713630F00275A66 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				3FCA86DA27185D2500275A66 /* MainButton.swift */,
 				3FCA86E127186CC900275A66 /* RootView.swift */,
 				3FCA86E72718718800275A66 /* LoginView.swift */,
+				3F5AFC90271D991F0021C0DF /* textField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				3FCA86DD2718677900275A66 /* OnboardingViewModel.swift in Sources */,
 				3FCA86DF2718679B00275A66 /* OnboardingSlide.swift in Sources */,
 				3FCA86982713630F00275A66 /* OnboardingView.swift in Sources */,
+				3F5AFC91271D991F0021C0DF /* textField.swift in Sources */,
 				3FCA86E227186CC900275A66 /* RootView.swift in Sources */,
 				3FCA86E627186FA800275A66 /* UserDefaultsManager.swift in Sources */,
 				3FCA86D927185CC200275A66 /* Color+Colors.swift in Sources */,
