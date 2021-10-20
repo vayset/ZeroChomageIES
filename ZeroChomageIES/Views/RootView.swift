@@ -21,7 +21,7 @@ struct RootView: View {
                 .environmentObject(viewModel)
         case .main:
             Text("Main View")
+                
         }
-        
     }
 }

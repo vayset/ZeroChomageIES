@@ -12,5 +12,6 @@ extension Color {
     static let textMainColor = Color("textMainColor")
     static let textFieldBackgroundColor = Color("textFieldBackgroundColor")
     static let placeHolderColor = Color("placeHolderColor")
-    static let passwordForgetButton = Color("passwordForgetButton")
+    static let textPasswordAndSignUpColor = Color("textPasswordAndSignUpColor")
+    static let secondTextColor = Color("secondTextColor")
 }

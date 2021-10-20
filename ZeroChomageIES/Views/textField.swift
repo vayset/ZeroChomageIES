@@ -12,19 +12,31 @@ struct textField: View {
     let placeHolder: String
     
     var body: some View {
-        TextField(placeHolder, text: $input)
-            .frame(width: 315, height: 50, alignment: .center)
-            .padding()
-            .font(Font.system(size: 16))
-            .background(Color.textFieldBackgroundColor)
-        
+        ZStack {
+            TextField("", text: $input)
+                .frame(width: 315, height: 50, alignment: .center)
+                .padding(.all)
+                .font(.custom("Gilroy-Medium", size: 16))
+                .foregroundColor(Color.black)
+                .background(Color.textFieldBackgroundColor)
+            HStack {
+                if input.isEmpty {
+                    Text(placeHolder)
+                        .foregroundColor(Color.placeHolderColor)
+                        .padding(.leading, 38)
+                        .font(.custom("Gilroy-Medium", size: 16))
+                }
+                Spacer()
+            }
+            
+        }
     }
 }
 
 struct textField_Previews: PreviewProvider {
     
     static var previews: some View {
-
-        textField(input: .constant("Saddam"), placeHolder: "Saddam")
+        
+        textField(input: .constant(""), placeHolder: "Saddam")
     }
 }

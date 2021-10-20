@@ -5,6 +5,8 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Ubuntu-Medium.ttf</string>
+		<string>Gilroy-Semibold.ttf</string>
+		<string>Gilroy-Medium.ttf</string>
 	</array>
 </dict>
 </plist>

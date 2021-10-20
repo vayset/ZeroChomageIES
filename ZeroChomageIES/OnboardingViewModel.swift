@@ -17,17 +17,17 @@ class OnboardingViewModel: ObservableObject {
         ),
         .init(
             title: "Trouver\nUn But",
-            imageName: "Illustration",
+            imageName: "Illustration1",
             bodyText: "Trouver un objectif professionel"
         ),
         .init(
             title: "Terminer\nLes Recherches",
-            imageName: "Illustration",
+            imageName: "Illustration3",
             bodyText: "Les informations viennent à vous"
         ),
         .init(
             title: "C'esst\nParti !",
-            imageName: "Illustration",
+            imageName: "IllustrationHome",
             bodyText: "Rejoignez le plus grand réseau de professionel"
         )
     ]

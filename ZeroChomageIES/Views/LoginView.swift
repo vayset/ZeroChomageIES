@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct LoginView: View {
-//    @State private var email = ""
+    //    @State private var email = ""
     @State var email = ""
     @State var password = ""
-
+    
     
     var body: some View {
         VStack {
@@ -20,27 +20,35 @@ struct LoginView: View {
             Image("IllustrationLogin")
                 .padding(60)
             
-            textField(input: $email, placeHolder: "E-Mail")
-                .padding()
+            textField(input: $email, placeHolder: "E-MAIL")
+            
             textField(input: $password, placeHolder: "Mots de passe")
             
-            Button {
-                print("test")
-            } label: {
-              Text("Mots de passe oublié ?")
-            }
-            .foregroundColor(Color.passwordForgetButton)
+            TextButton(titleForButton: "Mots de passe oublié ?", colorForButton: .textPasswordAndSignUpColor)
+                .padding(.leading, 175)
+                .font(.custom("Gilroy-Semibold", size: 16))
             
-
-
+            MainButton(title: "Connexion", action: {
+                print("Test")
+            })
+                .padding()
             Spacer()
-            
+            HStack {
+                Text("Vous n'avez pas de compte ?")
+                    .foregroundColor(Color.textPasswordAndSignUpColor)
+                    .font(.custom("Gilroy-Medium", size: 16))
+                TextButton(titleForButton: "Inscription", colorForButton: .secondTextColor)
+                    .foregroundColor(Color.secondTextColor)
+                    .font(.custom("Gilroy-Semibold", size: 16))
+                
+            }
         }
-        
+        .background(Color.white)
     }
     
     private var title: some View {
         Text("Connexion")
+            .font(.custom("Gilroy-Semibold", size: 18))
     }
 }
 

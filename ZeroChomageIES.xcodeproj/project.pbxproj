@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3F5AFC91271D991F0021C0DF /* textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AFC90271D991F0021C0DF /* textField.swift */; };
+		3F5AFC93271EE1E00021C0DF /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AFC92271EE1E00021C0DF /* TextButton.swift */; };
+		3FAE886C2720B89A003EE8BD /* Gilroy-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3FAE886A2720B89A003EE8BD /* Gilroy-ExtraBold.otf */; };
+		3FAE886D2720B89A003EE8BD /* Gilroy-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3FAE886B2720B89A003EE8BD /* Gilroy-Light.otf */; };
+		3FAE886F2720BA0D003EE8BD /* Gilroy-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FAE886E2720BA0D003EE8BD /* Gilroy-Semibold.ttf */; };
+		3FAE88712720CF7A003EE8BD /* Gilroy-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FAE88702720CF7A003EE8BD /* Gilroy-Medium.ttf */; };
 		3FCA86962713630F00275A66 /* ZeroChomageIESApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA86952713630F00275A66 /* ZeroChomageIESApp.swift */; };
 		3FCA86982713630F00275A66 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA86972713630F00275A66 /* OnboardingView.swift */; };
 		3FCA869A2713631000275A66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FCA86992713631000275A66 /* Assets.xcassets */; };
@@ -53,6 +58,11 @@
 
 /* Begin PBXFileReference section */
 		3F5AFC90271D991F0021C0DF /* textField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textField.swift; sourceTree = "<group>"; };
+		3F5AFC92271EE1E00021C0DF /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
+		3FAE886A2720B89A003EE8BD /* Gilroy-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-ExtraBold.otf"; sourceTree = "<group>"; };
+		3FAE886B2720B89A003EE8BD /* Gilroy-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Light.otf"; sourceTree = "<group>"; };
+		3FAE886E2720BA0D003EE8BD /* Gilroy-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Semibold.ttf"; sourceTree = "<group>"; };
+		3FAE88702720CF7A003EE8BD /* Gilroy-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Medium.ttf"; sourceTree = "<group>"; };
 		3FCA86922713630F00275A66 /* ZeroChomageIES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZeroChomageIES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FCA86952713630F00275A66 /* ZeroChomageIESApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroChomageIESApp.swift; sourceTree = "<group>"; };
 		3FCA86972713630F00275A66 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -177,6 +187,10 @@
 				3FCA86C5271367C200275A66 /* Ubuntu-Medium.ttf */,
 				3FCA86C6271367C200275A66 /* Ubuntu-LightItalic.ttf */,
 				3FCA86C7271367C200275A66 /* Ubuntu-Regular.ttf */,
+				3FAE886A2720B89A003EE8BD /* Gilroy-ExtraBold.otf */,
+				3FAE886B2720B89A003EE8BD /* Gilroy-Light.otf */,
+				3FAE886E2720BA0D003EE8BD /* Gilroy-Semibold.ttf */,
+				3FAE88702720CF7A003EE8BD /* Gilroy-Medium.ttf */,
 				3FCA86C8271367C200275A66 /* Ubuntu-Bold.ttf */,
 				3FCA86C9271367C200275A66 /* Ubuntu-MediumItalic.ttf */,
 				3FCA86CA271367C200275A66 /* Ubuntu-BoldItalic.ttf */,
@@ -192,6 +206,7 @@
 			children = (
 				3FCA86972713630F00275A66 /* OnboardingView.swift */,
 				3FCA86DA27185D2500275A66 /* MainButton.swift */,
+				3F5AFC92271EE1E00021C0DF /* TextButton.swift */,
 				3FCA86E127186CC900275A66 /* RootView.swift */,
 				3FCA86E72718718800275A66 /* LoginView.swift */,
 				3F5AFC90271D991F0021C0DF /* textField.swift */,
@@ -310,10 +325,14 @@
 				3FCA869D2713631000275A66 /* Preview Assets.xcassets in Resources */,
 				3FCA86D4271367C200275A66 /* Ubuntu-Italic.ttf in Resources */,
 				3FCA86D6271367C200275A66 /* UFL.txt in Resources */,
+				3FAE88712720CF7A003EE8BD /* Gilroy-Medium.ttf in Resources */,
 				3FCA86D1271367C200275A66 /* Ubuntu-Bold.ttf in Resources */,
 				3FCA869A2713631000275A66 /* Assets.xcassets in Resources */,
+				3FAE886F2720BA0D003EE8BD /* Gilroy-Semibold.ttf in Resources */,
 				3FCA86D0271367C200275A66 /* Ubuntu-Regular.ttf in Resources */,
+				3FAE886D2720B89A003EE8BD /* Gilroy-Light.otf in Resources */,
 				3FCA86CE271367C200275A66 /* Ubuntu-Medium.ttf in Resources */,
+				3FAE886C2720B89A003EE8BD /* Gilroy-ExtraBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F5AFC93271EE1E00021C0DF /* TextButton.swift in Sources */,
 				3FCA86DB27185D2500275A66 /* MainButton.swift in Sources */,
 				3FCA86DD2718677900275A66 /* OnboardingViewModel.swift in Sources */,
 				3FCA86DF2718679B00275A66 /* OnboardingSlide.swift in Sources */,
