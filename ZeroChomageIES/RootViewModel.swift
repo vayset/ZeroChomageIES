@@ -8,6 +8,7 @@
 import Foundation
 
 
+import SwiftUI
 
 enum RootType {
     case onboarding
@@ -21,6 +22,15 @@ class RootViewModel: ObservableObject {
         if userDefaultsManager.getHasSeenOnboarding() {
             currentRootType = .login
         }
+        
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            .font: UIFont(name: "Gilroy-Semibold", size: 18)!
+        ]
+        
+        UINavigationBar.appearance().titleTextAttributes = [
+            .font: UIFont(name: "Gilroy-Semibold", size: 18)!
+        ]
+        
     }
     
     @Published var currentRootType: RootType = .onboarding

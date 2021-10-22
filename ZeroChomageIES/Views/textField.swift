@@ -14,8 +14,8 @@ struct textField: View {
     var body: some View {
         ZStack {
             TextField("", text: $input)
-                .frame(width: 315, height: 50, alignment: .center)
-                .padding(.all)
+                .frame(height: 50, alignment: .center)
+                .padding(.vertical)
                 .font(.custom("Gilroy-Medium", size: 16))
                 .foregroundColor(Color.black)
                 .background(Color.textFieldBackgroundColor)

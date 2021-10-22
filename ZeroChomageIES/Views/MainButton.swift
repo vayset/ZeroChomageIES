@@ -16,7 +16,8 @@ struct MainButton: View {
     var body: some View {
         Button(action: action) {
             Text(title)
-                .frame(width: 340 , height: 50, alignment: .center)
+                .frame(height: 50, alignment: .center)
+                .frame(maxWidth: .infinity)
         }
         .background(Color.blueHorizon)
         .foregroundColor(Color.white)

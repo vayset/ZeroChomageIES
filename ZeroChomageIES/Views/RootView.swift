@@ -12,16 +12,15 @@ struct RootView: View {
     @StateObject var viewModel = RootViewModel()
     
     var body: some View {
-        switch viewModel.currentRootType {
-        case .onboarding:
-            OnboardingView()
-                .environmentObject(viewModel)
-        case .login:
-            LoginView()
-                .environmentObject(viewModel)
-        case .main:
-            Text("Main View")
-                
-        }
+        Group {
+            switch viewModel.currentRootType {
+            case .onboarding:
+                OnboardingView()
+            case .login:
+                LoginView()
+            case .main:
+                MainView()
+            }
+        }.environmentObject(viewModel)
     }
 }

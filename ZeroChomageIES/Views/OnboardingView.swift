@@ -49,6 +49,7 @@ struct OnboardingView: View {
                 .cornerRadius(100)
             }
         }
+        .padding(.horizontal)
     }
     
     

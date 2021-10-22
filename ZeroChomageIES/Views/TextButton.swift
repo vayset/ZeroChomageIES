@@ -11,11 +11,12 @@ struct TextButton: View {
     
     let titleForButton: String
     let colorForButton: Color
+    let action: () -> Void
     
     var body: some View {
         
         Button {
-            print("test")
+            action()
         } label: {
             Text(titleForButton)
                 .underline()
@@ -29,6 +30,6 @@ struct TextButton: View {
 
 struct TextButton_Previews: PreviewProvider {
     static var previews: some View {
-        TextButton(titleForButton: "mots de passe oublié", colorForButton: .secondTextColor)
+        TextButton(titleForButton: "mots de passe oublié", colorForButton: .secondTextColor, action: { print("tapped")})
     }
 }
