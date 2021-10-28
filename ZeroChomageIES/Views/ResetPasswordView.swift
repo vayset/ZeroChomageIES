@@ -8,10 +8,38 @@
 import SwiftUI
 
 struct ResetPasswordView: View {
+    @EnvironmentObject var rootViewModel: RootViewModel
+    //    @State private var email = ""
+    @State var email = ""
+    
     var body: some View {
-        Text("Reset password View")
+        NavigationView {
+            VStack(spacing: 15) {
+                Spacer()
+                Image("IllustrationLogin")
+                Spacer()
+                VStack(spacing: 20) {
+                    textField(input: $email, placeHolder: "E-MAIL")
+                }
+                
+                MainButton(title: "Réinstaller", action: {
+                    rootViewModel.currentRootType = .main
+                })
+                    .padding(.top, 20)
+                
+                Spacer()
+            }
+            .padding(.horizontal)
+            .navigationTitle(
+                Text("Réinstaller le mot de passe")
+            )
+            .navigationBarTitleDisplayMode(.inline)
+            .background(Color.white.edgesIgnoringSafeArea(.all))
+            
+        }
     }
 }
+
 
 struct ResetPasswordView_Previews: PreviewProvider {
     static var previews: some View {

@@ -19,9 +19,9 @@ struct LoginView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 15) {
+                Spacer()
                 Image("IllustrationLogin")
-                    .padding(60)
-                
+                Spacer()
                 VStack(spacing: 20) {
                     textField(input: $email, placeHolder: "E-MAIL")
                     
@@ -42,7 +42,7 @@ struct LoginView: View {
                     } label: {
                         EmptyView()
                     }
-
+                
                 
                 
                 TextButton(
@@ -79,11 +79,12 @@ struct LoginView: View {
                 }
             }
             .padding(.horizontal)
-            .background(Color.white)
             .navigationTitle(
                 Text("Connexion")
             )
             .navigationBarTitleDisplayMode(.inline)
+            .background(Color.white.edgesIgnoringSafeArea(.all))
+
         }
     }
 }

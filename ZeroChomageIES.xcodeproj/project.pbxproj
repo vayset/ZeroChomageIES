@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3F5AFC91271D991F0021C0DF /* textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AFC90271D991F0021C0DF /* textField.swift */; };
 		3F5AFC93271EE1E00021C0DF /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AFC92271EE1E00021C0DF /* TextButton.swift */; };
+		3FA5FAA2272A096100713EA8 /* RoundedButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5FAA1272A096000713EA8 /* RoundedButtonView.swift */; };
 		3FAE886C2720B89A003EE8BD /* Gilroy-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3FAE886A2720B89A003EE8BD /* Gilroy-ExtraBold.otf */; };
 		3FAE886D2720B89A003EE8BD /* Gilroy-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3FAE886B2720B89A003EE8BD /* Gilroy-Light.otf */; };
 		3FAE886F2720BA0D003EE8BD /* Gilroy-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FAE886E2720BA0D003EE8BD /* Gilroy-Semibold.ttf */; };
@@ -62,6 +63,7 @@
 /* Begin PBXFileReference section */
 		3F5AFC90271D991F0021C0DF /* textField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textField.swift; sourceTree = "<group>"; };
 		3F5AFC92271EE1E00021C0DF /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
+		3FA5FAA1272A096000713EA8 /* RoundedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonView.swift; sourceTree = "<group>"; };
 		3FAE886A2720B89A003EE8BD /* Gilroy-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-ExtraBold.otf"; sourceTree = "<group>"; };
 		3FAE886B2720B89A003EE8BD /* Gilroy-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Light.otf"; sourceTree = "<group>"; };
 		3FAE886E2720BA0D003EE8BD /* Gilroy-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Semibold.ttf"; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				3F5AFC92271EE1E00021C0DF /* TextButton.swift */,
 				3FCA86E127186CC900275A66 /* RootView.swift */,
 				3FCA86E72718718800275A66 /* LoginView.swift */,
+				3FA5FAA1272A096000713EA8 /* RoundedButtonView.swift */,
 				3F5AFC90271D991F0021C0DF /* textField.swift */,
 				3FAE8872272193FD003EE8BD /* MainView.swift */,
 				3FAE8874272197AD003EE8BD /* ResetPasswordView.swift */,
@@ -376,6 +379,7 @@
 				3F5AFC91271D991F0021C0DF /* textField.swift in Sources */,
 				3FCA86E227186CC900275A66 /* RootView.swift in Sources */,
 				3FAE8877272197CE003EE8BD /* CreateAccountView.swift in Sources */,
+				3FA5FAA2272A096100713EA8 /* RoundedButtonView.swift in Sources */,
 				3FCA86E627186FA800275A66 /* UserDefaultsManager.swift in Sources */,
 				3FCA86D927185CC200275A66 /* Color+Colors.swift in Sources */,
 				3FCA86E427186CDF00275A66 /* RootViewModel.swift in Sources */,

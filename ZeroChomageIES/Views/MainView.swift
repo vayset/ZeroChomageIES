@@ -9,7 +9,16 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                RoundedButtonView(action: {print("ca marche")})
+            }
+            .navigationTitle(
+                Text("Mes informations")
+            )
+            .navigationBarTitleDisplayMode(.inline)
+            .background(Color.white.edgesIgnoringSafeArea(.all))
+        }
     }
 }
 

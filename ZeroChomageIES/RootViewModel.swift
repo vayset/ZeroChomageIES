@@ -22,14 +22,22 @@ class RootViewModel: ObservableObject {
         if userDefaultsManager.getHasSeenOnboarding() {
             currentRootType = .login
         }
-        
-        UINavigationBar.appearance().largeTitleTextAttributes = [
-            .font: UIFont(name: "Gilroy-Semibold", size: 18)!
+        let attrs = [
+            NSAttributedString.Key.foregroundColor: UIColor(Color.textMainColor),
+            NSAttributedString.Key.font: UIFont(name: "Gilroy-Semibold", size: 16)!
         ]
         
-        UINavigationBar.appearance().titleTextAttributes = [
-            .font: UIFont(name: "Gilroy-Semibold", size: 18)!
-        ]
+        UINavigationBar.appearance().titleTextAttributes = attrs
+        UINavigationBar.appearance().largeTitleTextAttributes = attrs
+//        UINavigationBar.appearance().largeTitleTextAttributes = [
+//            .font: UIFont(name: "Gilroy-Semibold", size: 18)!
+//
+//
+//        ]
+
+//        UINavigationBar.appearance().titleTextAttributes = [
+//            .font: UIFont(name: "Gilroy-Semibold", size: 18)!
+//        ]
         
     }
     

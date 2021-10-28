@@ -22,5 +22,7 @@ struct RootView: View {
                 MainView()
             }
         }.environmentObject(viewModel)
+
     }
+    
 }

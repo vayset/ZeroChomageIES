@@ -15,7 +15,7 @@ struct textField: View {
         ZStack {
             TextField("", text: $input)
                 .frame(height: 50, alignment: .center)
-                .padding(.vertical)
+                .padding()
                 .font(.custom("Gilroy-Medium", size: 16))
                 .foregroundColor(Color.black)
                 .background(Color.textFieldBackgroundColor)
@@ -23,7 +23,7 @@ struct textField: View {
                 if input.isEmpty {
                     Text(placeHolder)
                         .foregroundColor(Color.placeHolderColor)
-                        .padding(.leading, 38)
+                        .padding()
                         .font(.custom("Gilroy-Medium", size: 16))
                 }
                 Spacer()
