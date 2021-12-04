@@ -28,6 +28,7 @@ struct textField: View {
                 }
                 Spacer()
             }
+            .allowsHitTesting(false)
             
         }
     }

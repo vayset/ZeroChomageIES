@@ -14,7 +14,7 @@ struct RoundedButtonView: View {
         Button(action: action) {
             Text("+")
         }
-        .frame(width: 50, height: 50, alignment: .center)
+        .frame(width: 80, height: 80, alignment: .center)
         .background(Color.blueHorizon)
         .foregroundColor(.white)
         .cornerRadius(100)

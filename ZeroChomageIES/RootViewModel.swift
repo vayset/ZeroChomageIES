@@ -26,9 +26,26 @@ class RootViewModel: ObservableObject {
             NSAttributedString.Key.foregroundColor: UIColor(Color.textMainColor),
             NSAttributedString.Key.font: UIFont(name: "Gilroy-Semibold", size: 16)!
         ]
+//
+//        UINavigationBar.appearance().titleTextAttributes = attrs
+//        UINavigationBar.appearance().largeTitleTextAttributes = attrs
+//        UINavigationBar.appearance().backgroundColor = .white
         
-        UINavigationBar.appearance().titleTextAttributes = attrs
-        UINavigationBar.appearance().largeTitleTextAttributes = attrs
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithTransparentBackground()
+        appearance.backgroundColor = .white
+        
+        appearance.largeTitleTextAttributes = attrs
+        appearance.titleTextAttributes = attrs
+        
+
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        
+        
+        
 //        UINavigationBar.appearance().largeTitleTextAttributes = [
 //            .font: UIFont(name: "Gilroy-Semibold", size: 18)!
 //

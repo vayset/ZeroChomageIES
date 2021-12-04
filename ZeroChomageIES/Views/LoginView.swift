@@ -19,7 +19,7 @@ struct LoginView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 15) {
-                Spacer()
+                
                 Image("IllustrationLogin")
                 Spacer()
                 VStack(spacing: 20) {

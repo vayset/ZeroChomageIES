@@ -19,7 +19,6 @@ struct CreateAccountView: View {
         
         NavigationView {
             VStack(spacing: 15) {
-                Spacer()
                 Image("IllustrationSignIn")
                 Spacer()
                 
@@ -48,10 +47,10 @@ struct CreateAccountView: View {
             }
             .padding(.horizontal)
             .navigationTitle(
-                Text("Inscription")
+                "Inscription"
             )
             .navigationBarTitleDisplayMode(.inline)
-            .background(Color.white.edgesIgnoringSafeArea(.all))
+//            .background(Color.white.edgesIgnoringSafeArea(.all))
             
             
         }
