@@ -47,7 +47,7 @@ class OnboardingViewModel: ObservableObject {
         currentSlideIndex += 1
     }
     
-    let nextButtonTitle = "Suivant"
+//    let nextButtonTitle = "Suivant"
     
     func didFinishOnboarding() {
         userDefaultsManager.setHasSeenOnboarding(value: true)
