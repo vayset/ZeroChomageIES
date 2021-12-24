@@ -9,7 +9,7 @@ import Foundation
 
 class OnboardingViewModel: ObservableObject {
     
-    private let slides: [OnboardingSlide] = [
+    let slides: [TabSlideViewModel] = [
         .init(
             title: "Zero\nChomeur",
             imageName: "Illustration",
@@ -26,7 +26,7 @@ class OnboardingViewModel: ObservableObject {
             bodyText: "Les informations viennent à vous"
         ),
         .init(
-            title: "C'esst\nParti !",
+            title: "C'esst\nParti Saddam !",
             imageName: "IllustrationHome",
             bodyText: "Rejoignez le plus grand réseau de professionel"
         )
@@ -34,7 +34,7 @@ class OnboardingViewModel: ObservableObject {
     
     @Published var currentSlideIndex = 0
     
-    var currentSlide: OnboardingSlide {
+    var currentSlide: TabSlideViewModel {
         slides[currentSlideIndex]
     }
     

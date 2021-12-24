@@ -13,44 +13,12 @@ struct OnboardingView: View {
     @EnvironmentObject var rootViewModel: RootViewModel
     
     var body: some View {
-        VStack {
-            
-            titleView
-            
-            Image(viewModel.currentSlide.imageName)
-                .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-            
-            Text(viewModel.currentSlide.bodyText)
-                .font(.custom("Ubuntu-Medium", size: 16))
-                .foregroundColor(.textMainColor)
-                .multilineTextAlignment(.center)
-                .padding()
-                .transition(.slide)
-
-            Spacer()
-    
-            if !viewModel.isLastSlide {
-                MainButton(title: viewModel.nextButtonTitle) {
-                    viewModel.incrementSlideIndex()
-                }
-            } else {
-                withAnimation
-                {
-                Button("+") {
-
-                    rootViewModel.currentRootType = .login
-                    viewModel.didFinishOnboarding()
-                    print("should leave onboarding")
-                    }
-                }
-                .frame(width: 50, height: 50, alignment: .center)
-                .background(Color.blueHorizon)
-                .foregroundColor(.white)
-                .cornerRadius(100)
+        TabView {
+            ForEach(viewModel.slides) { slide in
+                TabSlideView(viewModel: slide)
             }
         }
-        .background(Color.white.edgesIgnoringSafeArea(.all))
-        .padding(.horizontal)
+        .tabViewStyle(PageTabViewStyle())
     }
     
     

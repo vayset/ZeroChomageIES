@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct OnboardingSlide {
+struct TabSlideViewModel: Identifiable {
+    var id = UUID()
     let title: String
     let imageName: String
     let bodyText: String
