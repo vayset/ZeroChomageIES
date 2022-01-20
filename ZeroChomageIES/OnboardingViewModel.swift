@@ -7,37 +7,60 @@
 
 import Foundation
 
+import Combine
+import SwiftUI
+
 class OnboardingViewModel: ObservableObject {
+    init() {
+        subscribeToAssignCurrenSlide()
+    }
     
     let slides: [TabSlideViewModel] = [
         .init(
-            title: "Zero\nChomeur",
+            title: "TZCLD",
             imageName: "Illustration",
-            bodyText: "Zero chomeur est creer pour aider a vous orientez"
+            bodyText: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley",
+            index: 0
         ),
         .init(
             title: "Trouver\nUn But",
             imageName: "Illustration1",
-            bodyText: "Trouver un objectif professionel"
+            bodyText: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley",
+            index: 1
         ),
         .init(
             title: "Terminer\nLes Recherches",
             imageName: "Illustration3",
-            bodyText: "Les informations viennent à vous"
+            bodyText: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley",
+            index: 2
         ),
         .init(
             title: "C'esst\nParti Saddam !",
             imageName: "IllustrationHome",
-            bodyText: "Rejoignez le plus grand réseau de professionel"
+            bodyText: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley",
+            index: 3
         )
     ]
     
     @Published var currentSlideIndex = 0
     
-    var currentSlide: TabSlideViewModel {
-        slides[currentSlideIndex]
-    }
     
+    
+    
+    @Published var currentSlide: TabSlideViewModel?
+    
+    
+    private func subscribeToAssignCurrenSlide() {
+        $currentSlideIndex
+            .receive(on: RunLoop.main)
+            .map { self.slides[$0] }
+            .sink(receiveValue: { [weak self] slideViewModel in
+                withAnimation {
+                    self?.currentSlide = slideViewModel
+                }
+            })
+            .store(in: &subscriptions)
+    }
     
     var isLastSlide: Bool {
         currentSlideIndex >= slides.count - 1
@@ -55,4 +78,8 @@ class OnboardingViewModel: ObservableObject {
     
     
     private let userDefaultsManager = UserDefaultsManager()
+    
+    
+    
+    private var subscriptions: Set<AnyCancellable> = []
 }

@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct TabSlideView: View {
-    @StateObject var onboardingViewModel = OnboardingViewModel()
-    @EnvironmentObject var rootViewModel: RootViewModel
+    @ObservedObject var onboardingViewModel: OnboardingViewModel
+
     @State private var isAnimating: Bool = true
     
-    let viewModel: TabSlideViewModel
+    @ObservedObject var viewModel: TabSlideViewModel
     
     
     
@@ -37,24 +37,7 @@ struct TabSlideView: View {
             
             Spacer()
             
-            if !onboardingViewModel.isLastSlide {
-                MainButton(title: "Suivant") {
-                    onboardingViewModel.incrementSlideIndex()
-                }
-                .padding()
-            } else {
-                
-                Button("+") {
-                    rootViewModel.currentRootType = .login
-                    onboardingViewModel.didFinishOnboarding()
-                    print("should leave onboarding")
-                    
-                }
-                .frame(width: 50, height: 50, alignment: .center)
-                .background(Color.blueHorizon)
-                .foregroundColor(.white)
-                .cornerRadius(100)
-            }
+            
             
         }
         .background(Color.white.edgesIgnoringSafeArea(.all))
@@ -65,8 +48,8 @@ struct TabSlideView: View {
     
 }
 
-struct TabView_Previews: PreviewProvider {
-    static var previews: some View {
-        TabSlideView(viewModel: .init(title: "zeeroo heros", imageName: "Illustration", bodyText: "ici body"))
-    }
-}
+//struct TabView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TabSlideView(viewModel: .init(title: "zeeroo heros", imageName: "Illustration", bodyText: "ici body", index: 0))
+//    }
+//}

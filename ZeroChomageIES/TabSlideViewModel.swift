@@ -7,9 +7,18 @@
 
 import Foundation
 
-struct TabSlideViewModel: Identifiable {
+class TabSlideViewModel: Identifiable, ObservableObject {
+    internal init(id: UUID = UUID(), title: String, imageName: String, bodyText: String, index: Int) {
+        self.id = id
+        self.title = title
+        self.imageName = imageName
+        self.bodyText = bodyText
+        self.index = index
+    }
+    
     var id = UUID()
     let title: String
     let imageName: String
     let bodyText: String
+    let index: Int
 }
