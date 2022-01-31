@@ -11,7 +11,7 @@ struct OnboardingView: View {
     
     @StateObject var viewModel = OnboardingViewModel()
     @EnvironmentObject var rootViewModel: RootViewModel
-    
+    @State private var scale: CGFloat = 1
     @Namespace var nameSpace
     
     
@@ -32,7 +32,9 @@ struct OnboardingView: View {
                     }
                 }
                 .padding()
-                .matchedGeometryEffect(id: "OnboardingButton", in: nameSpace)
+                .scaleEffect(scale)
+                .animation(.easeIn, value: scale)
+//                .matchedGeometryEffect(id: "OnboardingButton", in: nameSpace)
                 
             } else {
                 
@@ -47,7 +49,10 @@ struct OnboardingView: View {
                 .foregroundColor(.white)
                 .cornerRadius(100)
                 .padding()
-                .matchedGeometryEffect(id: "OnboardingButton", in: nameSpace, isSource: false)
+                .scaleEffect(scale)
+                .animation(.easeIn, value: scale)
+//                .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
+//                .matchedGeometryEffect(id: "OnboardingButton", in: nameSpace, isSource: false)
             }
         }
     }

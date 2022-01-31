@@ -12,7 +12,7 @@ struct CreateAccountView: View {
     @State var password = ""
     @State var confirmPassword = ""
     
-    
+    @Environment(\.dismiss) var dismiss
     
     
     var body: some View {
@@ -36,7 +36,8 @@ struct CreateAccountView: View {
                         titleForButton: "Connexion",
                         colorForButton: .secondTextColor,
                         action: {
-                            print("inscrit")
+                            dismiss()
+                            
                         }
                     )
                         .foregroundColor(Color.secondTextColor)

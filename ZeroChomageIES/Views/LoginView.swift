@@ -57,7 +57,14 @@ struct LoginView: View {
                 
                 
                 MainButton(title: "Connexion", action: {
-                    rootViewModel.currentRootType = .main
+                    Task {
+                        do {
+                            try await AuthenticationService.shared.login(email: email, password: password)
+                            rootViewModel.currentRootType = .main
+                        } catch {
+                            print("Failed to login")
+                        }
+                    }
                 })
                     .padding(.top, 20)
                 

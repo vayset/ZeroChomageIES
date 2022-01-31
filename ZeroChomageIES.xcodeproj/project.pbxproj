@@ -10,6 +10,8 @@
 		3F5AFC91271D991F0021C0DF /* textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AFC90271D991F0021C0DF /* textField.swift */; };
 		3F5AFC93271EE1E00021C0DF /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AFC92271EE1E00021C0DF /* TextButton.swift */; };
 		3F6379882774417A00273450 /* TabViewSlides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6379872774417A00273450 /* TabViewSlides.swift */; };
+		3F8DEB6D27A32B8B00436BD2 /* ZeroChomageWebShared in Frameworks */ = {isa = PBXBuildFile; productRef = 3F8DEB6C27A32B8B00436BD2 /* ZeroChomageWebShared */; };
+		3F8DEB6F27A32BBF00436BD2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8DEB6E27A32BBF00436BD2 /* NetworkManager.swift */; };
 		3FA5FAA2272A096100713EA8 /* RoundedButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5FAA1272A096000713EA8 /* RoundedButtonView.swift */; };
 		3FAE886C2720B89A003EE8BD /* Gilroy-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3FAE886A2720B89A003EE8BD /* Gilroy-ExtraBold.otf */; };
 		3FAE886D2720B89A003EE8BD /* Gilroy-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3FAE886B2720B89A003EE8BD /* Gilroy-Light.otf */; };
@@ -65,6 +67,7 @@
 		3F5AFC90271D991F0021C0DF /* textField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textField.swift; sourceTree = "<group>"; };
 		3F5AFC92271EE1E00021C0DF /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
 		3F6379872774417A00273450 /* TabViewSlides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewSlides.swift; sourceTree = "<group>"; };
+		3F8DEB6E27A32BBF00436BD2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		3FA5FAA1272A096000713EA8 /* RoundedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonView.swift; sourceTree = "<group>"; };
 		3FAE886A2720B89A003EE8BD /* Gilroy-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-ExtraBold.otf"; sourceTree = "<group>"; };
 		3FAE886B2720B89A003EE8BD /* Gilroy-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Light.otf"; sourceTree = "<group>"; };
@@ -108,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F8DEB6D27A32B8B00436BD2 /* ZeroChomageWebShared in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +166,7 @@
 				3FCA869B2713631000275A66 /* Preview Content */,
 				3FCA86D827185CC200275A66 /* Color+Colors.swift */,
 				3FCA86E527186FA800275A66 /* UserDefaultsManager.swift */,
+				3F8DEB6E27A32BBF00436BD2 /* NetworkManager.swift */,
 			);
 			path = ZeroChomageIES;
 			sourceTree = "<group>";
@@ -245,6 +250,9 @@
 			dependencies = (
 			);
 			name = ZeroChomageIES;
+			packageProductDependencies = (
+				3F8DEB6C27A32B8B00436BD2 /* ZeroChomageWebShared */,
+			);
 			productName = ZeroChomageIES;
 			productReference = 3FCA86922713630F00275A66 /* ZeroChomageIES.app */;
 			productType = "com.apple.product-type.application";
@@ -317,6 +325,9 @@
 				Base,
 			);
 			mainGroup = 3FCA86892713630F00275A66;
+			packageReferences = (
+				3F8DEB6B27A32B8B00436BD2 /* XCRemoteSwiftPackageReference "ZeroChomageWebShared" */,
+			);
 			productRefGroup = 3FCA86932713630F00275A66 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -372,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F8DEB6F27A32BBF00436BD2 /* NetworkManager.swift in Sources */,
 				3F5AFC93271EE1E00021C0DF /* TextButton.swift in Sources */,
 				3FAE8873272193FD003EE8BD /* MainView.swift in Sources */,
 				3FCA86DB27185D2500275A66 /* MainButton.swift in Sources */,
@@ -558,7 +570,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -568,7 +580,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -589,7 +601,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -599,7 +611,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -739,6 +751,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3F8DEB6B27A32B8B00436BD2 /* XCRemoteSwiftPackageReference "ZeroChomageWebShared" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vayset/ZeroChomageWebShared.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3F8DEB6C27A32B8B00436BD2 /* ZeroChomageWebShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F8DEB6B27A32B8B00436BD2 /* XCRemoteSwiftPackageReference "ZeroChomageWebShared" */;
+			productName = ZeroChomageWebShared;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3FCA868A2713630F00275A66 /* Project object */;
 }
