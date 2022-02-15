@@ -22,9 +22,9 @@ struct CreateAccountView: View {
                 Image("IllustrationSignIn")
                 Spacer()
                 
-                textField(input: $email, placeHolder: "E-mail")
-                textField(input: $password, placeHolder: "Mots de passe")
-                textField(input: $confirmPassword, placeHolder: "Confirmer votre mots de passe")
+                CustomTextField(input: $email, placeHolder: "E-mail")
+                CustomTextField(input: $password, placeHolder: "Mots de passe")
+                CustomTextField(input: $confirmPassword, placeHolder: "Confirmer votre mots de passe")
                 
                 MainButton(title: "Inscription", action: {print("Inscription")})
                 Spacer()

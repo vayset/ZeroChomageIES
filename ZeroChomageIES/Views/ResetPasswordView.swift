@@ -19,7 +19,7 @@ struct ResetPasswordView: View {
                 Image("IllustrationLogin")
                 Spacer()
                 VStack(spacing: 20) {
-                    textField(input: $email, placeHolder: "E-MAIL")
+                    CustomTextField(input: $email, placeHolder: "E-MAIL")
                 }
                 
                 MainButton(title: "Réinstaller", action: {

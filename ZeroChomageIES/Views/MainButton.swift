@@ -9,20 +9,41 @@ import SwiftUI
 
 struct MainButton: View {
     
+    @Binding var isLoading: Bool
+    
     let title: String
     let action: () -> Void
     
     
     var body: some View {
         Button(action: action) {
-            Text(title)
-                .frame(height: 50, alignment: .center)
-                .frame(maxWidth: .infinity)
+            if isLoading {
+                ProgressView()
+                    .progressViewStyle(.circular)
+            } else {
+                Text(title)
+                
+                
+            }
+
         }
+        .frame(height: 50, alignment: .center)
+        .frame(maxWidth: .infinity)
         .background(Color.blueHorizon)
         .foregroundColor(Color.white)
         .transition(.slide)
     }
+    
+    init(
+        isLoading: Binding<Bool> = .constant(false),
+        title: String,
+        action: @escaping () -> Void
+    ){
+        self._isLoading = isLoading
+        self.title = title
+        self.action = action
+    }
+    
 }
 
 struct MainButton_Previews: PreviewProvider {

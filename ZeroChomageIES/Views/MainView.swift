@@ -9,9 +9,36 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
+        TabView {
+            firstTabView
+            SecondTabView()
+        }
+    }
+    
+    @State var isInformationFormPresented = false
+    @StateObject var questionnairesContainerViewModel = QuestionnairesContainerViewModel()
+    
+    @ViewBuilder
+    private var firstTabView: some View {
         NavigationView {
             VStack {
-                RoundedButtonView(action: {print("ca marche")})
+                RoundedButtonView(
+                    action: {
+                        isInformationFormPresented.toggle()
+                    }
+                )
+                
+                NavigationLink(
+                    isActive: $isInformationFormPresented
+                ) {
+                    QuestionnaireView(
+                        index: 0,
+                        questionnairesContainerViewModel: questionnairesContainerViewModel
+                    )
+                } label: {
+                    EmptyView()
+                }
+                
             }
             .navigationTitle(
                 Text("Mes informations")
@@ -19,8 +46,35 @@ struct MainView: View {
             .navigationBarTitleDisplayMode(.inline)
             .background(Color.white.edgesIgnoringSafeArea(.all))
         }
+        .tabItem {
+            Label("First", systemImage: "doc.plaintext")
+        }
+    }
+    
+
+    
+    
+}
+
+
+struct SecondTabView: View {
+    var body: some View {
+        NavigationView {
+            VStack {
+                Text("Second tab for saddam the senior dev")
+            }
+            .navigationTitle(
+                Text("Second Tab nav title")
+            )
+            .navigationBarTitleDisplayMode(.inline)
+            .background(Color.white.edgesIgnoringSafeArea(.all))
+        }
+        .tabItem {
+            Label("Second", systemImage: "0.square")
+        }
     }
 }
+
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {

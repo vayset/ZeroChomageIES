@@ -23,9 +23,9 @@ struct LoginView: View {
                 Image("IllustrationLogin")
                 Spacer()
                 VStack(spacing: 20) {
-                    textField(input: $email, placeHolder: "E-MAIL")
+                    CustomTextField(input: $email, placeHolder: "E-MAIL")
                     
-                    textField(input: $password, placeHolder: "Mots de passe")
+                    CustomSecureTextField(input: $password, placeHolder: "Mots de passe")                    
                 }
                 
                 NavigationLink(
@@ -56,14 +56,20 @@ struct LoginView: View {
                     .frame(maxWidth: .infinity, alignment: .trailing)
                 
                 
-                MainButton(title: "Connexion", action: {
+                MainButton(isLoading: $isLoading, title: "Connexion", action: {
                     Task {
+        
                         do {
+                            isLoading = true
+                            try await Task.sleep(nanoseconds: 1_000_000_000)
+             
                             try await AuthenticationService.shared.login(email: email, password: password)
                             rootViewModel.currentRootType = .main
                         } catch {
                             print("Failed to login")
+                            self.isAlertPresented.toggle()
                         }
+                        isLoading = false
                     }
                 })
                     .padding(.top, 20)
@@ -85,6 +91,14 @@ struct LoginView: View {
                     
                 }
             }
+            .alert(
+                "Error",
+                isPresented: $isAlertPresented,
+                actions: {
+                    Button("OK OK ") {
+                        
+                    }
+                })
             .padding(.horizontal)
             .navigationTitle(
                 Text("Connexion")
@@ -94,6 +108,9 @@ struct LoginView: View {
 
         }
     }
+    
+    @State var isAlertPresented = false
+    @State var isLoading = false
 }
 
 struct LoginView_Previews: PreviewProvider {

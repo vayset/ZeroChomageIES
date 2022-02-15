@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F5AFC91271D991F0021C0DF /* textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AFC90271D991F0021C0DF /* textField.swift */; };
+		3F5AFC91271D991F0021C0DF /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AFC90271D991F0021C0DF /* CustomTextField.swift */; };
 		3F5AFC93271EE1E00021C0DF /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AFC92271EE1E00021C0DF /* TextButton.swift */; };
 		3F6379882774417A00273450 /* TabViewSlides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6379872774417A00273450 /* TabViewSlides.swift */; };
 		3F8DEB6D27A32B8B00436BD2 /* ZeroChomageWebShared in Frameworks */ = {isa = PBXBuildFile; productRef = 3F8DEB6C27A32B8B00436BD2 /* ZeroChomageWebShared */; };
@@ -20,6 +20,9 @@
 		3FAE8873272193FD003EE8BD /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE8872272193FD003EE8BD /* MainView.swift */; };
 		3FAE8875272197AD003EE8BD /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE8874272197AD003EE8BD /* ResetPasswordView.swift */; };
 		3FAE8877272197CE003EE8BD /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE8876272197CE003EE8BD /* CreateAccountView.swift */; };
+		3FBE7A0927B3177700D29FAA /* QuestionnaireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBE7A0827B3177700D29FAA /* QuestionnaireView.swift */; };
+		3FBE7A0B27B320D900D29FAA /* CustomSecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBE7A0A27B320D900D29FAA /* CustomSecureTextField.swift */; };
+		3FBE7A0D27B46DDE00D29FAA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBE7A0C27B46DDE00D29FAA /* ProfileView.swift */; };
 		3FCA86962713630F00275A66 /* ZeroChomageIESApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA86952713630F00275A66 /* ZeroChomageIESApp.swift */; };
 		3FCA86982713630F00275A66 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA86972713630F00275A66 /* OnboardingView.swift */; };
 		3FCA869A2713631000275A66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FCA86992713631000275A66 /* Assets.xcassets */; };
@@ -64,7 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3F5AFC90271D991F0021C0DF /* textField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textField.swift; sourceTree = "<group>"; };
+		3F5AFC90271D991F0021C0DF /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		3F5AFC92271EE1E00021C0DF /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
 		3F6379872774417A00273450 /* TabViewSlides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewSlides.swift; sourceTree = "<group>"; };
 		3F8DEB6E27A32BBF00436BD2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -76,6 +79,9 @@
 		3FAE8872272193FD003EE8BD /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		3FAE8874272197AD003EE8BD /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		3FAE8876272197CE003EE8BD /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
+		3FBE7A0827B3177700D29FAA /* QuestionnaireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireView.swift; sourceTree = "<group>"; };
+		3FBE7A0A27B320D900D29FAA /* CustomSecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureTextField.swift; sourceTree = "<group>"; };
+		3FBE7A0C27B46DDE00D29FAA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		3FCA86922713630F00275A66 /* ZeroChomageIES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZeroChomageIES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FCA86952713630F00275A66 /* ZeroChomageIESApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroChomageIESApp.swift; sourceTree = "<group>"; };
 		3FCA86972713630F00275A66 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -226,7 +232,10 @@
 				3FCA86E127186CC900275A66 /* RootView.swift */,
 				3FCA86E72718718800275A66 /* LoginView.swift */,
 				3FA5FAA1272A096000713EA8 /* RoundedButtonView.swift */,
-				3F5AFC90271D991F0021C0DF /* textField.swift */,
+				3FBE7A0827B3177700D29FAA /* QuestionnaireView.swift */,
+				3FBE7A0C27B46DDE00D29FAA /* ProfileView.swift */,
+				3F5AFC90271D991F0021C0DF /* CustomTextField.swift */,
+				3FBE7A0A27B320D900D29FAA /* CustomSecureTextField.swift */,
 				3FAE8872272193FD003EE8BD /* MainView.swift */,
 				3FAE8874272197AD003EE8BD /* ResetPasswordView.swift */,
 				3FAE8876272197CE003EE8BD /* CreateAccountView.swift */,
@@ -385,13 +394,14 @@
 			files = (
 				3F8DEB6F27A32BBF00436BD2 /* NetworkManager.swift in Sources */,
 				3F5AFC93271EE1E00021C0DF /* TextButton.swift in Sources */,
+				3FBE7A0927B3177700D29FAA /* QuestionnaireView.swift in Sources */,
 				3FAE8873272193FD003EE8BD /* MainView.swift in Sources */,
 				3FCA86DB27185D2500275A66 /* MainButton.swift in Sources */,
 				3FAE8875272197AD003EE8BD /* ResetPasswordView.swift in Sources */,
 				3FCA86DD2718677900275A66 /* OnboardingViewModel.swift in Sources */,
 				3FCA86DF2718679B00275A66 /* TabSlideViewModel.swift in Sources */,
 				3FCA86982713630F00275A66 /* OnboardingView.swift in Sources */,
-				3F5AFC91271D991F0021C0DF /* textField.swift in Sources */,
+				3F5AFC91271D991F0021C0DF /* CustomTextField.swift in Sources */,
 				3FCA86E227186CC900275A66 /* RootView.swift in Sources */,
 				3FAE8877272197CE003EE8BD /* CreateAccountView.swift in Sources */,
 				3FA5FAA2272A096100713EA8 /* RoundedButtonView.swift in Sources */,
@@ -399,7 +409,9 @@
 				3FCA86E627186FA800275A66 /* UserDefaultsManager.swift in Sources */,
 				3FCA86D927185CC200275A66 /* Color+Colors.swift in Sources */,
 				3FCA86E427186CDF00275A66 /* RootViewModel.swift in Sources */,
+				3FBE7A0B27B320D900D29FAA /* CustomSecureTextField.swift in Sources */,
 				3FCA86E82718718800275A66 /* LoginView.swift in Sources */,
+				3FBE7A0D27B46DDE00D29FAA /* ProfileView.swift in Sources */,
 				3FCA86962713630F00275A66 /* ZeroChomageIESApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

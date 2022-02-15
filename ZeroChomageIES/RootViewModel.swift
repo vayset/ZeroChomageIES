@@ -19,9 +19,16 @@ enum RootType {
 class RootViewModel: ObservableObject {
     
     init() {
-        if userDefaultsManager.getHasSeenOnboarding() {
+        
+        switch (userDefaultsManager.getHasSeenOnboarding(), isLoggedIn) {
+        case (true, false):
             currentRootType = .login
+        case (true, true):
+            currentRootType = .main
+        case (false, _):
+            currentRootType = .onboarding
         }
+        
         let attrs = [
             NSAttributedString.Key.foregroundColor: UIColor(Color.textMainColor),
             NSAttributedString.Key.font: UIFont(name: "Gilroy-Semibold", size: 16)!
@@ -57,6 +64,8 @@ class RootViewModel: ObservableObject {
 //        ]
         
     }
+    
+    var isLoggedIn = true
     
     @Published var currentRootType: RootType = .onboarding
     
