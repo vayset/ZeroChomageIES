@@ -10,8 +10,18 @@ import SwiftUI
 struct ProfileView: View {
     var body: some View {
         ZStack {
-            Color(.blue)
+            Color.textMainColor
+            VStack {
+                Rectangle()
+                    .fill(Color.white)
+                    .frame(width: 400, height: 300)
+            }
+    
+
+                
+            
         }
+        .ignoresSafeArea()
     }
 }
 
