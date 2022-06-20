@@ -39,8 +39,8 @@ struct OnboardingView: View {
             } else {
                 
                 Button("+") {
-                    rootViewModel.currentRootType = .login
                     viewModel.didFinishOnboarding()
+                    rootViewModel.updateCurrentRootType()
                     print("should leave onboarding")
                     
                 }

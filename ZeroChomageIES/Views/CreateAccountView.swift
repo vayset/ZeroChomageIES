@@ -26,7 +26,12 @@ struct CreateAccountView: View {
                 CustomTextField(input: $password, placeHolder: "Mots de passe")
                 CustomTextField(input: $confirmPassword, placeHolder: "Confirmer votre mots de passe")
                 
-                MainButton(title: "Inscription", action: {print("Inscription")})
+                MainButton(title: "Inscription", action: {
+                    print("Inscription")
+                    Task {
+                        try? await AuthenticationService.shared.signUp(email: email, password: password)
+                    }
+                })
                 Spacer()
                 HStack {
                     Text("Vous avez déjà un compte ?")

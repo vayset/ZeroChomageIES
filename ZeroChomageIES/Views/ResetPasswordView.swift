@@ -23,7 +23,8 @@ struct ResetPasswordView: View {
                 }
                 
                 MainButton(title: "Réinstaller", action: {
-                    rootViewModel.currentRootType = .main
+                    fatalError("Not implemented")
+                    //rootViewModel.currentRootType = .main
                 })
                     .padding(.top, 20)
                 

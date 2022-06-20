@@ -20,14 +20,7 @@ class RootViewModel: ObservableObject {
     
     init() {
         
-        switch (userDefaultsManager.getHasSeenOnboarding(), isLoggedIn) {
-        case (true, false):
-            currentRootType = .login
-        case (true, true):
-            currentRootType = .main
-        case (false, _):
-            currentRootType = .onboarding
-        }
+        updateCurrentRootType()
         
         let attrs = [
             NSAttributedString.Key.foregroundColor: UIColor(Color.textMainColor),
@@ -65,11 +58,25 @@ class RootViewModel: ObservableObject {
         
     }
     
-    var isLoggedIn = true
     
-    @Published var currentRootType: RootType = .onboarding
+    func updateCurrentRootType() {
+        switch (userDefaultsManager.getHasSeenOnboarding(), isLoggedIn) {
+        case (true, false):
+            currentRootType = .login
+        case (true, true):
+            currentRootType = .main
+        case (false, _):
+            currentRootType = .onboarding
+        }
+    }
+    
+    private var isLoggedIn: Bool {
+        userDefaultsManager.getUserToken() != nil
+    }
+    
+    @Published private(set) var currentRootType: RootType = .onboarding
     
     
     
-    private let userDefaultsManager = UserDefaultsManager()
+    private let userDefaultsManager = UserDefaultsManager.shared
 }

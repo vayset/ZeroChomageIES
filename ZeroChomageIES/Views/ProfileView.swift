@@ -8,21 +8,22 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
     var body: some View {
         ZStack {
             Color.textMainColor
             VStack {
                 Rectangle()
                     .fill(Color.white)
-                    .frame(width: 400, height: 300)
+                    .frame(height: 200)
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    Spacer()
             }
-    
-
-                
-            
         }
         .ignoresSafeArea()
     }
+    
+    
 }
 
 struct ProfileView_Previews: PreviewProvider {

@@ -15,6 +15,7 @@
 		3F7ADC7327C275DC00E4712C /* FormTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7ADC7227C275DC00E4712C /* FormTextFieldViewModel.swift */; };
 		3F7ADC7527C275F700E4712C /* QuestionnaireViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7ADC7427C275F700E4712C /* QuestionnaireViewModel.swift */; };
 		3F7ADC7727C2763700E4712C /* QuestionnairesContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7ADC7627C2763700E4712C /* QuestionnairesContainerViewModel.swift */; };
+		3F7ADC7927C2820500E4712C /* ContactInformationTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7ADC7827C2820500E4712C /* ContactInformationTextView.swift */; };
 		3F8DEB6D27A32B8B00436BD2 /* ZeroChomageWebShared in Frameworks */ = {isa = PBXBuildFile; productRef = 3F8DEB6C27A32B8B00436BD2 /* ZeroChomageWebShared */; };
 		3F8DEB6F27A32BBF00436BD2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8DEB6E27A32BBF00436BD2 /* NetworkManager.swift */; };
 		3FA5FAA2272A096100713EA8 /* RoundedButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5FAA1272A096000713EA8 /* RoundedButtonView.swift */; };
@@ -80,6 +81,7 @@
 		3F7ADC7227C275DC00E4712C /* FormTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextFieldViewModel.swift; sourceTree = "<group>"; };
 		3F7ADC7427C275F700E4712C /* QuestionnaireViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewModel.swift; sourceTree = "<group>"; };
 		3F7ADC7627C2763700E4712C /* QuestionnairesContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnairesContainerViewModel.swift; sourceTree = "<group>"; };
+		3F7ADC7827C2820500E4712C /* ContactInformationTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInformationTextView.swift; sourceTree = "<group>"; };
 		3F8DEB6E27A32BBF00436BD2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		3FA5FAA1272A096000713EA8 /* RoundedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonView.swift; sourceTree = "<group>"; };
 		3FAE886A2720B89A003EE8BD /* Gilroy-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-ExtraBold.otf"; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				3FCA86972713630F00275A66 /* OnboardingView.swift */,
 				3FCA86DA27185D2500275A66 /* MainButton.swift */,
 				3F5AFC92271EE1E00021C0DF /* TextButton.swift */,
+				3F7ADC7827C2820500E4712C /* ContactInformationTextView.swift */,
 				3F6379872774417A00273450 /* TabViewSlides.swift */,
 				3FCA86E127186CC900275A66 /* RootView.swift */,
 				3FCA86E72718718800275A66 /* LoginView.swift */,
@@ -409,6 +412,7 @@
 			files = (
 				3F8DEB6F27A32BBF00436BD2 /* NetworkManager.swift in Sources */,
 				3F5AFC93271EE1E00021C0DF /* TextButton.swift in Sources */,
+				3F7ADC7927C2820500E4712C /* ContactInformationTextView.swift in Sources */,
 				3FBE7A0927B3177700D29FAA /* QuestionnaireView.swift in Sources */,
 				3FAE8873272193FD003EE8BD /* MainView.swift in Sources */,
 				3FCA86DB27185D2500275A66 /* MainButton.swift in Sources */,

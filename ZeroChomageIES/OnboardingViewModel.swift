@@ -43,10 +43,7 @@ class OnboardingViewModel: ObservableObject {
     ]
     
     @Published var currentSlideIndex = 0
-    
-    
-    
-    
+
     @Published var currentSlide: TabSlideViewModel?
     
     
@@ -77,7 +74,7 @@ class OnboardingViewModel: ObservableObject {
     }
     
     
-    private let userDefaultsManager = UserDefaultsManager()
+    private let userDefaultsManager = UserDefaultsManager.shared
     
     
     

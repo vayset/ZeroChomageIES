@@ -64,7 +64,9 @@ struct LoginView: View {
                             try await Task.sleep(nanoseconds: 1_000_000_000)
              
                             try await AuthenticationService.shared.login(email: email, password: password)
-                            rootViewModel.currentRootType = .main
+                            
+
+                            rootViewModel.updateCurrentRootType()
                         } catch {
                             print("Failed to login")
                             self.isAlertPresented.toggle()

@@ -51,17 +51,22 @@ struct MainView: View {
         }
     }
     
-
-    
-    
 }
 
 
 struct SecondTabView: View {
+    @EnvironmentObject var rootViewModel: RootViewModel
+    
     var body: some View {
         NavigationView {
             VStack {
                 Text("Second tab for saddam the senior dev")
+                Button("Logout") {
+                    
+                    UserDefaultsManager.shared.removeUserToken()
+                    rootViewModel.updateCurrentRootType()
+                }
+                
             }
             .navigationTitle(
                 Text("Second Tab nav title")
