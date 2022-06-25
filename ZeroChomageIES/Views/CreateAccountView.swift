@@ -12,7 +12,12 @@ struct CreateAccountView: View {
     @State var password = ""
     @State var confirmPassword = ""
     
+    @State var isLoading = false
+    @State var isAlertPresented = false
+    @State var alertError: AuthenticationServiceError?
+    
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var rootViewModel: RootViewModel
     
     
     var body: some View {
@@ -23,15 +28,32 @@ struct CreateAccountView: View {
                 Spacer()
                 
                 CustomTextField(input: $email, placeHolder: "E-mail")
-                CustomTextField(input: $password, placeHolder: "Mots de passe")
-                CustomTextField(input: $confirmPassword, placeHolder: "Confirmer votre mots de passe")
+                CustomSecureTextField(input: $password, placeHolder: "Mots de passe")
+                CustomSecureTextField(input: $confirmPassword, placeHolder: "Confirmer votre mots de passe")
                 
-                MainButton(title: "Inscription", action: {
-                    print("Inscription")
-                    Task {
-                        try? await AuthenticationService.shared.signUp(email: email, password: password)
+                MainButton(
+                    isLoading: $isLoading,
+                    title: "Inscription",
+                    action: {
+                        Task {
+                            isLoading = true
+                            do {
+                                try await AuthenticationService.shared.signUp(
+                                    email: email,
+                                    password: password,
+                                    passwordConfirmation: confirmPassword
+                                )
+                                rootViewModel.updateCurrentRootType()
+                            } catch {
+                                alertError = (error as? AuthenticationServiceError) ?? .unknownError
+                                isAlertPresented = true
+                            }
+                            isLoading = false
+                        }
+                        
+
                     }
-                })
+                )
                 Spacer()
                 HStack {
                     Text("Vous avez déjà un compte ?")
@@ -56,6 +78,9 @@ struct CreateAccountView: View {
                 "Inscription"
             )
             .navigationBarTitleDisplayMode(.inline)
+            .alert(isPresented: $isAlertPresented, error: alertError) {
+                Button("OK", role: .cancel) { }
+            }
 //            .background(Color.white.edgesIgnoringSafeArea(.all))
             
             

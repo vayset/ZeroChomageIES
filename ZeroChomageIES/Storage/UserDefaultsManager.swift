@@ -26,24 +26,15 @@ class UserDefaultsManager {
     
     
     
+    private let isNotFirstAppLaunch = "isNotFirstAppLaunch"
     
-    //TODO: Should be moved to keachain as it is sensitive information
-    
-    
-    private let userTokenKey = "userTokenKey"
-    
-    func setUserToken(value: String) {
-        UserDefaults.standard.set(value, forKey: userTokenKey)
+    func setIsNotFirstAppLaunch(value: Bool) {
+        UserDefaults.standard.set(value, forKey: isNotFirstAppLaunch)
     }
     
-    func removeUserToken() {
-        UserDefaults.standard.removeObject(forKey: userTokenKey)
+    func getIsNotFirstAppLaunch() -> Bool {
+        UserDefaults.standard.bool(forKey: isNotFirstAppLaunch)
     }
-    
-    func getUserToken() -> String? {
-        UserDefaults.standard.string(forKey: userTokenKey)
-    }
-    
     
     
 }

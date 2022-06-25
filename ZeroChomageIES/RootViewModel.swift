@@ -71,7 +71,7 @@ class RootViewModel: ObservableObject {
     }
     
     private var isLoggedIn: Bool {
-        userDefaultsManager.getUserToken() != nil
+        (try? keychainService.getToken()) != nil
     }
     
     @Published private(set) var currentRootType: RootType = .onboarding
@@ -79,4 +79,5 @@ class RootViewModel: ObservableObject {
     
     
     private let userDefaultsManager = UserDefaultsManager.shared
+    private let keychainService = KeychainService.shared
 }

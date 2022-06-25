@@ -12,6 +12,12 @@ struct ZeroChomageIESApp: App {
     
     init() {
         GlobalViewSetupManager.shared.setupPageControl()
+        
+        // After app deletion, keychain is not cleaned, so we need to remove the token on first app launch
+        if !userDefaultsManager.getIsNotFirstAppLaunch() {
+            try? KeychainService.shared.deleteToken()
+            userDefaultsManager.setIsNotFirstAppLaunch(value: true)
+        }
     }
 
 
@@ -20,6 +26,9 @@ struct ZeroChomageIESApp: App {
             RootView()
         }
     }
+    
+    
+    private let userDefaultsManager = UserDefaultsManager.shared
 }
 
 

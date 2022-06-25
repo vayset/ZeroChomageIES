@@ -62,9 +62,12 @@ struct SecondTabView: View {
             VStack {
                 Text("Second tab for saddam the senior dev")
                 Button("Logout") {
-                    
-                    UserDefaultsManager.shared.removeUserToken()
-                    rootViewModel.updateCurrentRootType()
+                    do {
+                        try KeychainService.shared.deleteToken()
+                        rootViewModel.updateCurrentRootType()
+                    } catch {
+                        print("Failed to delete token")
+                    }
                 }
                 
             }

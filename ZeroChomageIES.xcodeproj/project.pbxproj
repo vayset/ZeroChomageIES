@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F3BC4BE28673823009BFAD7 /* KeychainTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3BC4BD28673823009BFAD7 /* KeychainTestView.swift */; };
+		3F3BC4C028673F40009BFAD7 /* KeychainServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3BC4BF28673F40009BFAD7 /* KeychainServiceError.swift */; };
+		3F578F9A28672AC100B43AA9 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F578F9928672AC100B43AA9 /* KeychainService.swift */; };
 		3F5AFC91271D991F0021C0DF /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AFC90271D991F0021C0DF /* CustomTextField.swift */; };
 		3F5AFC93271EE1E00021C0DF /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AFC92271EE1E00021C0DF /* TextButton.swift */; };
 		3F6379882774417A00273450 /* TabViewSlides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6379872774417A00273450 /* TabViewSlides.swift */; };
@@ -73,6 +76,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F3BC4BD28673823009BFAD7 /* KeychainTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainTestView.swift; sourceTree = "<group>"; };
+		3F3BC4BF28673F40009BFAD7 /* KeychainServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServiceError.swift; sourceTree = "<group>"; };
+		3F578F9928672AC100B43AA9 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		3F5AFC90271D991F0021C0DF /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		3F5AFC92271EE1E00021C0DF /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
 		3F6379872774417A00273450 /* TabViewSlides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewSlides.swift; sourceTree = "<group>"; };
@@ -150,6 +156,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F3BC4C128673F61009BFAD7 /* KeychainService */ = {
+			isa = PBXGroup;
+			children = (
+				3F578F9928672AC100B43AA9 /* KeychainService.swift */,
+				3F3BC4BF28673F40009BFAD7 /* KeychainServiceError.swift */,
+			);
+			path = KeychainService;
+			sourceTree = "<group>";
+		};
+		3F578F9828672A9800B43AA9 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				3F3BC4C128673F61009BFAD7 /* KeychainService */,
+				3FCA86E527186FA800275A66 /* UserDefaultsManager.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 		3FCA86892713630F00275A66 = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +197,7 @@
 		3FCA86942713630F00275A66 /* ZeroChomageIES */ = {
 			isa = PBXGroup;
 			children = (
+				3F578F9828672A9800B43AA9 /* Storage */,
 				3FCA86E02718681700275A66 /* Views */,
 				3FCA86D727144BE100275A66 /* Info.plist */,
 				3FCA86E327186CDF00275A66 /* RootViewModel.swift */,
@@ -188,7 +213,6 @@
 				3FCA86C4271367C200275A66 /* Fonts */,
 				3FCA869B2713631000275A66 /* Preview Content */,
 				3FCA86D827185CC200275A66 /* Color+Colors.swift */,
-				3FCA86E527186FA800275A66 /* UserDefaultsManager.swift */,
 				3F8DEB6E27A32BBF00436BD2 /* NetworkManager.swift */,
 			);
 			path = ZeroChomageIES;
@@ -257,6 +281,7 @@
 				3FAE8872272193FD003EE8BD /* MainView.swift */,
 				3FAE8874272197AD003EE8BD /* ResetPasswordView.swift */,
 				3FAE8876272197CE003EE8BD /* CreateAccountView.swift */,
+				3F3BC4BD28673823009BFAD7 /* KeychainTestView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -418,6 +443,7 @@
 				3FCA86DB27185D2500275A66 /* MainButton.swift in Sources */,
 				3FAE8875272197AD003EE8BD /* ResetPasswordView.swift in Sources */,
 				3FCA86DD2718677900275A66 /* OnboardingViewModel.swift in Sources */,
+				3F3BC4C028673F40009BFAD7 /* KeychainServiceError.swift in Sources */,
 				3F7ADC7127C2758700E4712C /* QuestionnaireResponse.swift in Sources */,
 				3F7ADC7327C275DC00E4712C /* FormTextFieldViewModel.swift in Sources */,
 				3F7ADC7527C275F700E4712C /* QuestionnaireViewModel.swift in Sources */,
@@ -432,9 +458,11 @@
 				3F6379882774417A00273450 /* TabViewSlides.swift in Sources */,
 				3FCA86E627186FA800275A66 /* UserDefaultsManager.swift in Sources */,
 				3FCA86D927185CC200275A66 /* Color+Colors.swift in Sources */,
+				3F3BC4BE28673823009BFAD7 /* KeychainTestView.swift in Sources */,
 				3FCA86E427186CDF00275A66 /* RootViewModel.swift in Sources */,
 				3FBE7A0B27B320D900D29FAA /* CustomSecureTextField.swift in Sources */,
 				3FCA86E82718718800275A66 /* LoginView.swift in Sources */,
+				3F578F9A28672AC100B43AA9 /* KeychainService.swift in Sources */,
 				3FBE7A0D27B46DDE00D29FAA /* ProfileView.swift in Sources */,
 				3FCA86962713630F00275A66 /* ZeroChomageIESApp.swift in Sources */,
 			);

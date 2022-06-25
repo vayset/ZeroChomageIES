@@ -10,16 +10,27 @@ import SwiftUI
 struct CustomSecureTextField: View {
     @Binding var input: String
     let placeHolder: String
+    @State var isVisible = false
     
     var body: some View {
         ZStack {
-            SecureField("", text: $input)
-                .frame(height: 50, alignment: .center)
-                .padding()
-                .font(.custom("Gilroy-Medium", size: 16))
-                .foregroundColor(Color.black)
-                .background(Color.textFieldBackgroundColor)
-                .autocapitalization(.none)
+            Group {
+                if isVisible {
+                    Text(input)
+                } else {
+                    SecureField("", text: $input)
+                }
+            }
+            .frame(height: 50, alignment: .leading)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .multilineTextAlignment(.leading)
+            .padding()
+            .font(.custom("Gilroy-Medium", size: 16))
+            .foregroundColor(Color.black)
+            .background(Color.textFieldBackgroundColor)
+            .autocapitalization(.none)
+            .disableAutocorrection(true)
+            
             HStack {
                 if input.isEmpty {
                     Text(placeHolder)
@@ -30,6 +41,22 @@ struct CustomSecureTextField: View {
                 Spacer()
             }
             .allowsHitTesting(false)
+            
+            HStack {
+                Spacer()
+                Button {
+                    isVisible.toggle()
+                } label: {
+                    Image(systemName: isVisible ? "eye" : "eye.slash")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 20)
+                        .padding()
+                        .foregroundColor(.black)
+                }
+
+            }
+            
             
         }
     }
