@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "ZeroChomageWebShared",
+        "repositoryURL": "https://github.com/vayset/ZeroChomageWebShared.git",
+        "state": {
+          "branch": "main",
+          "revision": "da26cf89e55282ca3e033bdd0c31ab8d0ef06fa4",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
