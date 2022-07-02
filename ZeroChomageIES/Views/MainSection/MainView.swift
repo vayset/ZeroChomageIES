@@ -11,7 +11,7 @@ struct MainView: View {
     var body: some View {
         TabView {
             firstTabView
-            SecondTabView()
+            AccountTabView()
         }
     }
     
@@ -53,35 +53,6 @@ struct MainView: View {
     
 }
 
-
-struct SecondTabView: View {
-    @EnvironmentObject var rootViewModel: RootViewModel
-    
-    var body: some View {
-        NavigationView {
-            VStack {
-                Text("Second tab for saddam the senior dev")
-                Button("Logout") {
-                    do {
-                        try KeychainService.shared.deleteToken()
-                        rootViewModel.updateCurrentRootType()
-                    } catch {
-                        print("Failed to delete token")
-                    }
-                }
-                
-            }
-            .navigationTitle(
-                Text("Second Tab nav title")
-            )
-            .navigationBarTitleDisplayMode(.inline)
-            .background(Color.white.edgesIgnoringSafeArea(.all))
-        }
-        .tabItem {
-            Label("Second", systemImage: "0.square")
-        }
-    }
-}
 
 
 struct MainView_Previews: PreviewProvider {

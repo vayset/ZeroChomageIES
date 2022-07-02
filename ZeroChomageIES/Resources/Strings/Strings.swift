@@ -10,6 +10,7 @@ import Foundation
 
 struct Strings {
     static let loginPasswordPlaceHolder = "loginPasswordPlaceHolder".localized
+    static let accountTabTitle = "accountTabTitle".localized
 }
 
 
