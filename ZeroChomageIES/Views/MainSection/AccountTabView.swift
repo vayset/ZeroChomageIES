@@ -9,14 +9,24 @@ import Foundation
 import SwiftUI
 
 
-
 struct AccountTabView: View {
     @EnvironmentObject var rootViewModel: RootViewModel
+    
+    @StateObject var viewModel = AccountTabViewModel()
     
     var body: some View {
         NavigationView {
             VStack {
-                Text("Second tab for saddam the senior dev")
+                if viewModel.isLoading {
+                    ProgressView()
+                }
+                if let user = viewModel.user {
+                    VStack {
+                        Text("Email: \(user.email)")
+                        Text("Is Admin: \(user.isAdmin ? "yes" : "no")")
+                    }
+                }
+                
                 Button("Logout") {
                     do {
                         try KeychainService.shared.deleteToken()
@@ -32,9 +42,17 @@ struct AccountTabView: View {
             )
             .navigationBarTitleDisplayMode(.inline)
             .background(Color.white.edgesIgnoringSafeArea(.all))
+            .task {
+                viewModel.fetchUser()
+            }
         }
         .tabItem {
             Label(Strings.accountTabTitle, systemImage: "0.square")
         }
     }
 }
+
+
+
+
+
