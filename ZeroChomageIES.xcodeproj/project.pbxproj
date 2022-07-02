@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		3F3BC4BE28673823009BFAD7 /* KeychainTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3BC4BD28673823009BFAD7 /* KeychainTestView.swift */; };
 		3F3BC4C028673F40009BFAD7 /* KeychainServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3BC4BF28673F40009BFAD7 /* KeychainServiceError.swift */; };
+		3F537B5E28703969002D70CC /* FormValidatorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B5D28703969002D70CC /* FormValidatorService.swift */; };
+		3F537B6028703A7C002D70CC /* FormValidatorServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B5F28703A7C002D70CC /* FormValidatorServiceTests.swift */; };
+		3F537B63287044E6002D70CC /* RegularExpressionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B62287044E6002D70CC /* RegularExpressionFactory.swift */; };
 		3F578F9A28672AC100B43AA9 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F578F9928672AC100B43AA9 /* KeychainService.swift */; };
 		3F5AFC91271D991F0021C0DF /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AFC90271D991F0021C0DF /* CustomTextField.swift */; };
 		3F5AFC93271EE1E00021C0DF /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AFC92271EE1E00021C0DF /* TextButton.swift */; };
@@ -78,6 +81,9 @@
 /* Begin PBXFileReference section */
 		3F3BC4BD28673823009BFAD7 /* KeychainTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainTestView.swift; sourceTree = "<group>"; };
 		3F3BC4BF28673F40009BFAD7 /* KeychainServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServiceError.swift; sourceTree = "<group>"; };
+		3F537B5D28703969002D70CC /* FormValidatorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidatorService.swift; sourceTree = "<group>"; };
+		3F537B5F28703A7C002D70CC /* FormValidatorServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidatorServiceTests.swift; sourceTree = "<group>"; };
+		3F537B62287044E6002D70CC /* RegularExpressionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularExpressionFactory.swift; sourceTree = "<group>"; };
 		3F578F9928672AC100B43AA9 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		3F5AFC90271D991F0021C0DF /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		3F5AFC92271EE1E00021C0DF /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
@@ -165,6 +171,38 @@
 			path = KeychainService;
 			sourceTree = "<group>";
 		};
+		3F3BC4C2286A17D1009BFAD7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3F537B61287044C6002D70CC /* FormValidatorService */,
+				3F7ADC6E27C2756500E4712C /* QuestionnaireRequestBody.swift */,
+				3F7ADC7027C2758700E4712C /* QuestionnaireResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3F3BC4C3286A17E6009BFAD7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3FCA86DE2718679B00275A66 /* TabSlideViewModel.swift */,
+				3FCA86E327186CDF00275A66 /* RootViewModel.swift */,
+				3F7ADC7227C275DC00E4712C /* FormTextFieldViewModel.swift */,
+				3F7ADC7427C275F700E4712C /* QuestionnaireViewModel.swift */,
+				3FCA86DC2718677900275A66 /* OnboardingViewModel.swift */,
+				3F7ADC7627C2763700E4712C /* QuestionnairesContainerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3F537B61287044C6002D70CC /* FormValidatorService */ = {
+			isa = PBXGroup;
+			children = (
+				3F537B5D28703969002D70CC /* FormValidatorService.swift */,
+				3F537B62287044E6002D70CC /* RegularExpressionFactory.swift */,
+			);
+			path = FormValidatorService;
+			sourceTree = "<group>";
+		};
 		3F578F9828672A9800B43AA9 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,15 +238,9 @@
 				3F578F9828672A9800B43AA9 /* Storage */,
 				3FCA86E02718681700275A66 /* Views */,
 				3FCA86D727144BE100275A66 /* Info.plist */,
-				3FCA86E327186CDF00275A66 /* RootViewModel.swift */,
-				3F7ADC6E27C2756500E4712C /* QuestionnaireRequestBody.swift */,
-				3F7ADC7227C275DC00E4712C /* FormTextFieldViewModel.swift */,
-				3F7ADC7427C275F700E4712C /* QuestionnaireViewModel.swift */,
-				3FCA86DC2718677900275A66 /* OnboardingViewModel.swift */,
-				3F7ADC7027C2758700E4712C /* QuestionnaireResponse.swift */,
+				3F3BC4C3286A17E6009BFAD7 /* ViewModel */,
 				3FCA86952713630F00275A66 /* ZeroChomageIESApp.swift */,
-				3F7ADC7627C2763700E4712C /* QuestionnairesContainerViewModel.swift */,
-				3FCA86DE2718679B00275A66 /* TabSlideViewModel.swift */,
+				3F3BC4C2286A17D1009BFAD7 /* Model */,
 				3FCA86992713631000275A66 /* Assets.xcassets */,
 				3FCA86C4271367C200275A66 /* Fonts */,
 				3FCA869B2713631000275A66 /* Preview Content */,
@@ -230,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				3FCA86AB2713631100275A66 /* ZeroChomageIESTests.swift */,
+				3F537B5F28703A7C002D70CC /* FormValidatorServiceTests.swift */,
 			);
 			path = ZeroChomageIESTests;
 			sourceTree = "<group>";
@@ -440,6 +473,7 @@
 				3F7ADC7927C2820500E4712C /* ContactInformationTextView.swift in Sources */,
 				3FBE7A0927B3177700D29FAA /* QuestionnaireView.swift in Sources */,
 				3FAE8873272193FD003EE8BD /* MainView.swift in Sources */,
+				3F537B63287044E6002D70CC /* RegularExpressionFactory.swift in Sources */,
 				3FCA86DB27185D2500275A66 /* MainButton.swift in Sources */,
 				3FAE8875272197AD003EE8BD /* ResetPasswordView.swift in Sources */,
 				3FCA86DD2718677900275A66 /* OnboardingViewModel.swift in Sources */,
@@ -451,6 +485,7 @@
 				3FCA86982713630F00275A66 /* OnboardingView.swift in Sources */,
 				3F5AFC91271D991F0021C0DF /* CustomTextField.swift in Sources */,
 				3FCA86E227186CC900275A66 /* RootView.swift in Sources */,
+				3F537B5E28703969002D70CC /* FormValidatorService.swift in Sources */,
 				3FAE8877272197CE003EE8BD /* CreateAccountView.swift in Sources */,
 				3FA5FAA2272A096100713EA8 /* RoundedButtonView.swift in Sources */,
 				3F7ADC7727C2763700E4712C /* QuestionnairesContainerViewModel.swift in Sources */,
@@ -472,6 +507,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F537B6028703A7C002D70CC /* FormValidatorServiceTests.swift in Sources */,
 				3FCA86AC2713631100275A66 /* ZeroChomageIESTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -688,7 +724,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BAJKB9L735;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -713,7 +749,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BAJKB9L735;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -13,6 +13,8 @@ struct LoginView: View {
     @State var email = ""
     @State var password = ""
     
+    @State var errorTitle: String?
+    
     @State var isResetPasswordViewPresented = false
     @State var isCreateAccountViewPresented = false
     
@@ -60,14 +62,16 @@ struct LoginView: View {
                     Task {
         
                         do {
+                            try FormValidatorService.shared.validate(email: email)
+                            try FormValidatorService.shared.validateNotEmptyPassword(password: password)
+                            
                             isLoading = true
                             try await Task.sleep(nanoseconds: 1_000_000_000)
              
                             try await AuthenticationService.shared.login(email: email, password: password)
-                            
-
                             rootViewModel.updateCurrentRootType()
                         } catch {
+                            errorTitle = (error as? LocalizedError)?.errorDescription
                             print("Failed to login")
                             self.isAlertPresented.toggle()
                         }
@@ -94,10 +98,10 @@ struct LoginView: View {
                 }
             }
             .alert(
-                "Error",
+                errorTitle ?? "Unknown Error",
                 isPresented: $isAlertPresented,
                 actions: {
-                    Button("OK OK ") {
+                    Button("OK") {
                         
                     }
                 })

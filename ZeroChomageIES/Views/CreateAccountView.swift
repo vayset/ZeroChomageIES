@@ -13,8 +13,12 @@ struct CreateAccountView: View {
     @State var confirmPassword = ""
     
     @State var isLoading = false
+    
+    
     @State var isAlertPresented = false
-    @State var alertError: AuthenticationServiceError?
+    
+    @State var errorTitle: String?
+    
     
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var rootViewModel: RootViewModel
@@ -22,13 +26,22 @@ struct CreateAccountView: View {
     
     var body: some View {
         
-        NavigationView {
+        ScrollView {
             VStack(spacing: 15) {
                 Image("IllustrationSignIn")
                 Spacer()
                 
                 CustomTextField(input: $email, placeHolder: "E-mail")
                 CustomSecureTextField(input: $password, placeHolder: "Mots de passe")
+                Text(
+"""
+Password should respect the following rules
+1. asdadsdas
+2. asdsaadsdas
+3. asdasdadsadsasdads
+"""
+                )
+                .foregroundColor(.gray)
                 CustomSecureTextField(input: $confirmPassword, placeHolder: "Confirmer votre mots de passe")
                 
                 MainButton(
@@ -38,6 +51,9 @@ struct CreateAccountView: View {
                         Task {
                             isLoading = true
                             do {
+                                try FormValidatorService.shared.validate(email: email)
+                                try FormValidatorService.shared.validate(password: password)
+                                
                                 try await AuthenticationService.shared.signUp(
                                     email: email,
                                     password: password,
@@ -45,13 +61,14 @@ struct CreateAccountView: View {
                                 )
                                 rootViewModel.updateCurrentRootType()
                             } catch {
-                                alertError = (error as? AuthenticationServiceError) ?? .unknownError
-                                isAlertPresented = true
+                                errorTitle = (error as? LocalizedError)?.errorDescription
+                                print("Failed to login")
+                                self.isAlertPresented.toggle()
                             }
                             isLoading = false
                         }
                         
-
+                        
                     }
                 )
                 Spacer()
@@ -67,25 +84,31 @@ struct CreateAccountView: View {
                             
                         }
                     )
-                        .foregroundColor(Color.secondTextColor)
-                        .font(.custom("Gilroy-Semibold", size: 16))
+                    .foregroundColor(Color.secondTextColor)
+                    .font(.custom("Gilroy-Semibold", size: 16))
                     
                 }
                 
             }
-            .padding(.horizontal)
-            .navigationTitle(
-                "Inscription"
-            )
-            .navigationBarTitleDisplayMode(.inline)
-            .alert(isPresented: $isAlertPresented, error: alertError) {
-                Button("OK", role: .cancel) { }
-            }
-//            .background(Color.white.edgesIgnoringSafeArea(.all))
-            
-            
         }
+        .padding(.horizontal)
+        .navigationTitle(
+            "Inscription"
+        )
+        .navigationBarTitleDisplayMode(.inline)
+        .alert(
+            errorTitle ?? "Unknown Error",
+            isPresented: $isAlertPresented,
+            actions: {
+                Button("OK") {
+                    
+                }
+            })
+        .background(Color.white.edgesIgnoringSafeArea(.all))
+        
+        
     }
+    
 }
 
 
