@@ -9,5 +9,7 @@ import Foundation
 
 
 struct Strings {
-    static let loginPasswordPlaceHolder = NSLocalizedString("loginPasswordPlaceHolder", comment: "")
+    static let loginPasswordPlaceHolder = "loginPasswordPlaceHolder".localized
 }
+
+

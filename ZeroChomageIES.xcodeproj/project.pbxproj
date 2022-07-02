@@ -14,6 +14,7 @@
 		3F537B63287044E6002D70CC /* RegularExpressionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B62287044E6002D70CC /* RegularExpressionFactory.swift */; };
 		3F537B6828705A25002D70CC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F537B6A28705A25002D70CC /* Localizable.strings */; };
 		3F537B6D28705A8D002D70CC /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B6C28705A8D002D70CC /* Strings.swift */; };
+		3F537B6F28705BBC002D70CC /* Strings+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B6E28705BBC002D70CC /* Strings+Localizable.swift */; };
 		3F578F9A28672AC100B43AA9 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F578F9928672AC100B43AA9 /* KeychainService.swift */; };
 		3F5AFC91271D991F0021C0DF /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AFC90271D991F0021C0DF /* CustomTextField.swift */; };
 		3F5AFC93271EE1E00021C0DF /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AFC92271EE1E00021C0DF /* TextButton.swift */; };
@@ -89,6 +90,7 @@
 		3F537B6928705A25002D70CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3F537B6B28705A28002D70CC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3F537B6C28705A8D002D70CC /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		3F537B6E28705BBC002D70CC /* Strings+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings+Localizable.swift"; sourceTree = "<group>"; };
 		3F578F9928672AC100B43AA9 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		3F5AFC90271D991F0021C0DF /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		3F5AFC92271EE1E00021C0DF /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			children = (
 				3F537B6A28705A25002D70CC /* Localizable.strings */,
 				3F537B6C28705A8D002D70CC /* Strings.swift */,
+				3F537B6E28705BBC002D70CC /* Strings+Localizable.swift */,
 			);
 			path = Strings;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				3F8DEB6F27A32BBF00436BD2 /* NetworkManager.swift in Sources */,
 				3F537B6D28705A8D002D70CC /* Strings.swift in Sources */,
 				3F5AFC93271EE1E00021C0DF /* TextButton.swift in Sources */,
+				3F537B6F28705BBC002D70CC /* Strings+Localizable.swift in Sources */,
 				3F7ADC7927C2820500E4712C /* ContactInformationTextView.swift in Sources */,
 				3FBE7A0927B3177700D29FAA /* QuestionnaireView.swift in Sources */,
 				3FAE8873272193FD003EE8BD /* MainView.swift in Sources */,
