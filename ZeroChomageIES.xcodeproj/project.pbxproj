@@ -12,6 +12,8 @@
 		3F537B5E28703969002D70CC /* FormValidatorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B5D28703969002D70CC /* FormValidatorService.swift */; };
 		3F537B6028703A7C002D70CC /* FormValidatorServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B5F28703A7C002D70CC /* FormValidatorServiceTests.swift */; };
 		3F537B63287044E6002D70CC /* RegularExpressionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B62287044E6002D70CC /* RegularExpressionFactory.swift */; };
+		3F537B6828705A25002D70CC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F537B6A28705A25002D70CC /* Localizable.strings */; };
+		3F537B6D28705A8D002D70CC /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B6C28705A8D002D70CC /* Strings.swift */; };
 		3F578F9A28672AC100B43AA9 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F578F9928672AC100B43AA9 /* KeychainService.swift */; };
 		3F5AFC91271D991F0021C0DF /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AFC90271D991F0021C0DF /* CustomTextField.swift */; };
 		3F5AFC93271EE1E00021C0DF /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AFC92271EE1E00021C0DF /* TextButton.swift */; };
@@ -84,6 +86,9 @@
 		3F537B5D28703969002D70CC /* FormValidatorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidatorService.swift; sourceTree = "<group>"; };
 		3F537B5F28703A7C002D70CC /* FormValidatorServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidatorServiceTests.swift; sourceTree = "<group>"; };
 		3F537B62287044E6002D70CC /* RegularExpressionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularExpressionFactory.swift; sourceTree = "<group>"; };
+		3F537B6928705A25002D70CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3F537B6B28705A28002D70CC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3F537B6C28705A8D002D70CC /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		3F578F9928672AC100B43AA9 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		3F5AFC90271D991F0021C0DF /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		3F5AFC92271EE1E00021C0DF /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
@@ -204,6 +209,23 @@
 			path = FormValidatorService;
 			sourceTree = "<group>";
 		};
+		3F537B64287059FA002D70CC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3F537B6528705A01002D70CC /* Strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3F537B6528705A01002D70CC /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				3F537B6A28705A25002D70CC /* Localizable.strings */,
+				3F537B6C28705A8D002D70CC /* Strings.swift */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
 		3F578F9828672A9800B43AA9 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +258,7 @@
 		3FCA86942713630F00275A66 /* ZeroChomageIES */ = {
 			isa = PBXGroup;
 			children = (
+				3F537B64287059FA002D70CC /* Resources */,
 				3FCA86E02718681700275A66 /* Views */,
 				3FCA86D727144BE100275A66 /* Info.plist */,
 				3F3BC4C3286A17E6009BFAD7 /* ViewModel */,
@@ -408,6 +431,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 3FCA86892713630F00275A66;
 			packageReferences = (
@@ -442,6 +466,7 @@
 				3FAE886F2720BA0D003EE8BD /* Gilroy-Semibold.ttf in Resources */,
 				3FCA86D0271367C200275A66 /* Ubuntu-Regular.ttf in Resources */,
 				3FAE886D2720B89A003EE8BD /* Gilroy-Light.otf in Resources */,
+				3F537B6828705A25002D70CC /* Localizable.strings in Resources */,
 				3FCA86CE271367C200275A66 /* Ubuntu-Medium.ttf in Resources */,
 				3FAE886C2720B89A003EE8BD /* Gilroy-ExtraBold.otf in Resources */,
 			);
@@ -469,6 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F8DEB6F27A32BBF00436BD2 /* NetworkManager.swift in Sources */,
+				3F537B6D28705A8D002D70CC /* Strings.swift in Sources */,
 				3F5AFC93271EE1E00021C0DF /* TextButton.swift in Sources */,
 				3F7ADC7927C2820500E4712C /* ContactInformationTextView.swift in Sources */,
 				3FBE7A0927B3177700D29FAA /* QuestionnaireView.swift in Sources */,
@@ -535,6 +561,18 @@
 			targetProxy = 3FCA86B22713631100275A66 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3F537B6A28705A25002D70CC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F537B6928705A25002D70CC /* en */,
+				3F537B6B28705A28002D70CC /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3FCA86B92713631100275A66 /* Debug */ = {

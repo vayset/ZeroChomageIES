@@ -27,7 +27,7 @@ struct LoginView: View {
                 VStack(spacing: 20) {
                     CustomTextField(input: $email, placeHolder: "E-MAIL")
                     
-                    CustomSecureTextField(input: $password, placeHolder: "Mots de passe")                    
+                    CustomSecureTextField(input: $password, placeHolder: Strings.loginPasswordPlaceHolder)
                 }
                 
                 NavigationLink(

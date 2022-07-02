@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  ZeroChomageIES
+
+  Created by Saddam Satouyev on 02/07/2022.
+  
+*/
+
+"loginPasswordPlaceHolder" = "Mot de passe";
