@@ -17,22 +17,22 @@ struct MainButton: View {
     
     var body: some View {
         Button(action: action) {
-            if isLoading {
-                ProgressView()
-                    .progressViewStyle(.circular)
-            } else {
-                Text(title)
-                
-                
+            Group {
+                if isLoading {
+                    ProgressView()
+                        .progressViewStyle(.circular)
+                } else {
+                    Text(title)
+                }
             }
-
+            .frame(height: 50, alignment: .center)
+            .frame(maxWidth: .infinity)
+            
         }
-        .frame(height: 50, alignment: .center)
-        .frame(maxWidth: .infinity)
+      
         .background(Color.blueHorizon)
         .foregroundColor(Color.white)
         .transition(.slide)
-        .buttonStyle(.plain)
     }
     
     init(

@@ -16,7 +16,7 @@ struct CustomSecureTextField: View {
         ZStack {
             Group {
                 if isVisible {
-                    Text(input)
+                    TextField("", text: $input)
                 } else {
                     SecureField("", text: $input)
                 }
