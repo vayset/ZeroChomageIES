@@ -8,3 +8,4 @@
 
 "loginPasswordPlaceHolder" = "Mot de passe";
 "accountTabTitle" = "Mon Compte";
+"emailFordResetPassword" = "Si vous avez oublié votre mot de passe, veuillez écrire sur le mail suivant : contact@ies.fr";

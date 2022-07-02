@@ -14,20 +14,11 @@ struct ResetPasswordView: View {
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 15) {
+            VStack() {
                 Spacer()
                 Image("IllustrationLogin")
                 Spacer()
-                VStack(spacing: 20) {
-                    CustomTextField(input: $email, placeHolder: "E-MAIL")
-                }
-                
-                MainButton(title: "Réinstaller", action: {
-                    fatalError("Not implemented")
-                    //rootViewModel.currentRootType = .main
-                })
-                    .padding(.top, 20)
-                
+                    Text(Strings.emailFordResetPassword)
                 Spacer()
             }
             .padding(.horizontal)

@@ -9,6 +9,52 @@ import Foundation
 
 @MainActor
 final class QuestionnairesContainerViewModel: ObservableObject {
+    
+    lazy var startCell = ChomageCellViewModel(
+        iconSystemName: "doc.plaintext",
+        title: "Provide Information",
+        description: "Please provide your information so that you can find a great opportunity.",
+        buttonTitle: "Start",
+        buttonAction: { [weak self] in
+            self?.isQuestionnairePresented.toggle()
+        }
+    )
+    
+    lazy var statusCell = ChomageCellViewModel(
+        iconSystemName: "doc.plaintext",
+        title: "Check Status",
+        description: "You can check the status of your application here.",
+        buttonTitle: "Go",
+        buttonAction: { [weak self] in
+            
+        }
+    )
+
+    
+    lazy var newsCell = ChomageCellViewModel(
+        iconSystemName: "doc.plaintext",
+        title: "Check News",
+        description: "Check the news arround your place regarding work and job opportunity.",
+        buttonTitle: "Go",
+        buttonAction: { [weak self] in
+            
+        }
+    )
+
+    lazy var consultInformationCell = ChomageCellViewModel(
+        iconSystemName: "doc.plaintext",
+        title: "Consult Questionnaire",
+        description: "Verify the information you've sent us.",
+        buttonTitle: "Consult",
+        buttonAction: { [weak self] in
+            
+        }
+    )
+
+
+    @Published var isQuestionnairePresented = false
+    
+    
     lazy var questionnaireViewModels: [QuestionnaireViewModel] = [
         .init(
             title: "Info 1",
