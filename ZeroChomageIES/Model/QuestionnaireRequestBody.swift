@@ -18,5 +18,7 @@ struct QuestionnaireRequestBody: Encodable {
     let dateOfBirth: String
     let sexe: String
     let situationFamiliale: String
+    let isAlreadyFilled: Bool
+
 }
 

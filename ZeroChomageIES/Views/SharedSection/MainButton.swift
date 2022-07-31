@@ -50,6 +50,6 @@ struct MainButton: View {
 struct MainButton_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = OnboardingViewModel()
-        MainButton(title: "Suivant", action:viewModel.incrementSlideIndex )
+        MainButton(title: "test", action:viewModel.incrementSlideIndex )
     }
 }

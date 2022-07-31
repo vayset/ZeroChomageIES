@@ -9,3 +9,10 @@
 "loginPasswordPlaceHolder" = "Mot de passe";
 "accountTabTitle" = "Mon Compte";
 "emailFordResetPassword" = "Si vous avez oublié votre mot de passe, veuillez écrire sur le mail suivant : contact@ies.fr";
+"resetPassword" = "Réinitialiser le mot de passe";
+"passwordRespectRulesTitle" = "Le mot de passe doit respecter les règles suivantes";
+"passwordRespectRulesOne" = "Assurez-vous que la chaîne contient 1 lettre majuscule.";
+"passwordRespectRulesTwo" = "Assurez-vous que la chaîne a 1 lettre de casse spéciale.";
+"passwordRespectRulesThree" = "Assurez-vous que la chaîne comporte 1 chiffre.";
+"passwordRespectRulesFour" = "Assurez-vous que la chaîne contient 1 lettre minuscule.";
+"passwordRespectRulesFive" = "Assurez-vous que la chaîne comporte au moins 8 caractères.";

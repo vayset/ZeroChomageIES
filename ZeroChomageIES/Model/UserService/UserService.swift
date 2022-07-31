@@ -9,10 +9,10 @@ import Foundation
 
 
 
-final class UserService {
+final class UserService: ObservableObject{
     static let shared = UserService()
     
-    func fetchUser() async throws -> User {
+    func fetchUser() async throws -> [User] {
         let url = URL(string: "http://localhost:8080/api/v1/user-account-info/")!
         
         var request = URLRequest(url: url)
@@ -23,7 +23,7 @@ final class UserService {
         let userToken = try keychainService.getToken()
         request.addValue("Bearer \(userToken)", forHTTPHeaderField: "Authorization")
         
-        guard let response: User = try? await networkManager.fetch(urlRequest: request) else {
+        guard let response: [User] = try? await networkManager.fetch(urlRequest: request) else {
             throw UserServiceError.failedToFetchUser
         }
         

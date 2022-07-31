@@ -9,8 +9,6 @@ import SwiftUI
 
 struct ResetPasswordView: View {
     @EnvironmentObject var rootViewModel: RootViewModel
-    //    @State private var email = ""
-    @State var email = ""
     
     var body: some View {
         NavigationView {
@@ -23,11 +21,10 @@ struct ResetPasswordView: View {
             }
             .padding(.horizontal)
             .navigationTitle(
-                Text("Réinstaller le mot de passe")
+                Text(Strings.resetPassword)
             )
             .navigationBarTitleDisplayMode(.inline)
             .background(Color.white.edgesIgnoringSafeArea(.all))
-            
         }
     }
 }

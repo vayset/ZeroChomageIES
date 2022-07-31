@@ -47,6 +47,7 @@ struct QuestionnaireView: View {
                             viewModel.performAction()
                         }
                     )
+                    .buttonStyle(.plain)
                 }
                 Spacer()
             }

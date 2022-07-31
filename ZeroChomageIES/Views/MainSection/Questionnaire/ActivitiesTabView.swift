@@ -10,21 +10,25 @@ import SwiftUI
 
 
 
-struct QuestionnaireTabView: View {
+struct ActivitiesTabView: View {
     
     @StateObject var questionnairesContainerViewModel = QuestionnairesContainerViewModel()
-    
-    @State var isAlreadyFilled = false
+    @StateObject var viewModel = AccountTabViewModel()
+
+//    @State var isAlreadyFilled = false
     
     var body: some View {
         NavigationView {
             ScrollView {
-                if !isAlreadyFilled {
-                    questionnaireNotFilledView
-                } else {
-                    questionnaireAlreadyFilledView
+                    
+                if viewModel.user.first?.isAlreadyFilled == false {
+                        questionnaireNotFilledView
+                    } else {
+                        questionnaireAlreadyFilledView
+                    }
                 }
-            }
+            
+            
             .navigationTitle(
                 Text("Mes informations")
             )

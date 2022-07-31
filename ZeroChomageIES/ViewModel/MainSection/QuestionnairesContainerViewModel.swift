@@ -10,6 +10,9 @@ import Foundation
 @MainActor
 final class QuestionnairesContainerViewModel: ObservableObject {
     
+     var viewModel = AccountTabViewModel()
+
+    
     lazy var startCell = ChomageCellViewModel(
         iconSystemName: "doc.plaintext",
         title: "Provide Information",
@@ -54,12 +57,15 @@ final class QuestionnairesContainerViewModel: ObservableObject {
 
     @Published var isQuestionnairePresented = false
     
+    @Published var isAlertPresented = false
+    @Published var alertTitle = ""
+    
     
     lazy var questionnaireViewModels: [QuestionnaireViewModel] = [
         .init(
             title: "Info 1",
             imageName: "Illustration1",
-            buttonTitle: "Suivant",
+            buttonTitle: "suiv1",
             formTextFieldViewModels: [
                 .init(placeHolder: "Nom"),
                 .init(placeHolder: "Prénom"),
@@ -88,7 +94,14 @@ final class QuestionnairesContainerViewModel: ObservableObject {
     private func submitQuestionnairesInformation() {
         questionnaireViewModels.last?.isLoading = true
         Task {
-            try await sendQuestionnaire()
+            do {
+                try await sendQuestionnaire()
+            } catch {
+                alertTitle = "Failed to submit questionnaire"
+                isAlertPresented = true
+                
+            }
+            
             questionnaireViewModels.last?.isLoading = false
         }
         
@@ -99,12 +112,15 @@ final class QuestionnairesContainerViewModel: ObservableObject {
         let questionnaireRequestBody = getQuestionnaireRequestBody()
         
         guard
-            let url = URL(string: "localhost:8080/users") else { return }
+            let url = URL(string: "http://www.localhost:8080/api/v1/questionnaire-upload") else { return }
         
         var urlRequest = URLRequest(url: url)
         
         urlRequest.httpMethod = "POST"
-        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let userToken = try keychainService.getToken()
+        urlRequest.addValue("Bearer \(userToken)", forHTTPHeaderField: "Authorization")
         
         let jsonEncoder = JSONEncoder()
         let body = try jsonEncoder.encode(questionnaireRequestBody)
@@ -115,6 +131,14 @@ final class QuestionnairesContainerViewModel: ObservableObject {
         let response: QuestionnaireResponse = try await networkManager.fetch(urlRequest: urlRequest)
         
         print(response.isSuccess)
+        if response.isSuccess {
+            dismissCompleteQuestionnaire()
+        }
+    }
+    
+    private func dismissCompleteQuestionnaire() {
+        questionnaireViewModels.forEach { $0.isNextFormPresented = false }
+        isQuestionnairePresented = false
     }
     
     private func getQuestionnaireRequestBody() -> QuestionnaireRequestBody {
@@ -128,7 +152,7 @@ final class QuestionnairesContainerViewModel: ObservableObject {
             phoneNumber: questionnaireViewModels[1].formTextFieldViewModels[1].input,
             dateOfBirth: questionnaireViewModels[1].formTextFieldViewModels[2].input,
             sexe: questionnaireViewModels[1].formTextFieldViewModels[3].input,
-            situationFamiliale: questionnaireViewModels[1].formTextFieldViewModels[4].input
+            situationFamiliale: questionnaireViewModels[1].formTextFieldViewModels[4].input, isAlreadyFilled: true
         )
         
         return questionnaireRequestBody
@@ -136,4 +160,5 @@ final class QuestionnairesContainerViewModel: ObservableObject {
     
     
     private let networkManager = NetworkManager.shared
+    private let keychainService = KeychainService.shared
 }

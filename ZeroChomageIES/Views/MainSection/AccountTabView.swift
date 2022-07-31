@@ -21,10 +21,19 @@ struct AccountTabView: View {
                     ProgressView()
                 }
                 if let user = viewModel.user {
-                    VStack {
-                        Text("Email: \(user.email)")
-                        Text("Is Admin: \(user.isAdmin ? "yes" : "no")")
-                    }
+//                    VStack {
+//                        Text("Email: \(user.email)")
+//                        Text("Is Admin: \(user.isAdmin ? "yes" : "no")")
+//                        Text(user.lastName ?? "yes")
+//                        Text(user.civilStatus ?? "yes")
+//                        if user.isAlreadyFilled {
+//                            Text("c'est fait")
+//                        }
+//                        else if !user.isAlreadyFilled {
+//                            Text("c'est pas fait")
+//                        }
+//
+//                    }
                 }
                 
                 Button("Logout") {

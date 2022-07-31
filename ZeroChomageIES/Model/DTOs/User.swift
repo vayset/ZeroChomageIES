@@ -21,5 +21,6 @@ struct User: Codable {
     let gender: String?
     let civilStatus: String?
     let isAdmin: Bool
+    let isAlreadyFilled: Bool
 }
 

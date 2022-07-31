@@ -20,7 +20,7 @@
 		3F537B7B28706A08002D70CC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B7A28706A08002D70CC /* User.swift */; };
 		3F537B7D28706A1B002D70CC /* UserServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B7C28706A1B002D70CC /* UserServiceError.swift */; };
 		3F537B8228706AC4002D70CC /* AccountTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B8128706AC4002D70CC /* AccountTabViewModel.swift */; };
-		3F537B8428706DC7002D70CC /* QuestionnaireTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B8328706DC7002D70CC /* QuestionnaireTabView.swift */; };
+		3F537B8428706DC7002D70CC /* ActivitiesTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B8328706DC7002D70CC /* ActivitiesTabView.swift */; };
 		3F578F9A28672AC100B43AA9 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F578F9928672AC100B43AA9 /* KeychainService.swift */; };
 		3F5AFC91271D991F0021C0DF /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AFC90271D991F0021C0DF /* CustomTextField.swift */; };
 		3F5AFC93271EE1E00021C0DF /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AFC92271EE1E00021C0DF /* TextButton.swift */; };
@@ -101,7 +101,7 @@
 		3F537B7A28706A08002D70CC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3F537B7C28706A1B002D70CC /* UserServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceError.swift; sourceTree = "<group>"; };
 		3F537B8128706AC4002D70CC /* AccountTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTabViewModel.swift; sourceTree = "<group>"; };
-		3F537B8328706DC7002D70CC /* QuestionnaireTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireTabView.swift; sourceTree = "<group>"; };
+		3F537B8328706DC7002D70CC /* ActivitiesTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTabView.swift; sourceTree = "<group>"; };
 		3F578F9928672AC100B43AA9 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		3F5AFC90271D991F0021C0DF /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		3F5AFC92271EE1E00021C0DF /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
@@ -242,11 +242,10 @@
 		3F537B70287060E0002D70CC /* MainSection */ = {
 			isa = PBXGroup;
 			children = (
-				3FBE7A0827B3177700D29FAA /* QuestionnaireView.swift */,
+				3FD264C62877619C0070FEB9 /* Questionnaire */,
 				3FBE7A0C27B46DDE00D29FAA /* ProfileView.swift */,
 				3FAE8872272193FD003EE8BD /* MainView.swift */,
 				3F537B732870610B002D70CC /* AccountTabView.swift */,
-				3F537B8328706DC7002D70CC /* QuestionnaireTabView.swift */,
 			);
 			path = MainSection;
 			sourceTree = "<group>";
@@ -430,6 +429,15 @@
 				3F537B70287060E0002D70CC /* MainSection */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		3FD264C62877619C0070FEB9 /* Questionnaire */ = {
+			isa = PBXGroup;
+			children = (
+				3FBE7A0827B3177700D29FAA /* QuestionnaireView.swift */,
+				3F537B8328706DC7002D70CC /* ActivitiesTabView.swift */,
+			);
+			path = Questionnaire;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -617,7 +625,7 @@
 				3FCA86E427186CDF00275A66 /* RootViewModel.swift in Sources */,
 				3FBE7A0B27B320D900D29FAA /* CustomSecureTextField.swift in Sources */,
 				3FCA86E82718718800275A66 /* LoginView.swift in Sources */,
-				3F537B8428706DC7002D70CC /* QuestionnaireTabView.swift in Sources */,
+				3F537B8428706DC7002D70CC /* ActivitiesTabView.swift in Sources */,
 				3F537B7B28706A08002D70CC /* User.swift in Sources */,
 				3F578F9A28672AC100B43AA9 /* KeychainService.swift in Sources */,
 				3FBE7A0D27B46DDE00D29FAA /* ProfileView.swift in Sources */,

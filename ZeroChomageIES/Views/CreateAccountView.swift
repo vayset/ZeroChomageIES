@@ -35,13 +35,16 @@ struct CreateAccountView: View {
                 CustomSecureTextField(input: $password, placeHolder: "Mots de passe")
                 Text(
 """
-Password should respect the following rules
-1. asdadsdas
-2. asdsaadsdas
-3. asdasdadsadsasdads
+   \(Strings.passwordRespectRulesTitle)
+1. \(Strings.passwordRespectRulesOne)
+2. \(Strings.passwordRespectRulesTwo)
+3. \(Strings.passwordRespectRulesThree)
+4. \(Strings.passwordRespectRulesFour)
+5. \(Strings.passwordRespectRulesFive)
 """
                 )
                 .foregroundColor(.gray)
+                .font(.custom("Gilroy-Medium", size: 12))
                 CustomSecureTextField(input: $confirmPassword, placeHolder: "Confirmer votre mots de passe")
                 
                 MainButton(
@@ -67,8 +70,6 @@ Password should respect the following rules
                             }
                             isLoading = false
                         }
-                        
-                        
                     }
                 )
                 Spacer()
