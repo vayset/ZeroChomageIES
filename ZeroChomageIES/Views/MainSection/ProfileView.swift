@@ -19,8 +19,8 @@ struct ProfileView: View {
                 if let user = viewModel.user {
                 HStack {
                     
-                    Text(user.first??.lastName ?? "Error LastName")
-                    Text(user.first??.firstname  ?? "Error Firstname")
+                    Text(user.lastName ?? "Error LastName")
+                    Text(user.firstname ?? "Error Firstname")
 
                     
                 }
@@ -45,13 +45,8 @@ struct ProfileView: View {
                 
                 ZStack{
                     Color.gray
-                    
-                    List(viewModel.fetchUser) { item in
-                        VStack(alignment: .leading) {
-                            Text(item.trackName)
-                                .font(.headline)
-                            Text(item.collectionName)
-                        }                }
+                    Text("LastName")
+                }
             }
             .navigationTitle(
                 Text(Strings.accountTabTitle)

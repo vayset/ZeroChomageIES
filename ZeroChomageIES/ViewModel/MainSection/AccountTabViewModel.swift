@@ -10,7 +10,7 @@ import Foundation
 
 @MainActor
 final class AccountTabViewModel: ObservableObject {
-    @Published var user = [User?]()
+    @Published var user: User?
     @Published var isLoading = false
     
     func fetchUser() {

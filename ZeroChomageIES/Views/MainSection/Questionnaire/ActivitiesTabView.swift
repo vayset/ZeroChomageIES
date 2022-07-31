@@ -21,7 +21,7 @@ struct ActivitiesTabView: View {
         NavigationView {
             ScrollView {
                     
-                if viewModel.user.first?.isAlreadyFilled == false {
+                if viewModel.user?.isAlreadyFilled == false {
                         questionnaireNotFilledView
                     } else {
                         questionnaireAlreadyFilledView
