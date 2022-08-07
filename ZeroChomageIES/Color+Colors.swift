@@ -14,4 +14,5 @@ extension Color {
     static let placeHolderColor = Color("placeHolderColor")
     static let textPasswordAndSignUpColor = Color("textPasswordAndSignUpColor")
     static let secondTextColor = Color("secondTextColor")
+    static let blueBackgroundProfile = Color("blueBackgroundProfile")
 }

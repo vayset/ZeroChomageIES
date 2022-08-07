@@ -11,23 +11,20 @@ struct ProfileView: View {
     
     @StateObject var viewModel = AccountTabViewModel()
     @EnvironmentObject var rootViewModel: RootViewModel
-
+    
     
     var body: some View {
         NavigationView {
             VStack {
-                if let user = viewModel.user {
                 HStack {
-                    
-                    Text(user.lastName ?? "Error LastName")
-                    Text(user.firstname ?? "Error Firstname")
-
-                    
+                    ForEach(viewModel.userProfilInformation, id: \.lastName) { user in
+                        
+                        Text(user.lastName ?? "--")
+                        Text(user.firstName ?? "--")
+                    }
                 }
-                .padding(.top, 80)
+                .padding(.top, 20)
                 .font(.custom("Ubuntu-Medium", size: 24))
-                }
-                
                 
                 Button("Edit") {
                     do {
@@ -43,9 +40,20 @@ struct ProfileView: View {
                 
                 Spacer()
                 
-                ZStack{
-                    Color.gray
-                    Text("LastName")
+                ZStack {
+                    Color.blueBackgroundProfile
+                    List(viewModel.userInformationFieldViewModels, id: \.description) { fieldViewModel in
+                        HStack {
+                            Image(systemName: fieldViewModel.iconImageName)
+                            VStack {
+                                Text(fieldViewModel.description)
+                                Text(fieldViewModel.value ?? "--")
+                            }
+                        }
+                        .listRowBackground(Color.blueBackgroundProfile)
+                        
+                    }
+                    .listStyle(.plain)
                 }
             }
             .navigationTitle(

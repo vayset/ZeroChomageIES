@@ -14,19 +14,20 @@ struct ActivitiesTabView: View {
     
     @StateObject var questionnairesContainerViewModel = QuestionnairesContainerViewModel()
     @StateObject var viewModel = AccountTabViewModel()
-
-//    @State var isAlreadyFilled = false
+    
+    //    @State var isAlreadyFilled = false
     
     var body: some View {
         NavigationView {
             ScrollView {
-                    
-                if viewModel.user?.isAlreadyFilled == false {
-                        questionnaireNotFilledView
-                    } else {
-                        questionnaireAlreadyFilledView
-                    }
+                if !viewModel.questionnaireIsFilled {
+                    questionnaireNotFilledView
+                } else {
+                    questionnaireAlreadyFilledView
                 }
+            }
+            
+            
             
             
             .navigationTitle(
@@ -34,6 +35,9 @@ struct ActivitiesTabView: View {
             )
             .navigationBarTitleDisplayMode(.inline)
             .background(Color.white.edgesIgnoringSafeArea(.all))
+            .task {
+                viewModel.fetchUser()
+            }
         }
         .tabItem {
             Label("First", systemImage: "doc.plaintext")

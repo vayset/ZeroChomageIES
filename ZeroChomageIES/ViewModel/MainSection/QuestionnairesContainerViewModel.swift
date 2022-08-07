@@ -152,7 +152,8 @@ final class QuestionnairesContainerViewModel: ObservableObject {
             phoneNumber: questionnaireViewModels[1].formTextFieldViewModels[1].input,
             dateOfBirth: questionnaireViewModels[1].formTextFieldViewModels[2].input,
             sexe: questionnaireViewModels[1].formTextFieldViewModels[3].input,
-            situationFamiliale: questionnaireViewModels[1].formTextFieldViewModels[4].input, isAlreadyFilled: true
+            situationFamiliale: questionnaireViewModels[1].formTextFieldViewModels[4].input,
+            isAlreadyFilled: true
         )
         
         return questionnaireRequestBody

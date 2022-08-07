@@ -20,7 +20,7 @@ struct AccountTabView: View {
                 if viewModel.isLoading {
                     ProgressView()
                 }
-                if let user = viewModel.user {
+                //if let user = viewModel.user {
 //                    VStack {
 //                        Text("Email: \(user.email)")
 //                        Text("Is Admin: \(user.isAdmin ? "yes" : "no")")
@@ -34,7 +34,7 @@ struct AccountTabView: View {
 //                        }
 //
 //                    }
-                }
+                //}
                 
                 Button("Logout") {
                     do {
