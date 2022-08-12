@@ -14,8 +14,6 @@ struct TabSlideView: View {
     
     @ObservedObject var viewModel: TabSlideViewModel
     
-    
-    
     var body: some View {
         
         
@@ -36,9 +34,6 @@ struct TabSlideView: View {
                 .transition(.slide)
             
             Spacer()
-            
-            
-            
         }
         .background(Color.white.edgesIgnoringSafeArea(.all))
         .padding(.horizontal)

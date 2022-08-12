@@ -44,8 +44,15 @@ final class AccountTabViewModel: ObservableObject {
                 .init(lastName: user.lastName, firstName: user.firstname)
             ]
             self.userInformationFieldViewModels = [
-                .init(description: "Phone Number", value: user.phoneNumber, iconImageName: "phone.circle.fill"),
-                .init(description: "Email", value: user.email, iconImageName: "envelope.fill")
+                .init(description: "Date de naissance", value: user.dateOfBirth, iconImageName: "gift"),
+                .init(description: "Sexe", value: user.gender, iconImageName: "male-and-female-avatars"),
+                .init(description: "État civil", value: user.civilStatus, iconImageName: "newlyweds"),
+                .init(description: "Phone Number", value: user.phoneNumber, iconImageName: "phone-call"),
+                .init(description: "E-mail", value: user.email, iconImageName: "email"),
+                .init(description: "Adresse", value: user.address, iconImageName: "location"),
+                .init(description: "Code postale", value: user.zipCode, iconImageName: "zip-code"),
+                .init(description: "Commune", value: user.city, iconImageName: "location-pin")
+
             ]
             self.user = user
             questionnaireIsFilled = user.isAlreadyFilled

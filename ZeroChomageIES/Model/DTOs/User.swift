@@ -13,7 +13,7 @@ struct User: Codable, Identifiable {
     let email: String
     let passwordHash: String
     let lastName: String?
-    let addresse: String?
+    let address: String?
     let zipCode: String?
     let city: String?
     let phoneNumber: String?

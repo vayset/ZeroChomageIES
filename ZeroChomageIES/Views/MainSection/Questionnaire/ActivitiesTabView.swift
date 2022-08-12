@@ -23,7 +23,8 @@ struct ActivitiesTabView: View {
                 if !viewModel.questionnaireIsFilled {
                     questionnaireNotFilledView
                 } else {
-                    questionnaireAlreadyFilledView
+                    questionnaireNotFilledView
+
                 }
             }
             

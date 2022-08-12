@@ -15,7 +15,6 @@
 		3F537B6828705A25002D70CC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F537B6A28705A25002D70CC /* Localizable.strings */; };
 		3F537B6D28705A8D002D70CC /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B6C28705A8D002D70CC /* Strings.swift */; };
 		3F537B6F28705BBC002D70CC /* Strings+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B6E28705BBC002D70CC /* Strings+Localizable.swift */; };
-		3F537B742870610B002D70CC /* AccountTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B732870610B002D70CC /* AccountTabView.swift */; };
 		3F537B78287069DF002D70CC /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B77287069DF002D70CC /* UserService.swift */; };
 		3F537B7B28706A08002D70CC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B7A28706A08002D70CC /* User.swift */; };
 		3F537B7D28706A1B002D70CC /* UserServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B7C28706A1B002D70CC /* UserServiceError.swift */; };
@@ -42,7 +41,7 @@
 		3FAE8877272197CE003EE8BD /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE8876272197CE003EE8BD /* CreateAccountView.swift */; };
 		3FBE7A0927B3177700D29FAA /* QuestionnaireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBE7A0827B3177700D29FAA /* QuestionnaireView.swift */; };
 		3FBE7A0B27B320D900D29FAA /* CustomSecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBE7A0A27B320D900D29FAA /* CustomSecureTextField.swift */; };
-		3FBE7A0D27B46DDE00D29FAA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBE7A0C27B46DDE00D29FAA /* ProfileView.swift */; };
+		3FBE7A0D27B46DDE00D29FAA /* AccountTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBE7A0C27B46DDE00D29FAA /* AccountTabView.swift */; };
 		3FCA86962713630F00275A66 /* ZeroChomageIESApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA86952713630F00275A66 /* ZeroChomageIESApp.swift */; };
 		3FCA86982713630F00275A66 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA86972713630F00275A66 /* OnboardingView.swift */; };
 		3FCA869A2713631000275A66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FCA86992713631000275A66 /* Assets.xcassets */; };
@@ -96,7 +95,6 @@
 		3F537B6B28705A28002D70CC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3F537B6C28705A8D002D70CC /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		3F537B6E28705BBC002D70CC /* Strings+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings+Localizable.swift"; sourceTree = "<group>"; };
-		3F537B732870610B002D70CC /* AccountTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTabView.swift; sourceTree = "<group>"; };
 		3F537B77287069DF002D70CC /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		3F537B7A28706A08002D70CC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3F537B7C28706A1B002D70CC /* UserServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceError.swift; sourceTree = "<group>"; };
@@ -122,7 +120,7 @@
 		3FAE8876272197CE003EE8BD /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		3FBE7A0827B3177700D29FAA /* QuestionnaireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireView.swift; sourceTree = "<group>"; };
 		3FBE7A0A27B320D900D29FAA /* CustomSecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureTextField.swift; sourceTree = "<group>"; };
-		3FBE7A0C27B46DDE00D29FAA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		3FBE7A0C27B46DDE00D29FAA /* AccountTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTabView.swift; sourceTree = "<group>"; };
 		3FCA86922713630F00275A66 /* ZeroChomageIES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZeroChomageIES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FCA86952713630F00275A66 /* ZeroChomageIESApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroChomageIESApp.swift; sourceTree = "<group>"; };
 		3FCA86972713630F00275A66 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -243,9 +241,8 @@
 			isa = PBXGroup;
 			children = (
 				3FD264C62877619C0070FEB9 /* Questionnaire */,
-				3FBE7A0C27B46DDE00D29FAA /* ProfileView.swift */,
+				3FBE7A0C27B46DDE00D29FAA /* AccountTabView.swift */,
 				3FAE8872272193FD003EE8BD /* MainView.swift */,
-				3F537B732870610B002D70CC /* AccountTabView.swift */,
 			);
 			path = MainSection;
 			sourceTree = "<group>";
@@ -595,7 +592,6 @@
 				3F537B6D28705A8D002D70CC /* Strings.swift in Sources */,
 				3F5AFC93271EE1E00021C0DF /* TextButton.swift in Sources */,
 				3F537B6F28705BBC002D70CC /* Strings+Localizable.swift in Sources */,
-				3F537B742870610B002D70CC /* AccountTabView.swift in Sources */,
 				3FBE7A0927B3177700D29FAA /* QuestionnaireView.swift in Sources */,
 				3FAE8873272193FD003EE8BD /* MainView.swift in Sources */,
 				3F537B63287044E6002D70CC /* RegularExpressionFactory.swift in Sources */,
@@ -628,7 +624,7 @@
 				3F537B8428706DC7002D70CC /* ActivitiesTabView.swift in Sources */,
 				3F537B7B28706A08002D70CC /* User.swift in Sources */,
 				3F578F9A28672AC100B43AA9 /* KeychainService.swift in Sources */,
-				3FBE7A0D27B46DDE00D29FAA /* ProfileView.swift in Sources */,
+				3FBE7A0D27B46DDE00D29FAA /* AccountTabView.swift in Sources */,
 				3FCA86962713630F00275A66 /* ZeroChomageIESApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
