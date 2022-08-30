@@ -55,7 +55,7 @@ final class AccountTabViewModel: ObservableObject {
 
             ]
             self.user = user
-            questionnaireIsFilled = user.isAlreadyFilled
+            self.questionnaireIsFilled = user.isAlreadyFilled
             
             
         }

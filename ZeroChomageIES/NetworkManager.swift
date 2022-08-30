@@ -134,6 +134,13 @@ final class NetworkManager {
         return decodedData
         
     }
+    
+    
+    func send(urlRequest: URLRequest) async throws {
+        
+        let (_, _) = try await URLSession.shared.data(for: urlRequest)
+        
+    }
 }
 
 

@@ -8,8 +8,12 @@
 import Foundation
 
 final class FormTextFieldViewModel: ObservableObject {
-    init(placeHolder: String) {
+    init(
+        placeHolder: String,
+        prefilledText: String? = nil
+    ) {
         self.placeHolder = placeHolder
+        self.input = prefilledText ?? ""
     }
     
     let placeHolder: String

@@ -6,12 +6,32 @@
 //
 
 import Foundation
+import Combine
+
 
 @MainActor
 final class QuestionnairesContainerViewModel: ObservableObject {
     
      var viewModel = AccountTabViewModel()
+    
+    init(shouldPrefillWithUserData: Bool) {
+        self.shouldPrefillWithUserData = shouldPrefillWithUserData
+        
+        if shouldPrefillWithUserData {
+            userService.$cachedUser
+                .receive(on: DispatchQueue.main)
+                .sink { [weak self] cachedUser in
+                    self?.createQuestionnaireViewModels(user: cachedUser)
+                }
+                .store(in: &subscriptions)
+        } else {
+            createQuestionnaireViewModels(user: nil)
+        }
+ 
+    }
 
+    
+    private var subscriptions: Set<AnyCancellable> = []
     
     lazy var startCell = ChomageCellViewModel(
         iconSystemName: "doc.plaintext",
@@ -60,42 +80,67 @@ final class QuestionnairesContainerViewModel: ObservableObject {
     @Published var isAlertPresented = false
     @Published var alertTitle = ""
     
+    private let shouldPrefillWithUserData: Bool
     
-    lazy var questionnaireViewModels: [QuestionnaireViewModel] = [
-        .init(
-            title: "Info 1",
-            imageName: "Illustration1",
-            buttonTitle: "Suivant",
-            formTextFieldViewModels: [
-                .init(placeHolder: "Nom"),
-                .init(placeHolder: "Prénom"),
-                .init(placeHolder: "Adresse"),
-                .init(placeHolder: "Code postale"),
-                .init(placeHolder: "Commune")
-            ],
-            action: nil
-        ),
-        .init(
-            title: "Info 2",
-            imageName: "Illustration3",
-            buttonTitle: "Suivant",
-            formTextFieldViewModels: [
-                .init(placeHolder: "Adresse mail"),
-                .init(placeHolder: "Numero de tel"),
-                .init(placeHolder: "Date de naissance"),
-                .init(placeHolder: "Sexe"),
-                .init(placeHolder: "Situation familiale")
+    private let userService = UserService.shared
+    
+    
+    private func createQuestionnaireViewModels(user: User?) {
+        self.questionnaireViewModels = [
+            .init(
+                title: "Info 1",
+                imageName: "Illustration1",
+                buttonTitle: "Suivant",
+                formTextFieldViewModels: [
+                    .init(
+                        placeHolder: "Nom",
+                        prefilledText: shouldPrefillWithUserData ? user?.lastName : ""
+                    ),
+                    .init(
+                        placeHolder: "Prénom",
+                        prefilledText: shouldPrefillWithUserData ? user?.firstname : ""
+                    ),
+                    .init(
+                        placeHolder: "Adresse",
+                        prefilledText: shouldPrefillWithUserData ? user?.address : ""
+                    ),
+                    .init(
+                        placeHolder: "Code postale",
+                        prefilledText: shouldPrefillWithUserData ? user?.zipCode : ""
+                    ),
+                    .init(
+                        placeHolder: "Commune",
+                        prefilledText: shouldPrefillWithUserData ? user?.city : ""
+                    )
+                ],
+                action: nil
+            ),
+            .init(// TODO: Should handle prefill information for other questionnaire pages as well
+                title: "Info 2",
+                imageName: "Illustration3",
+                buttonTitle: "Suivant",
+                formTextFieldViewModels: [
+                    .init(placeHolder: "Adresse mail"),
+                    .init(placeHolder: "Numero de tel"),
+                    .init(placeHolder: "Date de naissance"),
+                    .init(placeHolder: "Sexe"),
+                    .init(placeHolder: "Situation familiale")
 
-            ],
-            action:  { [weak self] in self?.submitQuestionnairesInformation() }
-        )
-    ]
+                ],
+                action:  { [weak self] in self?.submitQuestionnairesInformation() }
+            )
+        ]
+    }
+
+    
+    @Published var questionnaireViewModels: [QuestionnaireViewModel] = []
     
     private func submitQuestionnairesInformation() {
         questionnaireViewModels.last?.isLoading = true
         Task {
             do {
                 try await sendQuestionnaire()
+                dismissCompleteQuestionnaire()
             } catch {
                 alertTitle = "Failed to submit questionnaire"
                 isAlertPresented = true
@@ -128,17 +173,13 @@ final class QuestionnairesContainerViewModel: ObservableObject {
         urlRequest.httpBody = body
         
         
-        let response: QuestionnaireResponse = try await networkManager.fetch(urlRequest: urlRequest)
-        
-        print(response.isSuccess)
-        if response.isSuccess {
-            dismissCompleteQuestionnaire()
-        }
+        try await networkManager.send(urlRequest: urlRequest)
     }
     
     private func dismissCompleteQuestionnaire() {
-        questionnaireViewModels.forEach { $0.isNextFormPresented = false }
         isQuestionnairePresented = false
+        questionnaireViewModels.forEach { $0.isNextFormPresented = false }
+
     }
     
     private func getQuestionnaireRequestBody() -> QuestionnaireRequestBody {

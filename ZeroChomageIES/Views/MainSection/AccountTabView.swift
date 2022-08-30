@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AccountTabView: View {
     
+    @StateObject var questionnairesContainerViewModel = QuestionnairesContainerViewModel(shouldPrefillWithUserData: true)
+    
     @StateObject var viewModel = AccountTabViewModel()
     @EnvironmentObject var rootViewModel: RootViewModel
     
@@ -25,48 +27,56 @@ struct AccountTabView: View {
                 }
                 .padding(.top, 20)
                 .font(.custom("Ubuntu-Medium", size: 24))
-                
-                Button("Edit") {
-                    do {
-                        try KeychainService.shared.deleteToken()
-                        rootViewModel.updateCurrentRootType()
-                    } catch {
-                        print("Failed to delete token")
+                HStack {
+                    Button(action: {
+                        print("button pressed")
+                        
+                    }) {
+                        Image("ok")
+                            .resizable()
+                            .renderingMode(.original)
+                            .frame(width: 20, height: 20)
                     }
+                    
+                    Button("Edit") {
+                        
+                        questionnairesContainerViewModel.isQuestionnairePresented = true
+                        
+                        
+                        do {
+                            //try KeychainService.shared.deleteToken()
+                            //rootViewModel.updateCurrentRootType()
+                        } catch {
+                            //print("Failed to delete token")
+                        }
+                    }
+                    .font(.custom("Gilroy-Semibold", size: 16))
+                    .foregroundColor(.orange)
+                    .padding()
                 }
-                .font(.custom("Gilroy-Semibold", size: 16))
-                .foregroundColor(.orange)
-                .padding()
-                
                 Spacer()
                 
                 ZStack {
                     Color.blueBackgroundProfile
                     List(viewModel.userInformationFieldViewModels, id: \.description) { fieldViewModel in
-                        HStack(alignment: .center) {
-                            Image(fieldViewModel.iconImageName)
-                                .resizable()
-                                .frame(width: 30, height: 30)
-
-                            VStack(alignment: .leading, spacing: 10) {
-                                Text(fieldViewModel.description)
-                                    .foregroundColor(.gray)
-                                
-                                Text(fieldViewModel.value ?? "--")
-                                    .foregroundColor(.white)
-                            }
-                            .aspectRatio(contentMode: .fit)
-                            .font(.custom("Gilroy-Medium", size: 16))
-                            Spacer()
-                            
-                        }
-                        .listRowBackground(Color.blueBackgroundProfile)
-                        .padding()
-                        .border(.gray)
-                        
-                        
+                        AccountTabListFieldView(imageView: fieldViewModel.iconImageName,
+                                                descriptionView: fieldViewModel.description,
+                                                valueView: fieldViewModel.value ?? "--")
                     }
                     .listStyle(.plain)
+                }
+                
+                NavigationLink(
+                    isActive: $questionnairesContainerViewModel.isQuestionnairePresented
+                ) {
+                    if questionnairesContainerViewModel.questionnaireViewModels.indices.contains(0)  {
+                        QuestionnaireView(
+                            index: 0,
+                            questionnairesContainerViewModel: questionnairesContainerViewModel
+                        )
+                    }
+                } label: {
+                    EmptyView()
                 }
             }
             .navigationTitle(
@@ -77,14 +87,14 @@ struct AccountTabView: View {
             .task {
                 viewModel.fetchUser()
             }
-            
-            
         }
         .tabItem {
             Label(Strings.accountTabTitle, systemImage: "0.square")
         }
     }
 }
+
+
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         AccountTabView()

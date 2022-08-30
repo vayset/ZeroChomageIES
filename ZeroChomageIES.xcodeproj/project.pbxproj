@@ -29,6 +29,8 @@
 		3F7ADC7327C275DC00E4712C /* FormTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7ADC7227C275DC00E4712C /* FormTextFieldViewModel.swift */; };
 		3F7ADC7527C275F700E4712C /* QuestionnaireViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7ADC7427C275F700E4712C /* QuestionnaireViewModel.swift */; };
 		3F7ADC7727C2763700E4712C /* QuestionnairesContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7ADC7627C2763700E4712C /* QuestionnairesContainerViewModel.swift */; };
+		3F8101B228A7268900257299 /* AccountTabListFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8101B128A7268900257299 /* AccountTabListFieldView.swift */; };
+		3F8101B428A72C5100257299 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8101B328A72C5100257299 /* DatePickerView.swift */; };
 		3F8DEB6D27A32B8B00436BD2 /* ZeroChomageWebShared in Frameworks */ = {isa = PBXBuildFile; productRef = 3F8DEB6C27A32B8B00436BD2 /* ZeroChomageWebShared */; };
 		3F8DEB6F27A32BBF00436BD2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8DEB6E27A32BBF00436BD2 /* NetworkManager.swift */; };
 		3FA5FAA2272A096100713EA8 /* RoundedButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5FAA1272A096000713EA8 /* RoundedButtonView.swift */; };
@@ -109,6 +111,8 @@
 		3F7ADC7227C275DC00E4712C /* FormTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextFieldViewModel.swift; sourceTree = "<group>"; };
 		3F7ADC7427C275F700E4712C /* QuestionnaireViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewModel.swift; sourceTree = "<group>"; };
 		3F7ADC7627C2763700E4712C /* QuestionnairesContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnairesContainerViewModel.swift; sourceTree = "<group>"; };
+		3F8101B128A7268900257299 /* AccountTabListFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTabListFieldView.swift; sourceTree = "<group>"; };
+		3F8101B328A72C5100257299 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		3F8DEB6E27A32BBF00436BD2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		3FA5FAA1272A096000713EA8 /* RoundedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonView.swift; sourceTree = "<group>"; };
 		3FAE886A2720B89A003EE8BD /* Gilroy-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-ExtraBold.otf"; sourceTree = "<group>"; };
@@ -240,6 +244,7 @@
 		3F537B70287060E0002D70CC /* MainSection */ = {
 			isa = PBXGroup;
 			children = (
+				3F8101B028A7265B00257299 /* Elements */,
 				3FD264C62877619C0070FEB9 /* Questionnaire */,
 				3FBE7A0C27B46DDE00D29FAA /* AccountTabView.swift */,
 				3FAE8872272193FD003EE8BD /* MainView.swift */,
@@ -270,11 +275,13 @@
 		3F537B7528706126002D70CC /* SharedSection */ = {
 			isa = PBXGroup;
 			children = (
+				3F8101B128A7268900257299 /* AccountTabListFieldView.swift */,
 				3FCA86DA27185D2500275A66 /* MainButton.swift */,
 				3F5AFC92271EE1E00021C0DF /* TextButton.swift */,
 				3FA5FAA1272A096000713EA8 /* RoundedButtonView.swift */,
 				3F5AFC90271D991F0021C0DF /* CustomTextField.swift */,
 				3FBE7A0A27B320D900D29FAA /* CustomSecureTextField.swift */,
+				3F8101B328A72C5100257299 /* DatePickerView.swift */,
 			);
 			path = SharedSection;
 			sourceTree = "<group>";
@@ -330,6 +337,13 @@
 				3FCA86E527186FA800275A66 /* UserDefaultsManager.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		3F8101B028A7265B00257299 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Elements;
 			sourceTree = "<group>";
 		};
 		3FCA86892713630F00275A66 = {
@@ -594,7 +608,9 @@
 				3F537B6F28705BBC002D70CC /* Strings+Localizable.swift in Sources */,
 				3FBE7A0927B3177700D29FAA /* QuestionnaireView.swift in Sources */,
 				3FAE8873272193FD003EE8BD /* MainView.swift in Sources */,
+				3F8101B428A72C5100257299 /* DatePickerView.swift in Sources */,
 				3F537B63287044E6002D70CC /* RegularExpressionFactory.swift in Sources */,
+				3F8101B228A7268900257299 /* AccountTabListFieldView.swift in Sources */,
 				3FCA86DB27185D2500275A66 /* MainButton.swift in Sources */,
 				3FAE8875272197AD003EE8BD /* ResetPasswordView.swift in Sources */,
 				3FCA86DD2718677900275A66 /* OnboardingViewModel.swift in Sources */,

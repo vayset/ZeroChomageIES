@@ -12,7 +12,7 @@ import SwiftUI
 
 struct ActivitiesTabView: View {
     
-    @StateObject var questionnairesContainerViewModel = QuestionnairesContainerViewModel()
+    @StateObject var questionnairesContainerViewModel = QuestionnairesContainerViewModel(shouldPrefillWithUserData: false)
     @StateObject var viewModel = AccountTabViewModel()
     
     //    @State var isAlreadyFilled = false
@@ -23,14 +23,10 @@ struct ActivitiesTabView: View {
                 if !viewModel.questionnaireIsFilled {
                     questionnaireNotFilledView
                 } else {
-                    questionnaireNotFilledView
+                    questionnaireAlreadyFilledView
 
                 }
             }
-            
-            
-            
-            
             .navigationTitle(
                 Text("Mes informations")
             )
@@ -53,10 +49,12 @@ struct ActivitiesTabView: View {
             NavigationLink(
                 isActive: $questionnairesContainerViewModel.isQuestionnairePresented
             ) {
-                QuestionnaireView(
-                    index: 0,
-                    questionnairesContainerViewModel: questionnairesContainerViewModel
-                )
+                if questionnairesContainerViewModel.questionnaireViewModels.indices.contains(0)  {
+                    QuestionnaireView(
+                        index: 0,
+                        questionnairesContainerViewModel: questionnairesContainerViewModel
+                    )
+                }
             } label: {
                 EmptyView()
             }
@@ -95,6 +93,8 @@ struct ChomageCellView: View {
         }
         .background(Color.gray.opacity(0.1))
         .cornerRadius(20)
+        .padding(.horizontal, 8)
+        .padding(.vertical, 4)
     }
 }
 

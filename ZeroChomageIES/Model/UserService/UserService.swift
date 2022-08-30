@@ -12,6 +12,8 @@ import Foundation
 final class UserService: ObservableObject{
     static let shared = UserService()
     
+    @Published var cachedUser: User?
+    
     func fetchUser() async throws -> User {
         let url = URL(string: "http://localhost:8080/api/v1/user-account-info/")!
         
@@ -23,11 +25,14 @@ final class UserService: ObservableObject{
         let userToken = try keychainService.getToken()
         request.addValue("Bearer \(userToken)", forHTTPHeaderField: "Authorization")
         
-        guard let response: User = try? await networkManager.fetch(urlRequest: request) else {
+        guard let user: User = try? await networkManager.fetch(urlRequest: request) else {
             throw UserServiceError.failedToFetchUser
         }
         
-        return response
+        
+        self.cachedUser = user
+        
+        return user
     }
     
     
