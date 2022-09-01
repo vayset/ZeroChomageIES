@@ -43,13 +43,15 @@ final class QuestionnairesContainerViewModel: ObservableObject {
         }
     )
     
+    //
+    
     lazy var statusCell = ChomageCellViewModel(
         iconSystemName: "doc.plaintext",
         title: "Check Status",
         description: "You can check the status of your application here.",
-        buttonTitle: "Go",
+        buttonTitle: "Check",
         buttonAction: { [weak self] in
-            
+            self?.isCheckStatusPresented.toggle()
         }
     )
 
@@ -60,19 +62,22 @@ final class QuestionnairesContainerViewModel: ObservableObject {
         description: "Check the news arround your place regarding work and job opportunity.",
         buttonTitle: "Go",
         buttonAction: { [weak self] in
-            
+            self?.isNewsListPresented.toggle()
         }
     )
-
-    lazy var consultInformationCell = ChomageCellViewModel(
-        iconSystemName: "doc.plaintext",
-        title: "Consult Questionnaire",
-        description: "Verify the information you've sent us.",
-        buttonTitle: "Consult",
-        buttonAction: { [weak self] in
-            
-        }
-    )
+    
+    @Published var isNewsListPresented = false
+    @Published var isCheckStatusPresented = false
+//
+//    lazy var consultInformationCell = ChomageCellViewModel(
+//        iconSystemName: "doc.plaintext",
+//        title: "Consult Questionnaire",
+//        description: "Verify the information you've sent us.",
+//        buttonTitle: "Consult",
+//        buttonAction: { [weak self] in
+//
+//        }
+//    )
 
 
     @Published var isQuestionnairePresented = false
@@ -120,7 +125,6 @@ final class QuestionnairesContainerViewModel: ObservableObject {
                 imageName: "Illustration3",
                 buttonTitle: "Suivant",
                 formTextFieldViewModels: [
-                    .init(placeHolder: "Adresse mail"),
                     .init(placeHolder: "Numero de tel"),
                     .init(placeHolder: "Date de naissance"),
                     .init(placeHolder: "Sexe"),
@@ -177,8 +181,8 @@ final class QuestionnairesContainerViewModel: ObservableObject {
     }
     
     private func dismissCompleteQuestionnaire() {
-        isQuestionnairePresented = false
         questionnaireViewModels.forEach { $0.isNextFormPresented = false }
+        isQuestionnairePresented = false
 
     }
     
@@ -189,11 +193,10 @@ final class QuestionnairesContainerViewModel: ObservableObject {
             address: questionnaireViewModels[0].formTextFieldViewModels[2].input,
             zipCode: questionnaireViewModels[0].formTextFieldViewModels[3].input,
             city: questionnaireViewModels[0].formTextFieldViewModels[4].input,
-            email: questionnaireViewModels[1].formTextFieldViewModels[0].input,
-            phoneNumber: questionnaireViewModels[1].formTextFieldViewModels[1].input,
-            dateOfBirth: questionnaireViewModels[1].formTextFieldViewModels[2].input,
-            gender: questionnaireViewModels[1].formTextFieldViewModels[3].input,
-            civilStatus: questionnaireViewModels[1].formTextFieldViewModels[4].input,
+            phoneNumber: questionnaireViewModels[1].formTextFieldViewModels[0].input,
+            dateOfBirth: questionnaireViewModels[1].formTextFieldViewModels[1].input,
+            gender: questionnaireViewModels[1].formTextFieldViewModels[2].input,
+            civilStatus: questionnaireViewModels[1].formTextFieldViewModels[3].input,
             isAlreadyFilled: true
         )
         

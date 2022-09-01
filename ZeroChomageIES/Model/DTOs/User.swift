@@ -22,5 +22,6 @@ struct User: Codable, Identifiable {
     let civilStatus: String?
     let isAdmin: Bool
     let isAlreadyFilled: Bool
+    let isValidated: Bool
 }
 

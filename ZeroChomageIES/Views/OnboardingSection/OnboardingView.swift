@@ -26,7 +26,7 @@ struct OnboardingView: View {
             .tabViewStyle(PageTabViewStyle())
             
             if !viewModel.isLastSlide {
-                MainButton(title: "next") {
+                MainButton(title: "Suivant") {
                     withAnimation {
                         viewModel.incrementSlideIndex()
                     }

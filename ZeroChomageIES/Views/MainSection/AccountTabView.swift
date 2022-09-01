@@ -42,13 +42,7 @@ struct AccountTabView: View {
                         
                         questionnairesContainerViewModel.isQuestionnairePresented = true
                         
-                        
-                        do {
-                            //try KeychainService.shared.deleteToken()
-                            //rootViewModel.updateCurrentRootType()
-                        } catch {
-                            //print("Failed to delete token")
-                        }
+
                     }
                     .font(.custom("Gilroy-Semibold", size: 16))
                     .foregroundColor(.orange)
@@ -86,6 +80,21 @@ struct AccountTabView: View {
             .background(Color.white.edgesIgnoringSafeArea(.all))
             .task {
                 viewModel.fetchUser()
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        viewModel.logout()
+                    } label: {
+                        Text("Logout")
+                    }
+                    
+                }
+            }
+            .onReceive(viewModel.$shoudUpdateCurrentRootType) { shoudUpdateCurrentRootType  in
+                if shoudUpdateCurrentRootType {
+                    rootViewModel.updateCurrentRootType()
+                }
             }
         }
         .tabItem {

@@ -19,7 +19,7 @@ class OnboardingViewModel: ObservableObject {
         .init(
             title: "TZCLD",
             imageName: "Illustration",
-            bodyText: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley",
+            bodyText: "Le projet « Territoires zéro chômeur de longue durée » a été porté pour sa phase de démarrage par ATD Quart Monde en partenariat avec le Secours catholique, Emmaüs France, Le Pacte civique et la Fédération des acteurs de la solidarité.",
             index: 0
         ),
         .init(

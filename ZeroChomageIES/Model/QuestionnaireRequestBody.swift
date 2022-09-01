@@ -13,7 +13,6 @@ struct QuestionnaireRequestBody: Encodable {
     let address: String
     let zipCode: String
     let city: String
-    let email: String
     let phoneNumber: String
     let dateOfBirth: String
     let gender: String

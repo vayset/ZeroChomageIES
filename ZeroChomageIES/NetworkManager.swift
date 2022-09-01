@@ -120,6 +120,12 @@ struct SignUpResponse: Codable {
     let userToken: String
 }
 
+
+enum NetworkManagerError: Error {
+    case unknownError
+    case invalidHttpUrlResponse
+}
+
 final class NetworkManager {
     
     static let shared = NetworkManager()
@@ -138,7 +144,15 @@ final class NetworkManager {
     
     func send(urlRequest: URLRequest) async throws {
         
-        let (_, _) = try await URLSession.shared.data(for: urlRequest)
+        guard let (_, response) = try? await URLSession.shared.data(for: urlRequest) else {
+            throw NetworkManagerError.unknownError
+        }
+        
+        guard let response = response as? HTTPURLResponse,
+              response.statusCode == 200
+        else {
+            throw NetworkManagerError.invalidHttpUrlResponse
+        }
         
     }
 }

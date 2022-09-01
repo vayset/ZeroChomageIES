@@ -68,6 +68,9 @@
 		3FCA86E427186CDF00275A66 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA86E327186CDF00275A66 /* RootViewModel.swift */; };
 		3FCA86E627186FA800275A66 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA86E527186FA800275A66 /* UserDefaultsManager.swift */; };
 		3FCA86E82718718800275A66 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA86E72718718800275A66 /* LoginView.swift */; };
+		3FD8BB8828C127F0000FB6D0 /* NewsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BB8728C127F0000FB6D0 /* NewsListView.swift */; };
+		3FD8BB8A28C12F08000FB6D0 /* ArticleDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BB8928C12F08000FB6D0 /* ArticleDetailsView.swift */; };
+		3FD8BB8C28C13996000FB6D0 /* CheckStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BB8B28C13996000FB6D0 /* CheckStatusView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +156,9 @@
 		3FCA86E327186CDF00275A66 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		3FCA86E527186FA800275A66 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		3FCA86E72718718800275A66 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		3FD8BB8728C127F0000FB6D0 /* NewsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListView.swift; sourceTree = "<group>"; };
+		3FD8BB8928C12F08000FB6D0 /* ArticleDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsView.swift; sourceTree = "<group>"; };
+		3FD8BB8B28C13996000FB6D0 /* CheckStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckStatusView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +254,9 @@
 				3FD264C62877619C0070FEB9 /* Questionnaire */,
 				3FBE7A0C27B46DDE00D29FAA /* AccountTabView.swift */,
 				3FAE8872272193FD003EE8BD /* MainView.swift */,
+				3FD8BB8728C127F0000FB6D0 /* NewsListView.swift */,
+				3FD8BB8928C12F08000FB6D0 /* ArticleDetailsView.swift */,
+				3FD8BB8B28C13996000FB6D0 /* CheckStatusView.swift */,
 			);
 			path = MainSection;
 			sourceTree = "<group>";
@@ -617,6 +626,7 @@
 				3F3BC4C028673F40009BFAD7 /* KeychainServiceError.swift in Sources */,
 				3F7ADC7127C2758700E4712C /* QuestionnaireResponse.swift in Sources */,
 				3F7ADC7327C275DC00E4712C /* FormTextFieldViewModel.swift in Sources */,
+				3FD8BB8C28C13996000FB6D0 /* CheckStatusView.swift in Sources */,
 				3F537B8228706AC4002D70CC /* AccountTabViewModel.swift in Sources */,
 				3F7ADC7527C275F700E4712C /* QuestionnaireViewModel.swift in Sources */,
 				3FCA86DF2718679B00275A66 /* TabSlideViewModel.swift in Sources */,
@@ -628,6 +638,7 @@
 				3FAE8877272197CE003EE8BD /* CreateAccountView.swift in Sources */,
 				3F537B78287069DF002D70CC /* UserService.swift in Sources */,
 				3FA5FAA2272A096100713EA8 /* RoundedButtonView.swift in Sources */,
+				3FD8BB8A28C12F08000FB6D0 /* ArticleDetailsView.swift in Sources */,
 				3F7ADC7727C2763700E4712C /* QuestionnairesContainerViewModel.swift in Sources */,
 				3F7ADC6F27C2756500E4712C /* QuestionnaireRequestBody.swift in Sources */,
 				3F6379882774417A00273450 /* TabViewSlides.swift in Sources */,
@@ -637,6 +648,7 @@
 				3FCA86E427186CDF00275A66 /* RootViewModel.swift in Sources */,
 				3FBE7A0B27B320D900D29FAA /* CustomSecureTextField.swift in Sources */,
 				3FCA86E82718718800275A66 /* LoginView.swift in Sources */,
+				3FD8BB8828C127F0000FB6D0 /* NewsListView.swift in Sources */,
 				3F537B8428706DC7002D70CC /* ActivitiesTabView.swift in Sources */,
 				3F537B7B28706A08002D70CC /* User.swift in Sources */,
 				3F578F9A28672AC100B43AA9 /* KeychainService.swift in Sources */,

@@ -65,6 +65,8 @@ final class AccountTabViewModel: ObservableObject {
     
     @Published var isLoading = false
     
+    @Published var shoudUpdateCurrentRootType = false
+    
     func fetchUser() {
         Task {
             isLoading = true
@@ -77,6 +79,16 @@ final class AccountTabViewModel: ObservableObject {
                 print("Failed to fetch user")
             }
             isLoading = false
+        }
+    }
+    
+    
+    func logout() {
+        do {
+            try KeychainService.shared.deleteToken()
+            shoudUpdateCurrentRootType = true
+        } catch {
+            print("Failed to delete token")
         }
     }
     
