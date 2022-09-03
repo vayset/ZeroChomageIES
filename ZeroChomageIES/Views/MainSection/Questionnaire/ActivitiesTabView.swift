@@ -86,51 +86,6 @@ struct ActivitiesTabView: View {
 }
 
 
-struct ChomageCellView: View {
-    @ObservedObject var viewModel: ChomageCellViewModel
-    
-    var body: some View {
-        VStack {
-            
-            VStack {
-                HStack {
-                    Image(systemName: viewModel.iconSystemName)
-                    Text(viewModel.title)
-                        .font(.system(size: 24))
-                    Spacer()
-                }
-                .padding(16)
-                Text(viewModel.description)
-                    .padding(.vertical, 16)
-            }
-            .foregroundColor(viewModel.backgroundImageName == nil ? .black : .white)
-            .background(backgroundImageView)
-            
-            MainButton(title: viewModel.buttonTitle) {
-                viewModel.buttonAction()
-            }
-        }
-        .background(Color.gray.opacity(0.1))
-        .cornerRadius(20)
-        .padding(.horizontal, 8)
-        .padding(.vertical, 4)
-    }
-    
-    private var backgroundImageView: some View {
-        Group {
-            if let backgroundImageName = viewModel.backgroundImageName {
-                ZStack {
-                    Image(backgroundImageName)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                    Color.black.opacity(0.7)
-                }
-            } else {
-                EmptyView()
-            }
-        }
-    }
-}
 
 final class ChomageCellViewModel: ObservableObject {
     init(
