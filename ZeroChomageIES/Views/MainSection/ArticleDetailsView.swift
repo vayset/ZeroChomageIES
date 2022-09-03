@@ -7,13 +7,6 @@
 
 import SwiftUI
 
-struct Article: Codable {
-    let backgroundImageName: String
-    let title: String
-    let description: String
-    let body: String
-}
-
 struct ArticleDetailsView: View {
     let viewModel: Article?
     
