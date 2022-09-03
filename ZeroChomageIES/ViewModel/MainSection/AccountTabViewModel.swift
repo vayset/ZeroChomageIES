@@ -7,31 +7,6 @@
 
 import Foundation
 
-
-final class UserInformationFieldViewModel: ObservableObject {
-    init(description: String, value: String?, iconImageName: String) {
-        self.description = description
-        self.value = value
-        self.iconImageName = iconImageName
-    }
-    
-    let description: String
-    let value: String?
-    let iconImageName: String
-}
-
-final class UserProfilInformation: ObservableObject {
-    internal init(lastName: String?, firstName: String?) {
-        self.lastName = lastName
-        self.firstName = firstName
-    }
-    
-    
-    let lastName: String?
-    let firstName: String?
-    
-}
-
 @MainActor
 final class AccountTabViewModel: ObservableObject {
     @Published var userInformationFieldViewModels: [UserInformationFieldViewModel] = []

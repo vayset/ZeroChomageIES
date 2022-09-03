@@ -73,6 +73,8 @@
 		3FD8BB8C28C13996000FB6D0 /* CheckStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BB8B28C13996000FB6D0 /* CheckStatusView.swift */; };
 		3FD8BB8E28C41A5C000FB6D0 /* NewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BB8D28C41A5C000FB6D0 /* NewsListViewModel.swift */; };
 		3FD8BB9028C41ADF000FB6D0 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BB8F28C41ADF000FB6D0 /* Article.swift */; };
+		3FD8BB9228C41E54000FB6D0 /* UserInformationFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BB9128C41E54000FB6D0 /* UserInformationFieldViewModel.swift */; };
+		3FD8BB9428C41E80000FB6D0 /* UserProfilInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BB9328C41E80000FB6D0 /* UserProfilInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +165,8 @@
 		3FD8BB8B28C13996000FB6D0 /* CheckStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckStatusView.swift; sourceTree = "<group>"; };
 		3FD8BB8D28C41A5C000FB6D0 /* NewsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewModel.swift; sourceTree = "<group>"; };
 		3FD8BB8F28C41ADF000FB6D0 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		3FD8BB9128C41E54000FB6D0 /* UserInformationFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationFieldViewModel.swift; sourceTree = "<group>"; };
+		3FD8BB9328C41E80000FB6D0 /* UserProfilInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +317,7 @@
 			children = (
 				3F537B7A28706A08002D70CC /* User.swift */,
 				3FD8BB8F28C41ADF000FB6D0 /* Article.swift */,
+				3FD8BB9328C41E80000FB6D0 /* UserProfilInformation.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 				3F7ADC7627C2763700E4712C /* QuestionnairesContainerViewModel.swift */,
 				3F537B8128706AC4002D70CC /* AccountTabViewModel.swift */,
 				3FD8BB8D28C41A5C000FB6D0 /* NewsListViewModel.swift */,
+				3FD8BB9128C41E54000FB6D0 /* UserInformationFieldViewModel.swift */,
 			);
 			path = MainSection;
 			sourceTree = "<group>";
@@ -622,6 +628,7 @@
 				3F5AFC93271EE1E00021C0DF /* TextButton.swift in Sources */,
 				3F537B6F28705BBC002D70CC /* Strings+Localizable.swift in Sources */,
 				3FBE7A0927B3177700D29FAA /* QuestionnaireView.swift in Sources */,
+				3FD8BB9228C41E54000FB6D0 /* UserInformationFieldViewModel.swift in Sources */,
 				3FAE8873272193FD003EE8BD /* MainView.swift in Sources */,
 				3F8101B428A72C5100257299 /* DatePickerView.swift in Sources */,
 				3F537B63287044E6002D70CC /* RegularExpressionFactory.swift in Sources */,
@@ -655,6 +662,7 @@
 				3F3BC4BE28673823009BFAD7 /* KeychainTestView.swift in Sources */,
 				3FCA86E427186CDF00275A66 /* RootViewModel.swift in Sources */,
 				3FBE7A0B27B320D900D29FAA /* CustomSecureTextField.swift in Sources */,
+				3FD8BB9428C41E80000FB6D0 /* UserProfilInformation.swift in Sources */,
 				3FCA86E82718718800275A66 /* LoginView.swift in Sources */,
 				3FD8BB8828C127F0000FB6D0 /* NewsListView.swift in Sources */,
 				3F537B8428706DC7002D70CC /* ActivitiesTabView.swift in Sources */,
