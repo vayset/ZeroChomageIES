@@ -20,3 +20,4 @@
 "articleCreateFormDescriptionPlaceHolder" = "Description";
 "articleCreateFormBodyPlaceHolder" = "Contenue de corp";
 "articleCreateFormButtonTitle" = "Créer";
+"articleCreateFormUploadPhotoButtonTitle" = "Choisir une photo";

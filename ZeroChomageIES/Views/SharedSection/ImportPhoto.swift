@@ -11,18 +11,19 @@ struct ImportPhoto: View {
     @State private var image = UIImage()
     @Binding  var showSheet: Bool
     let action: () -> Void
-
+    
     var body: some View {
         Button(action: action) {
-            Text("photo")
-        }
+            Text(Strings.articleCreateFormUploadPhotoButtonTitle)
+                .font(.headline)
+                .frame(maxWidth: .infinity)
+                .frame(height: 50)
+                .background(LinearGradient(gradient: Gradient(colors: [Color.blueHorizon, Color(#colorLiteral(red: 0.6875163317, green: 0.8466343284, blue: 0.9052998424, alpha: 1))]), startPoint: .top, endPoint: .bottom))
+                .foregroundColor(.white)
+            .padding(.horizontal, 20)        }
         .sheet(isPresented: $showSheet) {
-                    // Pick an image from the photo library:
-                ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
-
-                    //  If you wish to take a photo from camera instead:
-                    // ImagePicker(sourceType: .camera, selectedImage: self.$image)
-            }
+            ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
+        }
     }
     
     init(

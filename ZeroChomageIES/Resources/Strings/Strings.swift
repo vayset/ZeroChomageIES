@@ -23,6 +23,7 @@ struct Strings {
     static let articleCreateFormDescriptionPlaceHolder = "articleCreateFormDescriptionPlaceHolder".localized
     static let articleCreateFormBodyPlaceHolder = "articleCreateFormBodyPlaceHolder".localized
     static let articleCreateFormButtonTitle = "articleCreateFormButtonTitle".localized
+    static let articleCreateFormUploadPhotoButtonTitle = "articleCreateFormUploadPhotoButtonTitle".localized
 
 
 //    static let nextText =
