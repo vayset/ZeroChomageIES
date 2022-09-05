@@ -14,7 +14,8 @@ struct ActivitiesTabView: View {
     
     @StateObject var questionnairesContainerViewModel = QuestionnairesContainerViewModel(shouldPrefillWithUserData: false)
     @StateObject var viewModel = AccountTabViewModel()
-    
+    @State private var showingCredits = false
+
     var body: some View {
         NavigationView {
             ScrollView {
@@ -38,6 +39,13 @@ struct ActivitiesTabView: View {
             .background(Color.white.edgesIgnoringSafeArea(.all))
             .task {
                 viewModel.fetchUser()
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    CreateArticle(showingCredits: $showingCredits) {
+                        showingCredits.toggle()
+                    }
+                }
             }
         }
         .tabItem {

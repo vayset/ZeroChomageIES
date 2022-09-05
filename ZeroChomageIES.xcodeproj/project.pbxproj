@@ -78,6 +78,7 @@
 		3FD8BB9628C41ED1000FB6D0 /* CheckStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BB9528C41ED1000FB6D0 /* CheckStatusViewModel.swift */; };
 		3FD8BB9928C41F16000FB6D0 /* ApprovalStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BB9828C41F16000FB6D0 /* ApprovalStatus.swift */; };
 		3FD8BB9B28C42006000FB6D0 /* ChomageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BB9A28C42006000FB6D0 /* ChomageCellView.swift */; };
+		3FD8BBBA28C54455000FB6D0 /* CreateArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BBB928C54455000FB6D0 /* CreateArticle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +174,7 @@
 		3FD8BB9528C41ED1000FB6D0 /* CheckStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckStatusViewModel.swift; sourceTree = "<group>"; };
 		3FD8BB9828C41F16000FB6D0 /* ApprovalStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalStatus.swift; sourceTree = "<group>"; };
 		3FD8BB9A28C42006000FB6D0 /* ChomageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChomageCellView.swift; sourceTree = "<group>"; };
+		3FD8BBB928C54455000FB6D0 /* CreateArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateArticle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +274,7 @@
 				3FD8BB8728C127F0000FB6D0 /* NewsListView.swift */,
 				3FD8BB8928C12F08000FB6D0 /* ArticleDetailsView.swift */,
 				3FD8BB8B28C13996000FB6D0 /* CheckStatusView.swift */,
+				3FD8BBB928C54455000FB6D0 /* CreateArticle.swift */,
 			);
 			path = MainSection;
 			sourceTree = "<group>";
@@ -642,6 +645,7 @@
 			files = (
 				3F8DEB6F27A32BBF00436BD2 /* NetworkManager.swift in Sources */,
 				3FD8BB9B28C42006000FB6D0 /* ChomageCellView.swift in Sources */,
+				3FD8BBBA28C54455000FB6D0 /* CreateArticle.swift in Sources */,
 				3F537B6D28705A8D002D70CC /* Strings.swift in Sources */,
 				3F5AFC93271EE1E00021C0DF /* TextButton.swift in Sources */,
 				3FD8BB9928C41F16000FB6D0 /* ApprovalStatus.swift in Sources */,
