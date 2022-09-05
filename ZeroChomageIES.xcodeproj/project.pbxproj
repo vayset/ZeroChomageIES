@@ -79,6 +79,8 @@
 		3FD8BB9928C41F16000FB6D0 /* ApprovalStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BB9828C41F16000FB6D0 /* ApprovalStatus.swift */; };
 		3FD8BB9B28C42006000FB6D0 /* ChomageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BB9A28C42006000FB6D0 /* ChomageCellView.swift */; };
 		3FD8BBBA28C54455000FB6D0 /* CreateArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BBB928C54455000FB6D0 /* CreateArticle.swift */; };
+		3FD8BBBC28C6919D000FB6D0 /* ImportPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BBBB28C6919D000FB6D0 /* ImportPhoto.swift */; };
+		3FD8BBBE28C69254000FB6D0 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BBBD28C69254000FB6D0 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +177,8 @@
 		3FD8BB9828C41F16000FB6D0 /* ApprovalStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalStatus.swift; sourceTree = "<group>"; };
 		3FD8BB9A28C42006000FB6D0 /* ChomageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChomageCellView.swift; sourceTree = "<group>"; };
 		3FD8BBB928C54455000FB6D0 /* CreateArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateArticle.swift; sourceTree = "<group>"; };
+		3FD8BBBB28C6919D000FB6D0 /* ImportPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportPhoto.swift; sourceTree = "<group>"; };
+		3FD8BBBD28C69254000FB6D0 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +313,8 @@
 				3F5AFC90271D991F0021C0DF /* CustomTextField.swift */,
 				3FBE7A0A27B320D900D29FAA /* CustomSecureTextField.swift */,
 				3F8101B328A72C5100257299 /* DatePickerView.swift */,
+				3FD8BBBB28C6919D000FB6D0 /* ImportPhoto.swift */,
+				3FD8BBBD28C69254000FB6D0 /* ImagePicker.swift */,
 			);
 			path = SharedSection;
 			sourceTree = "<group>";
@@ -664,6 +670,7 @@
 				3F7ADC7127C2758700E4712C /* QuestionnaireResponse.swift in Sources */,
 				3F7ADC7327C275DC00E4712C /* FormTextFieldViewModel.swift in Sources */,
 				3FD8BB8C28C13996000FB6D0 /* CheckStatusView.swift in Sources */,
+				3FD8BBBC28C6919D000FB6D0 /* ImportPhoto.swift in Sources */,
 				3F537B8228706AC4002D70CC /* AccountTabViewModel.swift in Sources */,
 				3FD8BB9628C41ED1000FB6D0 /* CheckStatusViewModel.swift in Sources */,
 				3F7ADC7527C275F700E4712C /* QuestionnaireViewModel.swift in Sources */,
@@ -693,6 +700,7 @@
 				3F537B7B28706A08002D70CC /* User.swift in Sources */,
 				3F578F9A28672AC100B43AA9 /* KeychainService.swift in Sources */,
 				3FBE7A0D27B46DDE00D29FAA /* AccountTabView.swift in Sources */,
+				3FD8BBBE28C69254000FB6D0 /* ImagePicker.swift in Sources */,
 				3FCA86962713630F00275A66 /* ZeroChomageIESApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

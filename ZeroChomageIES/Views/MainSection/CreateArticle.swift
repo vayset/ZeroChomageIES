@@ -9,8 +9,13 @@ import SwiftUI
 
 struct CreateArticle: View {
     @Binding var showingCredits: Bool
-    
+    @State private var showingSheet = false
     let action: () -> Void
+    @State var title = ""
+    @State var description = ""
+    @State var bodyArticle = ""
+    @State var isLoading = false
+    
     
     
     var body: some View {
@@ -19,17 +24,30 @@ struct CreateArticle: View {
                 .foregroundColor(Color.blueHorizon)
         }
         .sheet(isPresented: $showingCredits) {
-            Text("This app was brought to you by Hacking with Swift")
+            VStack(spacing: 50) {
+                Image("IllustrationSignIn")
+                VStack(spacing: 20) {
+                    CustomTextField(input: $title, placeHolder: Strings.articleCreateFormTitlePlaceHolder)
+                    CustomTextField(input: $description, placeHolder: Strings.articleCreateFormDescriptionPlaceHolder)
+                    CustomTextField(input: $bodyArticle, placeHolder: Strings.articleCreateFormBodyPlaceHolder)
+                    ImportPhoto(showSheet: $showingSheet) {
+                        self.showingSheet.toggle()
+                    }
+                    MainButton(isLoading: $isLoading, title: Strings.articleCreateFormButtonTitle) {
+                        print("post")
+                    }
+                }
+            }
         }
     }
-
-init(
-    showingCredits: Binding<Bool> = .constant(false),
-    action: @escaping () -> Void
-){
-    self._showingCredits = showingCredits
-    self.action = action
-}
+    
+    init(
+        showingCredits: Binding<Bool> = .constant(false),
+        action: @escaping () -> Void
+    ){
+        self._showingCredits = showingCredits
+        self.action = action
+    }
 }
 
 //struct SwiftUIView_Previews: PreviewProvider {

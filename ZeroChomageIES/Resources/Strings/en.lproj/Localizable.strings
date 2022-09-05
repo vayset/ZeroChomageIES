@@ -17,3 +17,7 @@
 "passwordRespectRulesThree" = "Ensure string has 1 digits.";
 "passwordRespectRulesFour" = "Ensure string has 1 lowercase letter.";
 "passwordRespectRulesFive" = "Ensure string has at least 8 characters.";
+"articleCreateFormTitlePlaceHolder" = "Title";
+"articleCreateFormDescriptionPlaceHolder" = "Description";
+"articleCreateFormBodyPlaceHolder" = "Body content";
+"articleCreateFormButtonTitle" = "Create";

@@ -19,5 +19,11 @@ struct Strings {
     static let passwordRespectRulesThree = "passwordRespectRulesThree".localized
     static let passwordRespectRulesFour = "passwordRespectRulesFour".localized
     static let passwordRespectRulesFive = "passwordRespectRulesFive".localized
+    static let articleCreateFormTitlePlaceHolder = "articleCreateFormTitlePlaceHolder".localized
+    static let articleCreateFormDescriptionPlaceHolder = "articleCreateFormDescriptionPlaceHolder".localized
+    static let articleCreateFormBodyPlaceHolder = "articleCreateFormBodyPlaceHolder".localized
+    static let articleCreateFormButtonTitle = "articleCreateFormButtonTitle".localized
+
+
 //    static let nextText =
 }

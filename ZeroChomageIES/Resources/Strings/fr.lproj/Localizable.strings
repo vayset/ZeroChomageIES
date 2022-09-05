@@ -16,3 +16,7 @@
 "passwordRespectRulesThree" = "Assurez-vous que la chaîne comporte 1 chiffre.";
 "passwordRespectRulesFour" = "Assurez-vous que la chaîne contient 1 lettre minuscule.";
 "passwordRespectRulesFive" = "Assurez-vous que la chaîne comporte au moins 8 caractères.";
+"articleCreateFormTitlePlaceHolder" = "Titre";
+"articleCreateFormDescriptionPlaceHolder" = "Description";
+"articleCreateFormBodyPlaceHolder" = "Contenue de corp";
+"articleCreateFormButtonTitle" = "Créer";
