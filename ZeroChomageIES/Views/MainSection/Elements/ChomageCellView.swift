@@ -53,13 +53,14 @@ struct ChomageCellView: View {
     }
 }
 
-
-struct ChomageCellView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChomageCellView(viewModel: .init(article: .init(backgroundImageName: "work_image", title: "Test Title", description: "test Description", body: "Test Body"), iconSystemName: "doc.plaintext", buttonTitle: "test Button title", buttonAction: {
-            print("Test button action")
-        }))
-        .previewInterfaceOrientation(.portrait)
-        
-    }
-}
+//
+//struct ChomageCellView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ChomageCellView(
+//            viewModel: .init(article: .init(backgroundImageName: "work_image", title: "Test Title", description: "test Description", body: "Test Body"), iconSystemName: "doc.plaintext", buttonTitle: "test Button title", buttonAction: {
+//            print("Test button action")
+//        }))
+//        .previewInterfaceOrientation(.portrait)
+//
+//    }
+//}

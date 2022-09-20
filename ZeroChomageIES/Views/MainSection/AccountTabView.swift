@@ -86,7 +86,7 @@ struct AccountTabView: View {
                     Button {
                         viewModel.logout()
                     } label: {
-                        Text("Logout")
+                        Image("logout")
                     }
                     
                 }

@@ -1,5 +1,5 @@
 //
-//  ImagePicker.swift
+//  ImagePickerView.swift
 //  ZeroChomageIES
 //
 //  Created by Saddam Satouyev on 05/09/2022.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct ImagePicker: UIViewControllerRepresentable {
+struct ImagePickerView: UIViewControllerRepresentable {
     @Environment(\.presentationMode) private var presentationMode
     var sourceType: UIImagePickerController.SourceType = .photoLibrary
     @Binding var selectedImage: UIImage
 
-    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePickerView>) -> UIImagePickerController {
 
         let imagePicker = UIImagePickerController()
         imagePicker.allowsEditing = false
@@ -22,7 +22,7 @@ struct ImagePicker: UIViewControllerRepresentable {
         return imagePicker
     }
 
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePickerView>) {
 
     }
 
@@ -32,9 +32,9 @@ struct ImagePicker: UIViewControllerRepresentable {
 
     final class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-        var parent: ImagePicker
+        var parent: ImagePickerView
 
-        init(_ parent: ImagePicker) {
+        init(_ parent: ImagePickerView) {
             self.parent = parent
         }
 

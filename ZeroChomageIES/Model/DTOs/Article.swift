@@ -8,8 +8,9 @@
 import Foundation
 
 struct Article: Codable {
-    let backgroundImageName: String
-    let title: String
-    let description: String
-    let body: String
+    let backgroundImageName: String?
+    let titleNews: String
+    let descriptionNews: String
+    let bodyNews: String
+    let createdAt: Date?
 }

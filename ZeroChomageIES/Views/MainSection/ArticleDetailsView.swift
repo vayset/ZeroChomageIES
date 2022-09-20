@@ -16,9 +16,9 @@ struct ArticleDetailsView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             VStack(alignment: .leading, spacing: 16) {
-                Text(viewModel?.title ?? "")
-                Text(viewModel?.description ?? "")
-                Text(viewModel?.body ?? "")
+                Text(viewModel?.titleNews ?? "")
+                Text(viewModel?.descriptionNews ?? "")
+                Text(viewModel?.bodyNews ?? "")
             }
         }
         .navigationTitle(

@@ -33,6 +33,7 @@
 		3F8101B428A72C5100257299 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8101B328A72C5100257299 /* DatePickerView.swift */; };
 		3F8DEB6D27A32B8B00436BD2 /* ZeroChomageWebShared in Frameworks */ = {isa = PBXBuildFile; productRef = 3F8DEB6C27A32B8B00436BD2 /* ZeroChomageWebShared */; };
 		3F8DEB6F27A32BBF00436BD2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8DEB6E27A32BBF00436BD2 /* NetworkManager.swift */; };
+		3FA1E5F728CFCC76005A1BB3 /* CreateNewsArticleRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1E5F628CFCC76005A1BB3 /* CreateNewsArticleRequestBody.swift */; };
 		3FA5FAA2272A096100713EA8 /* RoundedButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5FAA1272A096000713EA8 /* RoundedButtonView.swift */; };
 		3FAE886C2720B89A003EE8BD /* Gilroy-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3FAE886A2720B89A003EE8BD /* Gilroy-ExtraBold.otf */; };
 		3FAE886D2720B89A003EE8BD /* Gilroy-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3FAE886B2720B89A003EE8BD /* Gilroy-Light.otf */; };
@@ -78,9 +79,9 @@
 		3FD8BB9628C41ED1000FB6D0 /* CheckStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BB9528C41ED1000FB6D0 /* CheckStatusViewModel.swift */; };
 		3FD8BB9928C41F16000FB6D0 /* ApprovalStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BB9828C41F16000FB6D0 /* ApprovalStatus.swift */; };
 		3FD8BB9B28C42006000FB6D0 /* ChomageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BB9A28C42006000FB6D0 /* ChomageCellView.swift */; };
-		3FD8BBBA28C54455000FB6D0 /* CreateArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BBB928C54455000FB6D0 /* CreateArticle.swift */; };
+		3FD8BBBA28C54455000FB6D0 /* CreateArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BBB928C54455000FB6D0 /* CreateArticleView.swift */; };
 		3FD8BBBC28C6919D000FB6D0 /* ImportPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BBBB28C6919D000FB6D0 /* ImportPhoto.swift */; };
-		3FD8BBBE28C69254000FB6D0 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BBBD28C69254000FB6D0 /* ImagePicker.swift */; };
+		3FD8BBBE28C69254000FB6D0 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BBBD28C69254000FB6D0 /* ImagePickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 		3F8101B128A7268900257299 /* AccountTabListFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTabListFieldView.swift; sourceTree = "<group>"; };
 		3F8101B328A72C5100257299 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		3F8DEB6E27A32BBF00436BD2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		3FA1E5F628CFCC76005A1BB3 /* CreateNewsArticleRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewsArticleRequestBody.swift; sourceTree = "<group>"; };
 		3FA5FAA1272A096000713EA8 /* RoundedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonView.swift; sourceTree = "<group>"; };
 		3FAE886A2720B89A003EE8BD /* Gilroy-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-ExtraBold.otf"; sourceTree = "<group>"; };
 		3FAE886B2720B89A003EE8BD /* Gilroy-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Light.otf"; sourceTree = "<group>"; };
@@ -176,9 +178,9 @@
 		3FD8BB9528C41ED1000FB6D0 /* CheckStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckStatusViewModel.swift; sourceTree = "<group>"; };
 		3FD8BB9828C41F16000FB6D0 /* ApprovalStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalStatus.swift; sourceTree = "<group>"; };
 		3FD8BB9A28C42006000FB6D0 /* ChomageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChomageCellView.swift; sourceTree = "<group>"; };
-		3FD8BBB928C54455000FB6D0 /* CreateArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateArticle.swift; sourceTree = "<group>"; };
+		3FD8BBB928C54455000FB6D0 /* CreateArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateArticleView.swift; sourceTree = "<group>"; };
 		3FD8BBBB28C6919D000FB6D0 /* ImportPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportPhoto.swift; sourceTree = "<group>"; };
-		3FD8BBBD28C69254000FB6D0 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		3FD8BBBD28C69254000FB6D0 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 				3F537B61287044C6002D70CC /* FormValidatorService */,
 				3F7ADC6E27C2756500E4712C /* QuestionnaireRequestBody.swift */,
 				3F7ADC7027C2758700E4712C /* QuestionnaireResponse.swift */,
+				3FA1E5F628CFCC76005A1BB3 /* CreateNewsArticleRequestBody.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -278,7 +281,7 @@
 				3FD8BB8728C127F0000FB6D0 /* NewsListView.swift */,
 				3FD8BB8928C12F08000FB6D0 /* ArticleDetailsView.swift */,
 				3FD8BB8B28C13996000FB6D0 /* CheckStatusView.swift */,
-				3FD8BBB928C54455000FB6D0 /* CreateArticle.swift */,
+				3FD8BBB928C54455000FB6D0 /* CreateArticleView.swift */,
 			);
 			path = MainSection;
 			sourceTree = "<group>";
@@ -314,7 +317,7 @@
 				3FBE7A0A27B320D900D29FAA /* CustomSecureTextField.swift */,
 				3F8101B328A72C5100257299 /* DatePickerView.swift */,
 				3FD8BBBB28C6919D000FB6D0 /* ImportPhoto.swift */,
-				3FD8BBBD28C69254000FB6D0 /* ImagePicker.swift */,
+				3FD8BBBD28C69254000FB6D0 /* ImagePickerView.swift */,
 			);
 			path = SharedSection;
 			sourceTree = "<group>";
@@ -651,12 +654,13 @@
 			files = (
 				3F8DEB6F27A32BBF00436BD2 /* NetworkManager.swift in Sources */,
 				3FD8BB9B28C42006000FB6D0 /* ChomageCellView.swift in Sources */,
-				3FD8BBBA28C54455000FB6D0 /* CreateArticle.swift in Sources */,
+				3FD8BBBA28C54455000FB6D0 /* CreateArticleView.swift in Sources */,
 				3F537B6D28705A8D002D70CC /* Strings.swift in Sources */,
 				3F5AFC93271EE1E00021C0DF /* TextButton.swift in Sources */,
 				3FD8BB9928C41F16000FB6D0 /* ApprovalStatus.swift in Sources */,
 				3F537B6F28705BBC002D70CC /* Strings+Localizable.swift in Sources */,
 				3FBE7A0927B3177700D29FAA /* QuestionnaireView.swift in Sources */,
+				3FA1E5F728CFCC76005A1BB3 /* CreateNewsArticleRequestBody.swift in Sources */,
 				3FD8BB9228C41E54000FB6D0 /* UserInformationFieldViewModel.swift in Sources */,
 				3FAE8873272193FD003EE8BD /* MainView.swift in Sources */,
 				3F8101B428A72C5100257299 /* DatePickerView.swift in Sources */,
@@ -700,7 +704,7 @@
 				3F537B7B28706A08002D70CC /* User.swift in Sources */,
 				3F578F9A28672AC100B43AA9 /* KeychainService.swift in Sources */,
 				3FBE7A0D27B46DDE00D29FAA /* AccountTabView.swift in Sources */,
-				3FD8BBBE28C69254000FB6D0 /* ImagePicker.swift in Sources */,
+				3FD8BBBE28C69254000FB6D0 /* ImagePickerView.swift in Sources */,
 				3FCA86962713630F00275A66 /* ZeroChomageIESApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

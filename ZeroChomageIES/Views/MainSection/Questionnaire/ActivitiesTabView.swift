@@ -9,6 +9,11 @@ import Foundation
 import SwiftUI
 
 
+struct CheckStatusAdminView: View {
+    var body: some View {
+        Text("CheckStatusAdminView")
+    }
+}
 
 struct ActivitiesTabView: View {
     
@@ -20,7 +25,7 @@ struct ActivitiesTabView: View {
         NavigationView {
             ScrollView {
                 NavigationLink(
-                    destination: CheckStatusView(),
+                    destination: CheckStatusView(), //TODO: should check if is admin
                     isActive: $questionnairesContainerViewModel.isCheckStatusPresented) {
                         EmptyView()
                     }
@@ -42,7 +47,7 @@ struct ActivitiesTabView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    CreateArticle(showingCredits: $showingCredits) {
+                    CreateArticleView(showingCredits: $showingCredits) {
                         showingCredits.toggle()
                     }
                 }
@@ -104,8 +109,8 @@ final class ChomageCellViewModel: ObservableObject {
     ) {
         self.backgroundImageName = article.backgroundImageName
         self.iconSystemName = iconSystemName
-        self.title = article.title
-        self.description = article.description
+        self.title = article.titleNews
+        self.description = article.descriptionNews
         self.buttonTitle = buttonTitle
         self.buttonAction = buttonAction
     }

@@ -22,7 +22,7 @@ struct ImportPhoto: View {
                 .foregroundColor(.white)
             .padding(.horizontal, 20)        }
         .sheet(isPresented: $showSheet) {
-            ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
+            ImagePickerView(sourceType: .photoLibrary, selectedImage: self.$image)
         }
     }
     
