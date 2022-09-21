@@ -41,3 +41,9 @@ struct CheckStatusView: View {
     }
 }
 
+
+struct CheckStatusView_Previews: PreviewProvider {
+    static var previews: some View {
+        CheckStatusView()
+    }
+}

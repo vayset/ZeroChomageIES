@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3F3BC4BE28673823009BFAD7 /* KeychainTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3BC4BD28673823009BFAD7 /* KeychainTestView.swift */; };
 		3F3BC4C028673F40009BFAD7 /* KeychainServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3BC4BF28673F40009BFAD7 /* KeychainServiceError.swift */; };
+		3F4FF08728DA6B770038A8D0 /* AdminPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4FF08628DA6B770038A8D0 /* AdminPanelView.swift */; };
 		3F537B5E28703969002D70CC /* FormValidatorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B5D28703969002D70CC /* FormValidatorService.swift */; };
 		3F537B6028703A7C002D70CC /* FormValidatorServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B5F28703A7C002D70CC /* FormValidatorServiceTests.swift */; };
 		3F537B63287044E6002D70CC /* RegularExpressionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B62287044E6002D70CC /* RegularExpressionFactory.swift */; };
@@ -104,6 +105,7 @@
 /* Begin PBXFileReference section */
 		3F3BC4BD28673823009BFAD7 /* KeychainTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainTestView.swift; sourceTree = "<group>"; };
 		3F3BC4BF28673F40009BFAD7 /* KeychainServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServiceError.swift; sourceTree = "<group>"; };
+		3F4FF08628DA6B770038A8D0 /* AdminPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminPanelView.swift; sourceTree = "<group>"; };
 		3F537B5D28703969002D70CC /* FormValidatorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidatorService.swift; sourceTree = "<group>"; };
 		3F537B5F28703A7C002D70CC /* FormValidatorServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidatorServiceTests.swift; sourceTree = "<group>"; };
 		3F537B62287044E6002D70CC /* RegularExpressionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularExpressionFactory.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 				3FBE7A0C27B46DDE00D29FAA /* AccountTabView.swift */,
 				3FAE8872272193FD003EE8BD /* MainView.swift */,
 				3FD8BB8728C127F0000FB6D0 /* NewsListView.swift */,
+				3F4FF08628DA6B770038A8D0 /* AdminPanelView.swift */,
 				3FD8BB8928C12F08000FB6D0 /* ArticleDetailsView.swift */,
 				3FD8BB8B28C13996000FB6D0 /* CheckStatusView.swift */,
 				3FD8BBB928C54455000FB6D0 /* CreateArticleView.swift */,
@@ -654,6 +657,7 @@
 			files = (
 				3F8DEB6F27A32BBF00436BD2 /* NetworkManager.swift in Sources */,
 				3FD8BB9B28C42006000FB6D0 /* ChomageCellView.swift in Sources */,
+				3F4FF08728DA6B770038A8D0 /* AdminPanelView.swift in Sources */,
 				3FD8BBBA28C54455000FB6D0 /* CreateArticleView.swift in Sources */,
 				3F537B6D28705A8D002D70CC /* Strings.swift in Sources */,
 				3F5AFC93271EE1E00021C0DF /* TextButton.swift in Sources */,

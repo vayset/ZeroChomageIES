@@ -24,7 +24,19 @@ struct Strings {
     static let articleCreateFormBodyPlaceHolder = "articleCreateFormBodyPlaceHolder".localized
     static let articleCreateFormButtonTitle = "articleCreateFormButtonTitle".localized
     static let articleCreateFormUploadPhotoButtonTitle = "articleCreateFormUploadPhotoButtonTitle".localized
+    static let articleTitle = "articleTitle".localized
+    static let cellProvideInformation = "cellProvideInformation".localized
+    static let cellProvideInformationDescription = "cellProvideInformationDescription".localized
+    static let cellProvideInformationStart = "cellProvideInformationStart".localized
+    static let cellCheckStatusTitle = "cellCheckStatusTitle".localized
+    static let cellCheckStatusDescription = "cellCheckStatusDescription".localized
+    static let cellCheckButtonTitle = "cellCheckButtonTitle".localized
+    static let cellCheckNewsTitle = "cellCheckNewsTitle".localized
+    static let cellCheckNewsDescription = "cellCheckNewsDescription".localized
+    static let cellControlPanelTitle = "cellControlPanelTitle".localized
+    static let cellControlPanelDescription = "cellControlPanelDescription".localized
 
-
-//    static let nextText =
+    
+    
+    
 }

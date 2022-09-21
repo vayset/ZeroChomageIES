@@ -31,9 +31,6 @@ final class CheckStatusViewModel: ObservableObject {
             case (false, _):
                 approvalStatus = .needToFeelQuestionnaire
             }
-        
-            
-            
         } catch {
             print("Failed to fetch user")
         }

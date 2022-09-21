@@ -12,5 +12,4 @@ struct Article: Codable {
     let titleNews: String
     let descriptionNews: String
     let bodyNews: String
-    let createdAt: Date?
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NewsListView: View {
     @StateObject var viewModel = NewsListViewModel()
+    @State private var showingCredits = false
     
     var body: some View {
         NavigationLink(
@@ -23,12 +24,20 @@ struct NewsListView: View {
         }
         .listStyle(.plain)
         .navigationTitle(
-            Text("News Feed")
+            Text(Strings.articleTitle)
         )
+        
         .navigationBarTitleDisplayMode(.inline)
         .background(Color.white.edgesIgnoringSafeArea(.all))
         .task {
             await viewModel.fetchArticles()
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                CreateArticleView(showingCredits: $showingCredits) {
+                    showingCredits.toggle()
+                }
+            }
         }
     }
 }

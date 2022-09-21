@@ -22,3 +22,16 @@
 "articleCreateFormBodyPlaceHolder" = "Body content";
 "articleCreateFormButtonTitle" = "Create";
 "articleCreateFormUploadPhotoButtonTitle" = "Choose a picture";
+"articleTitle" = "News Feed";
+"cellProvideInformation" = "Provide Information";
+"cellProvideInformationDescription" = "Please provide your information so that we can validate your file.";
+"cellProvideInformationStart" = "Start";
+"cellCheckStatusTitle" = "Check status";
+"cellCheckStatusDescription" = "You can check the status of your case here.";
+"cellCheckButtonTitle" = "Check";
+"cellCheckNewsTitle" = "Consult News";
+"cellCheckNewsDescription" = "Consult the news concerning our projects or the world of work";
+"cellControlPanelTitle" = "Panel control";
+"cellControlPanelDescription" = "You can view the entire list of users, as well as vaild user folders";
+
+

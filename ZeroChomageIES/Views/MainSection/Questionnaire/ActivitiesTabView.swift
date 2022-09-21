@@ -19,17 +19,26 @@ struct ActivitiesTabView: View {
     
     @StateObject var questionnairesContainerViewModel = QuestionnairesContainerViewModel(shouldPrefillWithUserData: false)
     @StateObject var viewModel = AccountTabViewModel()
-    @State private var showingCredits = false
+
+    private let userService = UserService.shared
 
     var body: some View {
         NavigationView {
             ScrollView {
+                if userService.cachedUser?.isAdmin == true {
+                    NavigationLink(
+                        destination: AdminPanelView(),
+                        isActive: $questionnairesContainerViewModel.isAdminPanelPresented) {
+                            EmptyView()
+                        }
+                }
+                else {
                 NavigationLink(
-                    destination: CheckStatusView(), //TODO: should check if is admin
+                    destination: CheckStatusView(),
                     isActive: $questionnairesContainerViewModel.isCheckStatusPresented) {
                         EmptyView()
                     }
-                
+                }
                 if !viewModel.questionnaireIsFilled {
                     questionnaireNotFilledView
                 } else {
@@ -45,13 +54,6 @@ struct ActivitiesTabView: View {
             .task {
                 viewModel.fetchUser()
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    CreateArticleView(showingCredits: $showingCredits) {
-                        showingCredits.toggle()
-                    }
-                }
-            }
         }
         .tabItem {
             Label("First", systemImage: "doc.plaintext")
@@ -62,8 +64,11 @@ struct ActivitiesTabView: View {
         VStack {
             
             ChomageCellView(viewModel: questionnairesContainerViewModel.startCell)
-            ChomageCellView(viewModel: questionnairesContainerViewModel.statusCell)
-            
+            if userService.cachedUser?.isAdmin == true {
+                ChomageCellView(viewModel: questionnairesContainerViewModel.adminPanelCell)
+            } else {
+                ChomageCellView(viewModel: questionnairesContainerViewModel.statusCell)
+            }
             NavigationLink(
                 isActive: $questionnairesContainerViewModel.isQuestionnairePresented
             ) {
@@ -82,11 +87,12 @@ struct ActivitiesTabView: View {
     private var questionnaireAlreadyFilledView: some View {
         VStack {
             ChomageCellView(viewModel: questionnairesContainerViewModel.newsCell)
-            ChomageCellView(viewModel: questionnairesContainerViewModel.statusCell)
-            //ChomageCellView(viewModel: questionnairesContainerViewModel.consultInformationCell)
-            
-     
-            
+            if userService.cachedUser?.isAdmin == true {
+                ChomageCellView(viewModel: questionnairesContainerViewModel.adminPanelCell)
+            } else {
+                ChomageCellView(viewModel: questionnairesContainerViewModel.statusCell)
+            }
+                        
             NavigationLink(
                 destination: NewsListView(),
                 isActive: $questionnairesContainerViewModel.isNewsListPresented) {
@@ -94,8 +100,6 @@ struct ActivitiesTabView: View {
                 }
         }
     }
-    
-    
 }
 
 

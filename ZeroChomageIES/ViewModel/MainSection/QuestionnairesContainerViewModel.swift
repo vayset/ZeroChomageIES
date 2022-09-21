@@ -12,8 +12,8 @@ import Combine
 @MainActor
 final class QuestionnairesContainerViewModel: ObservableObject {
     
-     var viewModel = AccountTabViewModel()
-    
+    var viewModel = AccountTabViewModel()
+
     init(shouldPrefillWithUserData: Bool) {
         self.shouldPrefillWithUserData = shouldPrefillWithUserData
         
@@ -35,32 +35,39 @@ final class QuestionnairesContainerViewModel: ObservableObject {
     
     lazy var startCell = ChomageCellViewModel(
         iconSystemName: "doc.plaintext",
-        title: "Provide Information",
-        description: "Please provide your information so that you can find a great opportunity.",
-        buttonTitle: "Start",
+        title: Strings.cellProvideInformation,
+        description: Strings.cellProvideInformationDescription,
+        buttonTitle: Strings.cellProvideInformationStart,
         buttonAction: { [weak self] in
             self?.isQuestionnairePresented.toggle()
         }
     )
-    
-    //
-    
+        
     lazy var statusCell = ChomageCellViewModel(
         iconSystemName: "doc.plaintext",
-        title: "Check Status",
-        description: "You can check the status of your application here.",
-        buttonTitle: "Check",
+        title: Strings.cellCheckStatusTitle,
+        description: Strings.cellCheckStatusDescription,
+        buttonTitle: Strings.cellCheckButtonTitle,
         buttonAction: { [weak self] in
             self?.isCheckStatusPresented.toggle()
         }
     )
-
+    
+    lazy var adminPanelCell = ChomageCellViewModel(
+        iconSystemName: "doc.plaintext",
+        title: Strings.cellControlPanelTitle,
+        description: Strings.cellControlPanelDescription,
+        buttonTitle: Strings.cellCheckButtonTitle,
+        buttonAction: { [weak self] in
+            self?.isAdminPanelPresented.toggle()
+        }
+    )
     
     lazy var newsCell = ChomageCellViewModel(
         iconSystemName: "doc.plaintext",
-        title: "Check News",
-        description: "Check the news arround your place regarding work and job opportunity.",
-        buttonTitle: "Go",
+        title: Strings.cellCheckNewsTitle,
+        description: Strings.cellCheckNewsDescription,
+        buttonTitle: Strings.cellCheckButtonTitle,
         buttonAction: { [weak self] in
             self?.isNewsListPresented.toggle()
         }
@@ -68,6 +75,8 @@ final class QuestionnairesContainerViewModel: ObservableObject {
     
     @Published var isNewsListPresented = false
     @Published var isCheckStatusPresented = false
+    @Published var isAdminPanelPresented = false
+
 //
 //    lazy var consultInformationCell = ChomageCellViewModel(
 //        iconSystemName: "doc.plaintext",

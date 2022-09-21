@@ -21,3 +21,14 @@
 "articleCreateFormBodyPlaceHolder" = "Contenue de corp";
 "articleCreateFormButtonTitle" = "Créer";
 "articleCreateFormUploadPhotoButtonTitle" = "Choisir une photo";
+"articleTitle" = "Fil d'actualité";
+"cellProvideInformation" = "Fournir des informations";
+"cellProvideInformationDescription" = "Veuillez fournir vos informations afin que nous puission valider votre dossier.";
+"cellProvideInformationStart" = "Commencer";
+"cellCheckStatusTitle" = "Consulter le statut";
+"cellCheckStatusDescription" = "Vous pouvez vérifier l'état de votre dossier ici.";
+"cellCheckButtonTitle" = "Consulter";
+"cellCheckNewsTitle" = "Consulter les actualités";
+"cellCheckNewsDescription" = "Consulter l'actualité concernant nos projets ou sur le monde du travail";
+"cellControlPanelTitle" = "Contrôle panel";
+"cellControlPanelDescription" = "Vous pouvez consulter toute la liste des utilisateurs, ainsi que vailder les dossier des utilisateurs";
