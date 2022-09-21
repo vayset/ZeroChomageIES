@@ -98,7 +98,7 @@ struct AccountTabView: View {
             }
         }
         .tabItem {
-            Label(Strings.accountTabTitle, systemImage: "0.square")
+            Label(Strings.accountTabTitle, systemImage: "person.crop.circle.fill")
         }
     }
 }

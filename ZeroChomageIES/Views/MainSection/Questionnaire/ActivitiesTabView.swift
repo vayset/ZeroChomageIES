@@ -56,7 +56,7 @@ struct ActivitiesTabView: View {
             }
         }
         .tabItem {
-            Label("First", systemImage: "doc.plaintext")
+            Label("HomeO", systemImage: "house.fill")
         }
     }
     
