@@ -43,6 +43,8 @@
 		3FAE8873272193FD003EE8BD /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE8872272193FD003EE8BD /* MainView.swift */; };
 		3FAE8875272197AD003EE8BD /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE8874272197AD003EE8BD /* ResetPasswordView.swift */; };
 		3FAE8877272197CE003EE8BD /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE8876272197CE003EE8BD /* CreateAccountView.swift */; };
+		3FBB6BE428DD0E5F007020AF /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB6BE328DD0E5F007020AF /* AccountView.swift */; };
+		3FBB6BE628DD0EB5007020AF /* AdminPanelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB6BE528DD0EB5007020AF /* AdminPanelViewModel.swift */; };
 		3FBE7A0927B3177700D29FAA /* QuestionnaireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBE7A0827B3177700D29FAA /* QuestionnaireView.swift */; };
 		3FBE7A0B27B320D900D29FAA /* CustomSecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBE7A0A27B320D900D29FAA /* CustomSecureTextField.swift */; };
 		3FBE7A0D27B46DDE00D29FAA /* AccountTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBE7A0C27B46DDE00D29FAA /* AccountTabView.swift */; };
@@ -139,6 +141,8 @@
 		3FAE8872272193FD003EE8BD /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		3FAE8874272197AD003EE8BD /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		3FAE8876272197CE003EE8BD /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
+		3FBB6BE328DD0E5F007020AF /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		3FBB6BE528DD0EB5007020AF /* AdminPanelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminPanelViewModel.swift; sourceTree = "<group>"; };
 		3FBE7A0827B3177700D29FAA /* QuestionnaireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireView.swift; sourceTree = "<group>"; };
 		3FBE7A0A27B320D900D29FAA /* CustomSecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureTextField.swift; sourceTree = "<group>"; };
 		3FBE7A0C27B46DDE00D29FAA /* AccountTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTabView.swift; sourceTree = "<group>"; };
@@ -279,6 +283,7 @@
 				3F8101B028A7265B00257299 /* Elements */,
 				3FD264C62877619C0070FEB9 /* Questionnaire */,
 				3FBE7A0C27B46DDE00D29FAA /* AccountTabView.swift */,
+				3FBB6BE328DD0E5F007020AF /* AccountView.swift */,
 				3FAE8872272193FD003EE8BD /* MainView.swift */,
 				3FD8BB8728C127F0000FB6D0 /* NewsListView.swift */,
 				3F4FF08628DA6B770038A8D0 /* AdminPanelView.swift */,
@@ -361,6 +366,7 @@
 				3FD8BB8D28C41A5C000FB6D0 /* NewsListViewModel.swift */,
 				3FD8BB9128C41E54000FB6D0 /* UserInformationFieldViewModel.swift */,
 				3FD8BB9528C41ED1000FB6D0 /* CheckStatusViewModel.swift */,
+				3FBB6BE528DD0EB5007020AF /* AdminPanelViewModel.swift */,
 			);
 			path = MainSection;
 			sourceTree = "<group>";
@@ -659,6 +665,7 @@
 				3FD8BB9B28C42006000FB6D0 /* ChomageCellView.swift in Sources */,
 				3F4FF08728DA6B770038A8D0 /* AdminPanelView.swift in Sources */,
 				3FD8BBBA28C54455000FB6D0 /* CreateArticleView.swift in Sources */,
+				3FBB6BE428DD0E5F007020AF /* AccountView.swift in Sources */,
 				3F537B6D28705A8D002D70CC /* Strings.swift in Sources */,
 				3F5AFC93271EE1E00021C0DF /* TextButton.swift in Sources */,
 				3FD8BB9928C41F16000FB6D0 /* ApprovalStatus.swift in Sources */,
@@ -677,6 +684,7 @@
 				3F3BC4C028673F40009BFAD7 /* KeychainServiceError.swift in Sources */,
 				3F7ADC7127C2758700E4712C /* QuestionnaireResponse.swift in Sources */,
 				3F7ADC7327C275DC00E4712C /* FormTextFieldViewModel.swift in Sources */,
+				3FBB6BE628DD0EB5007020AF /* AdminPanelViewModel.swift in Sources */,
 				3FD8BB8C28C13996000FB6D0 /* CheckStatusView.swift in Sources */,
 				3FD8BBBC28C6919D000FB6D0 /* ImportPhoto.swift in Sources */,
 				3F537B8228706AC4002D70CC /* AccountViewModel.swift in Sources */,
