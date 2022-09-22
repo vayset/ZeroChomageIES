@@ -1,19 +1,19 @@
 //
-//  textField.swift
+//  CustomWithViewModelTextField.swift
 //  ZeroChomageIES
 //
-//  Created by Saddam Satouyev on 18/10/2021.
+//  Created by Saddam Satouyev on 22/09/2022.
 //
 
 import SwiftUI
 
-struct CustomTextField: View {
-    @Binding var input: String
-    let placeHolder: String
+struct CustomWithViewModelTextField: View {
+    
+    @ObservedObject var viewModel: FormTextFieldViewModel
     
     var body: some View {
         ZStack {
-            TextField("", text: $input)
+            TextField("", text: $viewModel.input)
                 .frame(height: 50, alignment: .center)
                 .padding()
                 .font(.custom("Gilroy-Medium", size: 16))
@@ -21,8 +21,8 @@ struct CustomTextField: View {
                 .background(Color.textFieldBackgroundColor)
                 .autocapitalization(.none)
             HStack {
-                if input.isEmpty {
-                    Text(placeHolder)
+                if viewModel.input.isEmpty {
+                    Text(viewModel.placeHolder)
                         .foregroundColor(Color.placeHolderColor)
                         .padding()
                         .font(.custom("Gilroy-Medium", size: 16))
@@ -33,12 +33,10 @@ struct CustomTextField: View {
             
         }
     }
-    
 }
 
-struct CustomTextField_Previews: PreviewProvider {
-    
+struct CustomWithViewModelTextField_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTextField(input: .constant(""), placeHolder: "Saddam")
+        CustomWithViewModelTextField(viewModel: .init(placeHolder: "test"))
     }
 }

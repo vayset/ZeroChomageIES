@@ -10,7 +10,6 @@ import SwiftUI
 struct DatePickerView: View {
     @State private var birthDate = Date()
 
-    
     var body: some View {
         VStack {
             DatePicker(selection: $birthDate, in: ...Date(), displayedComponents: .date) {

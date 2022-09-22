@@ -11,7 +11,6 @@ struct CreateAccountView: View {
     @State var email = ""
     @State var password = ""
     @State var confirmPassword = ""
-    
     @State var isLoading = false
     
     
@@ -106,8 +105,6 @@ struct CreateAccountView: View {
                 }
             })
         .background(Color.white.edgesIgnoringSafeArea(.all))
-        
-        
     }
     
 }

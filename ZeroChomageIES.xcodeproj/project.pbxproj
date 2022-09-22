@@ -45,6 +45,7 @@
 		3FAE8877272197CE003EE8BD /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE8876272197CE003EE8BD /* CreateAccountView.swift */; };
 		3FBB6BE428DD0E5F007020AF /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB6BE328DD0E5F007020AF /* AccountView.swift */; };
 		3FBB6BE628DD0EB5007020AF /* AdminPanelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB6BE528DD0EB5007020AF /* AdminPanelViewModel.swift */; };
+		3FBB6BE828DD0F1E007020AF /* CustomWithViewModelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB6BE728DD0F1E007020AF /* CustomWithViewModelTextField.swift */; };
 		3FBE7A0927B3177700D29FAA /* QuestionnaireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBE7A0827B3177700D29FAA /* QuestionnaireView.swift */; };
 		3FBE7A0B27B320D900D29FAA /* CustomSecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBE7A0A27B320D900D29FAA /* CustomSecureTextField.swift */; };
 		3FBE7A0D27B46DDE00D29FAA /* AccountTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBE7A0C27B46DDE00D29FAA /* AccountTabView.swift */; };
@@ -143,6 +144,7 @@
 		3FAE8876272197CE003EE8BD /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		3FBB6BE328DD0E5F007020AF /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		3FBB6BE528DD0EB5007020AF /* AdminPanelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminPanelViewModel.swift; sourceTree = "<group>"; };
+		3FBB6BE728DD0F1E007020AF /* CustomWithViewModelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWithViewModelTextField.swift; sourceTree = "<group>"; };
 		3FBE7A0827B3177700D29FAA /* QuestionnaireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireView.swift; sourceTree = "<group>"; };
 		3FBE7A0A27B320D900D29FAA /* CustomSecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureTextField.swift; sourceTree = "<group>"; };
 		3FBE7A0C27B46DDE00D29FAA /* AccountTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTabView.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				3F8101B328A72C5100257299 /* DatePickerView.swift */,
 				3FD8BBBB28C6919D000FB6D0 /* ImportPhoto.swift */,
 				3FD8BBBD28C69254000FB6D0 /* ImagePickerView.swift */,
+				3FBB6BE728DD0F1E007020AF /* CustomWithViewModelTextField.swift */,
 			);
 			path = SharedSection;
 			sourceTree = "<group>";
@@ -706,6 +709,7 @@
 				3F6379882774417A00273450 /* TabViewSlides.swift in Sources */,
 				3FCA86E627186FA800275A66 /* UserDefaultsManager.swift in Sources */,
 				3FCA86D927185CC200275A66 /* Color+Colors.swift in Sources */,
+				3FBB6BE828DD0F1E007020AF /* CustomWithViewModelTextField.swift in Sources */,
 				3F3BC4BE28673823009BFAD7 /* KeychainTestView.swift in Sources */,
 				3FCA86E427186CDF00275A66 /* RootViewModel.swift in Sources */,
 				3FBE7A0B27B320D900D29FAA /* CustomSecureTextField.swift in Sources */,

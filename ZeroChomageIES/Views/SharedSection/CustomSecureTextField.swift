@@ -54,10 +54,7 @@ struct CustomSecureTextField: View {
                         .padding()
                         .foregroundColor(.black)
                 }
-
             }
-            
-            
         }
     }
 }
