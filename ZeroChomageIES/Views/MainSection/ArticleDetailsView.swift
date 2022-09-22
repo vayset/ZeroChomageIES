@@ -29,7 +29,6 @@ struct ArticleDetailsView: View {
                 Text(viewModel?.bodyNews ?? "")
                     .font(.custom("Gilroy-Medium", size: 15))
                 Spacer()
-                
             }
         }
         .navigationTitle(

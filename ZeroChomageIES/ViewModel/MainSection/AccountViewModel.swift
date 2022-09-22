@@ -8,9 +8,17 @@
 import Foundation
 
 @MainActor
-final class AccountTabViewModel: ObservableObject {
+final class AccountViewModel: ObservableObject {
+    
+    
     @Published var userInformationFieldViewModels: [UserInformationFieldViewModel] = []
     @Published var userProfilInformation: [UserProfilInformation] = []
+    
+    
+    func setOverrideUser(user: User?) {
+        guard let user = user else { return }
+        self.user = user
+    }
     
     private var user: User? {
         didSet {
@@ -29,12 +37,12 @@ final class AccountTabViewModel: ObservableObject {
                 .init(description: "Commune", value: user.city, iconImageName: "location-pin")
 
             ]
-            self.user = user
             self.questionnaireIsFilled = user.isAlreadyFilled
             
             
         }
     }
+    
     
     @Published var questionnaireIsFilled = false
     

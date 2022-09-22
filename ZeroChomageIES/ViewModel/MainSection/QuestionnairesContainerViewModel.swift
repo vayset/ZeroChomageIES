@@ -12,7 +12,6 @@ import Combine
 @MainActor
 final class QuestionnairesContainerViewModel: ObservableObject {
     
-    var viewModel = AccountTabViewModel()
 
     init(shouldPrefillWithUserData: Bool) {
         self.shouldPrefillWithUserData = shouldPrefillWithUserData

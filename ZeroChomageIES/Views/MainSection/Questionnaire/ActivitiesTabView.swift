@@ -15,44 +15,104 @@ struct CheckStatusAdminView: View {
     }
 }
 
+
+
+import Combine
+
+@MainActor
+final class ActivitiesTabViewModel: ObservableObject {
+    
+    init() {
+        userService.$cachedUser
+            .receive(on: DispatchQueue.main)
+            .compactMap { $0 } // Si ça vaut nil alors on va plus loin sinon ça unwrap
+            .sink { [weak self] user in
+                self?.userIsAdmin = user.isAdmin
+                self?.hasAlreadyFilledForms = user.isAlreadyFilled
+            }
+            .store(in: &subscriptions)
+        
+        
+    }
+    
+    private var subscriptions: Set<AnyCancellable> = []
+    
+    @Published var userIsAdmin = false
+    @Published var hasAlreadyFilledForms = false
+    
+    @Published var isLoading = false
+    
+    
+    var alertTitle = ""
+    @Published var isAlertPresented = false
+    
+    
+    func updateUser() async {
+        isLoading = true
+        
+        do {
+            _ = try await userService.fetchUser()
+        } catch {
+            self.alertTitle = "Failed to update user"
+            
+        }
+        
+        isLoading = false
+    }
+    
+    private let userService = UserService.shared
+    
+}
+
 struct ActivitiesTabView: View {
     
     @StateObject var questionnairesContainerViewModel = QuestionnairesContainerViewModel(shouldPrefillWithUserData: false)
-    @StateObject var viewModel = AccountTabViewModel()
+    
+    @StateObject var viewModel = ActivitiesTabViewModel()
 
-    private let userService = UserService.shared
-
+    
     var body: some View {
         NavigationView {
-            ScrollView {
-                if userService.cachedUser?.isAdmin == true {
-                    NavigationLink(
-                        destination: AdminPanelView(),
-                        isActive: $questionnairesContainerViewModel.isAdminPanelPresented) {
-                            EmptyView()
-                        }
-                }
-                else {
-                NavigationLink(
-                    destination: CheckStatusView(),
-                    isActive: $questionnairesContainerViewModel.isCheckStatusPresented) {
-                        EmptyView()
-                    }
-                }
-                if !viewModel.questionnaireIsFilled {
-                    questionnaireNotFilledView
+            Group {
+                if viewModel.isLoading {
+                    ProgressView()
+                        .progressViewStyle(.circular)
                 } else {
-                    questionnaireAlreadyFilledView
-
+                    ScrollView {
+                        if viewModel.userIsAdmin {
+                            NavigationLink(
+                                destination: AdminPanelView(),
+                                isActive: $questionnairesContainerViewModel.isAdminPanelPresented) {
+                                    EmptyView()
+                                }
+                        }
+                        else {
+                            NavigationLink(
+                                destination: CheckStatusView(),
+                                isActive: $questionnairesContainerViewModel.isCheckStatusPresented) {
+                                    EmptyView()
+                                }
+                        }
+                        if !viewModel.hasAlreadyFilledForms && !viewModel.userIsAdmin {
+                            questionnaireNotFilledView
+                        } else {
+                            questionnaireAlreadyFilledView
+                            
+                        }
+                    }
+                    .navigationTitle(
+                        Text("Mes informations")
+                    )
+                    .navigationBarTitleDisplayMode(.inline)
+                    .background(Color.white.edgesIgnoringSafeArea(.all))
+                    
                 }
             }
-            .navigationTitle(
-                Text("Mes informations")
-            )
-            .navigationBarTitleDisplayMode(.inline)
-            .background(Color.white.edgesIgnoringSafeArea(.all))
+            .refreshable {
+                await viewModel.updateUser()
+            }
             .task {
-                viewModel.fetchUser()
+                await viewModel.updateUser()
             }
         }
         .tabItem {
@@ -64,7 +124,7 @@ struct ActivitiesTabView: View {
         VStack {
             
             ChomageCellView(viewModel: questionnairesContainerViewModel.startCell)
-            if userService.cachedUser?.isAdmin == true {
+            if viewModel.userIsAdmin {
                 ChomageCellView(viewModel: questionnairesContainerViewModel.adminPanelCell)
             } else {
                 ChomageCellView(viewModel: questionnairesContainerViewModel.statusCell)
@@ -87,7 +147,7 @@ struct ActivitiesTabView: View {
     private var questionnaireAlreadyFilledView: some View {
         VStack {
             ChomageCellView(viewModel: questionnairesContainerViewModel.newsCell)
-            if userService.cachedUser?.isAdmin == true {
+            if viewModel.userIsAdmin {
                 ChomageCellView(viewModel: questionnairesContainerViewModel.adminPanelCell)
             } else {
                 ChomageCellView(viewModel: questionnairesContainerViewModel.statusCell)

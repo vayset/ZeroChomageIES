@@ -38,6 +38,9 @@ struct CheckStatusView: View {
                 }
             }
         }
+        .refreshable {
+            await viewModel.fetchApprovalStatus()
+        }
         .task {
             await viewModel.fetchApprovalStatus()
         }

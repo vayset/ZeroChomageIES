@@ -19,7 +19,7 @@
 		3F537B78287069DF002D70CC /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B77287069DF002D70CC /* UserService.swift */; };
 		3F537B7B28706A08002D70CC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B7A28706A08002D70CC /* User.swift */; };
 		3F537B7D28706A1B002D70CC /* UserServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B7C28706A1B002D70CC /* UserServiceError.swift */; };
-		3F537B8228706AC4002D70CC /* AccountTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B8128706AC4002D70CC /* AccountTabViewModel.swift */; };
+		3F537B8228706AC4002D70CC /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B8128706AC4002D70CC /* AccountViewModel.swift */; };
 		3F537B8428706DC7002D70CC /* ActivitiesTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F537B8328706DC7002D70CC /* ActivitiesTabView.swift */; };
 		3F578F9A28672AC100B43AA9 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F578F9928672AC100B43AA9 /* KeychainService.swift */; };
 		3F5AFC91271D991F0021C0DF /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AFC90271D991F0021C0DF /* CustomTextField.swift */; };
@@ -116,7 +116,7 @@
 		3F537B77287069DF002D70CC /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		3F537B7A28706A08002D70CC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3F537B7C28706A1B002D70CC /* UserServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceError.swift; sourceTree = "<group>"; };
-		3F537B8128706AC4002D70CC /* AccountTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTabViewModel.swift; sourceTree = "<group>"; };
+		3F537B8128706AC4002D70CC /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		3F537B8328706DC7002D70CC /* ActivitiesTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTabView.swift; sourceTree = "<group>"; };
 		3F578F9928672AC100B43AA9 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		3F5AFC90271D991F0021C0DF /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -357,7 +357,7 @@
 			children = (
 				3F7ADC7427C275F700E4712C /* QuestionnaireViewModel.swift */,
 				3F7ADC7627C2763700E4712C /* QuestionnairesContainerViewModel.swift */,
-				3F537B8128706AC4002D70CC /* AccountTabViewModel.swift */,
+				3F537B8128706AC4002D70CC /* AccountViewModel.swift */,
 				3FD8BB8D28C41A5C000FB6D0 /* NewsListViewModel.swift */,
 				3FD8BB9128C41E54000FB6D0 /* UserInformationFieldViewModel.swift */,
 				3FD8BB9528C41ED1000FB6D0 /* CheckStatusViewModel.swift */,
@@ -679,7 +679,7 @@
 				3F7ADC7327C275DC00E4712C /* FormTextFieldViewModel.swift in Sources */,
 				3FD8BB8C28C13996000FB6D0 /* CheckStatusView.swift in Sources */,
 				3FD8BBBC28C6919D000FB6D0 /* ImportPhoto.swift in Sources */,
-				3F537B8228706AC4002D70CC /* AccountTabViewModel.swift in Sources */,
+				3F537B8228706AC4002D70CC /* AccountViewModel.swift in Sources */,
 				3FD8BB9628C41ED1000FB6D0 /* CheckStatusViewModel.swift in Sources */,
 				3F7ADC7527C275F700E4712C /* QuestionnaireViewModel.swift in Sources */,
 				3FCA86DF2718679B00275A66 /* TabSlideViewModel.swift in Sources */,

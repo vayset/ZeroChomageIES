@@ -29,6 +29,9 @@ struct NewsListView: View {
         
         .navigationBarTitleDisplayMode(.inline)
         .background(Color.white.edgesIgnoringSafeArea(.all))
+        .refreshable {
+            await viewModel.fetchArticles()
+        }
         .task {
             await viewModel.fetchArticles()
         }
