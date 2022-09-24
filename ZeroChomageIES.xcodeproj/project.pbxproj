@@ -46,6 +46,8 @@
 		3FBB6BE428DD0E5F007020AF /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB6BE328DD0E5F007020AF /* AccountView.swift */; };
 		3FBB6BE628DD0EB5007020AF /* AdminPanelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB6BE528DD0EB5007020AF /* AdminPanelViewModel.swift */; };
 		3FBB6BE828DD0F1E007020AF /* CustomWithViewModelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB6BE728DD0F1E007020AF /* CustomWithViewModelTextField.swift */; };
+		3FBB6BEC28DF839E007020AF /* ChomageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB6BEB28DF839E007020AF /* ChomageCellViewModel.swift */; };
+		3FBB6BEE28DF8431007020AF /* ActivitiesTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB6BED28DF8431007020AF /* ActivitiesTabViewModel.swift */; };
 		3FBE7A0927B3177700D29FAA /* QuestionnaireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBE7A0827B3177700D29FAA /* QuestionnaireView.swift */; };
 		3FBE7A0B27B320D900D29FAA /* CustomSecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBE7A0A27B320D900D29FAA /* CustomSecureTextField.swift */; };
 		3FBE7A0D27B46DDE00D29FAA /* AccountTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBE7A0C27B46DDE00D29FAA /* AccountTabView.swift */; };
@@ -145,6 +147,8 @@
 		3FBB6BE328DD0E5F007020AF /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		3FBB6BE528DD0EB5007020AF /* AdminPanelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminPanelViewModel.swift; sourceTree = "<group>"; };
 		3FBB6BE728DD0F1E007020AF /* CustomWithViewModelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWithViewModelTextField.swift; sourceTree = "<group>"; };
+		3FBB6BEB28DF839E007020AF /* ChomageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChomageCellViewModel.swift; sourceTree = "<group>"; };
+		3FBB6BED28DF8431007020AF /* ActivitiesTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTabViewModel.swift; sourceTree = "<group>"; };
 		3FBE7A0827B3177700D29FAA /* QuestionnaireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireView.swift; sourceTree = "<group>"; };
 		3FBE7A0A27B320D900D29FAA /* CustomSecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureTextField.swift; sourceTree = "<group>"; };
 		3FBE7A0C27B46DDE00D29FAA /* AccountTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTabView.swift; sourceTree = "<group>"; };
@@ -370,6 +374,8 @@
 				3FD8BB9128C41E54000FB6D0 /* UserInformationFieldViewModel.swift */,
 				3FD8BB9528C41ED1000FB6D0 /* CheckStatusViewModel.swift */,
 				3FBB6BE528DD0EB5007020AF /* AdminPanelViewModel.swift */,
+				3FBB6BEB28DF839E007020AF /* ChomageCellViewModel.swift */,
+				3FBB6BED28DF8431007020AF /* ActivitiesTabViewModel.swift */,
 			);
 			path = MainSection;
 			sourceTree = "<group>";
@@ -685,6 +691,7 @@
 				3FD8BB8E28C41A5C000FB6D0 /* NewsListViewModel.swift in Sources */,
 				3FCA86DD2718677900275A66 /* OnboardingViewModel.swift in Sources */,
 				3F3BC4C028673F40009BFAD7 /* KeychainServiceError.swift in Sources */,
+				3FBB6BEC28DF839E007020AF /* ChomageCellViewModel.swift in Sources */,
 				3F7ADC7127C2758700E4712C /* QuestionnaireResponse.swift in Sources */,
 				3F7ADC7327C275DC00E4712C /* FormTextFieldViewModel.swift in Sources */,
 				3FBB6BE628DD0EB5007020AF /* AdminPanelViewModel.swift in Sources */,
@@ -718,6 +725,7 @@
 				3FD8BB8828C127F0000FB6D0 /* NewsListView.swift in Sources */,
 				3F537B8428706DC7002D70CC /* ActivitiesTabView.swift in Sources */,
 				3F537B7B28706A08002D70CC /* User.swift in Sources */,
+				3FBB6BEE28DF8431007020AF /* ActivitiesTabViewModel.swift in Sources */,
 				3F578F9A28672AC100B43AA9 /* KeychainService.swift in Sources */,
 				3FBE7A0D27B46DDE00D29FAA /* AccountTabView.swift in Sources */,
 				3FD8BBBE28C69254000FB6D0 /* ImagePickerView.swift in Sources */,

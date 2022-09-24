@@ -1,5 +1,5 @@
 //
-//  QuestionnaireTabView.swift
+//  ActivitiesTabView.swift
 //  ZeroChomageIES
 //
 //  Created by Saddam Satouyev on 02/07/2022.
@@ -9,67 +9,10 @@ import Foundation
 import SwiftUI
 
 
-struct CheckStatusAdminView: View {
-    var body: some View {
-        Text("CheckStatusAdminView")
-    }
-}
-
-
-
-import Combine
-
-@MainActor
-final class ActivitiesTabViewModel: ObservableObject {
-    
-    init() {
-        userService.$cachedUser
-            .receive(on: DispatchQueue.main)
-            .compactMap { $0 } // Si ça vaut nil alors on va plus loin sinon ça unwrap
-            .sink { [weak self] user in
-                self?.userIsAdmin = user.isAdmin
-                self?.hasAlreadyFilledForms = user.isAlreadyFilled
-            }
-            .store(in: &subscriptions)
-        
-        
-    }
-    
-    private var subscriptions: Set<AnyCancellable> = []
-    
-    @Published var userIsAdmin = false
-    @Published var hasAlreadyFilledForms = false
-    
-    @Published var isLoading = false
-    
-    
-    var alertTitle = ""
-    @Published var isAlertPresented = false
-    
-    
-    func updateUser() async {
-        isLoading = true
-        
-        do {
-            _ = try await userService.fetchUser()
-        } catch {
-            self.alertTitle = "Failed to update user"
-            
-        }
-        
-        isLoading = false
-    }
-    
-    private let userService = UserService.shared
-    
-}
-
 struct ActivitiesTabView: View {
     
     @StateObject var questionnairesContainerViewModel = QuestionnairesContainerViewModel(shouldPrefillWithUserData: false)
-    
     @StateObject var viewModel = ActivitiesTabViewModel()
-
     
     var body: some View {
         NavigationView {
@@ -101,7 +44,7 @@ struct ActivitiesTabView: View {
                         }
                     }
                     .navigationTitle(
-                        Text("Mes informations")
+                        Text("Home")
                     )
                     .navigationBarTitleDisplayMode(.inline)
                     .background(Color.white.edgesIgnoringSafeArea(.all))
@@ -116,7 +59,7 @@ struct ActivitiesTabView: View {
             }
         }
         .tabItem {
-            Label("HomeO", systemImage: "house.fill")
+            Label("Home", systemImage: "house.fill")
         }
     }
     
@@ -160,45 +103,4 @@ struct ActivitiesTabView: View {
                 }
         }
     }
-}
-
-
-
-final class ChomageCellViewModel: ObservableObject {
-    init(
-        article: Article,
-        iconSystemName: String,
-        buttonTitle: String,
-        buttonAction: @escaping () -> Void
-    ) {
-        self.backgroundImageName = article.backgroundImageName
-        self.iconSystemName = iconSystemName
-        self.title = article.titleNews
-        self.description = article.descriptionNews
-        self.buttonTitle = buttonTitle
-        self.buttonAction = buttonAction
-    }
-    
-    internal init(
-        iconSystemName: String,
-        title: String,
-        description: String,
-        buttonTitle: String,
-        buttonAction: @escaping () -> Void
-    ) {
-        self.backgroundImageName = nil
-        self.iconSystemName = iconSystemName
-        self.title = title
-        self.description = description
-        self.buttonTitle = buttonTitle
-        self.buttonAction = buttonAction
-    }
-    
-    let backgroundImageName: String?
-    let iconSystemName: String
-    let title: String
-    let description: String
-    let buttonTitle: String
-    let buttonAction: () -> Void
-    
 }

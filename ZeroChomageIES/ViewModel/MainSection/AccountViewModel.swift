@@ -38,14 +38,14 @@ final class AccountViewModel: ObservableObject {
 
             ]
             self.questionnaireIsFilled = user.isAlreadyFilled
-            
-            
         }
     }
     
     
     @Published var questionnaireIsFilled = false
     
+    @Published var isValidated = false
+
     @Published var isLoading = false
     
     @Published var shoudUpdateCurrentRootType = false

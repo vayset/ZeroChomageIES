@@ -76,18 +76,6 @@ final class QuestionnairesContainerViewModel: ObservableObject {
     @Published var isCheckStatusPresented = false
     @Published var isAdminPanelPresented = false
 
-//
-//    lazy var consultInformationCell = ChomageCellViewModel(
-//        iconSystemName: "doc.plaintext",
-//        title: "Consult Questionnaire",
-//        description: "Verify the information you've sent us.",
-//        buttonTitle: "Consult",
-//        buttonAction: { [weak self] in
-//
-//        }
-//    )
-
-
     @Published var isQuestionnairePresented = false
     
     @Published var isAlertPresented = false

@@ -35,6 +35,16 @@ struct AccountView: View {
         VStack {
             HStack {
                 ForEach(viewModel.userProfilInformation, id: \.lastName) { user in
+                    if !isOverrideUser {
+                        Button(action: {
+                            viewModel.isValidated = true
+                        }) {
+                            Image("ok")
+                                .resizable()
+                                .renderingMode(.original)
+                                .frame(width: 20, height: 20)
+                        }
+                    }
                     Text(user.lastName ?? "--")
                     Text(user.firstName ?? "--")
                 }
@@ -42,16 +52,6 @@ struct AccountView: View {
             .padding(.top, 20)
             .font(.custom("Ubuntu-Medium", size: 24))
             HStack {
-                Button(action: {
-                    print("button pressed")
-                    
-                }) {
-                    Image("ok")
-                        .resizable()
-                        .renderingMode(.original)
-                        .frame(width: 20, height: 20)
-                }
-                
                 if !isOverrideUser {
                     Button("Edit") {
                         
