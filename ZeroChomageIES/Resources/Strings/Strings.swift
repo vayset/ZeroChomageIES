@@ -35,8 +35,6 @@ struct Strings {
     static let cellCheckNewsDescription = "cellCheckNewsDescription".localized
     static let cellControlPanelTitle = "cellControlPanelTitle".localized
     static let cellControlPanelDescription = "cellControlPanelDescription".localized
-
-    
-    
+    static let cellButtonTitle = "cellButtonTitle".localized
     
 }

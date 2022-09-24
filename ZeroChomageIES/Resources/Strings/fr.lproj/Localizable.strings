@@ -32,3 +32,4 @@
 "cellCheckNewsDescription" = "Consulter l'actualité concernant nos projets ou sur le monde du travail";
 "cellControlPanelTitle" = "Contrôle panel";
 "cellControlPanelDescription" = "Vous pouvez consulter toute la liste des utilisateurs, ainsi que vailder les dossier des utilisateurs";
+"cellButtonTitle" = "Lire";

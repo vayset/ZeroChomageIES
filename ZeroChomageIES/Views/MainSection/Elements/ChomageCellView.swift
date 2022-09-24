@@ -14,7 +14,7 @@ struct ChomageCellView: View {
         VStack {
             
             VStack {
-                HStack {
+                HStack(alignment: .top) {
                     Image(systemName: viewModel.iconSystemName)
                     Text(viewModel.title)
                         .font(.system(size: 24))
@@ -22,7 +22,7 @@ struct ChomageCellView: View {
                 }
                 .padding(16)
                 Text(viewModel.description)
-                    .padding(.vertical, 16)
+                    .padding()
             }
             .foregroundColor(viewModel.backgroundImageName == nil ? .black : .white)
             .background(backgroundImageView)
@@ -53,14 +53,14 @@ struct ChomageCellView: View {
     }
 }
 
-//
-//struct ChomageCellView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ChomageCellView(
-//            viewModel: .init(article: .init(backgroundImageName: "work_image", title: "Test Title", description: "test Description", body: "Test Body"), iconSystemName: "doc.plaintext", buttonTitle: "test Button title", buttonAction: {
-//            print("Test button action")
-//        }))
-//        .previewInterfaceOrientation(.portrait)
-//
-//    }
-//}
+
+struct ChomageCellView_Previews: PreviewProvider {
+    static var previews: some View {
+        ChomageCellView(
+            viewModel: .init(article: .init(backgroundImageName: "work_image", titleNews: "Test Title", descriptionNews: "test Description", bodyNews: "Test Body"), iconSystemName: "doc.plaintext", buttonTitle: "test Button title", buttonAction: {
+            print("Test button action")
+        }))
+        .previewInterfaceOrientation(.portrait)
+
+    }
+}

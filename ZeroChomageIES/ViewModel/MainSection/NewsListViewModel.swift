@@ -7,6 +7,8 @@
 
 import Foundation
 
+@MainActor
+
 final class NewsListViewModel: ObservableObject {
     
     func fetchArticles() async {
@@ -21,7 +23,7 @@ final class NewsListViewModel: ObservableObject {
                 ChomageCellViewModel(
                     article: article,
                     iconSystemName: "doc.plaintext",
-                    buttonTitle: "Read",
+                    buttonTitle: Strings.cellButtonTitle,
                     buttonAction: { [weak self] in
                         self?.presentedArticle = article
                     }
