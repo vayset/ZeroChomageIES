@@ -56,7 +56,36 @@ final class UserService: ObservableObject{
         return users
     }
     
+    func validateProfile(user: User) async throws {
+        let url = URL(string: "http://localhost:8080/api/v1/users/validate")!
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.post.rawValue
+        
+        let requestBody = ValidateUserBody(userToValidateEmail: user.email)
+        
+        guard let encodedBody = try? JSONEncoder().encode(requestBody) else {
+            throw NewsArticlesServiceError.createNewsArticleFailedEncoding
+        }
+        
+        request.httpBody = encodedBody
+        
+        
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        let userToken = try keychainService.getToken()
+        request.addValue("Bearer \(userToken)", forHTTPHeaderField: "Authorization")
+        
+        guard let _ = try? await networkManager.send(urlRequest: request) else {
+            throw UserServiceError.failedToValidateUser
+        }
+    }
     
     private let networkManager = NetworkManager.shared
     private let keychainService = KeychainService.shared
+}
+
+
+struct ValidateUserBody: Encodable {
+    let userToValidateEmail: String
 }

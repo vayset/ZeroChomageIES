@@ -18,7 +18,7 @@ struct AdminPanelView: View {
             } else {
                 List(viewModel.filteredNonAdminUsers, id: \.email) { user in
                     NavigationLink(user.email) {
-                        AccountView(overrideUser: user)
+                        AccountView(viewModel: AccountViewModel(overrideUser: user))
                     }
                 }
                 .listStyle(.plain)

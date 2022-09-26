@@ -15,28 +15,38 @@ final class AccountViewModel: ObservableObject {
     @Published var userProfilInformation: UserProfilInformation?
     
     
-    func setOverrideUser(user: User?) {
+    init(overrideUser: User?) {
+        isOverrideUser = overrideUser != nil
+        
+        user = overrideUser
+        createViewModels()
+    }
+    
+    let isOverrideUser: Bool
+    
+    
+    private func createViewModels() {
         guard let user = user else { return }
-        self.user = user
+        self.userProfilInformation = .init(lastName: user.lastName, firstName: user.firstname)
+        
+        self.userInformationFieldViewModels = [
+            .init(description: "Date de naissance", value: user.dateOfBirth, iconImageName: "gift"),
+            .init(description: "Sexe", value: user.gender, iconImageName: "male-and-female-avatars"),
+            .init(description: "État civil", value: user.civilStatus, iconImageName: "newlyweds"),
+            .init(description: "Phone Number", value: user.phoneNumber, iconImageName: "phone-call"),
+            .init(description: "E-mail", value: user.email, iconImageName: "email"),
+            .init(description: "Adresse", value: user.address, iconImageName: "location"),
+            .init(description: "Code postale", value: user.zipCode, iconImageName: "zip-code"),
+            .init(description: "Commune", value: user.city, iconImageName: "location-pin")
+
+        ]
+        self.questionnaireIsFilled = user.isAlreadyFilled
+        self.isValidated = user.isValidated
     }
     
     private var user: User? {
         didSet {
-            guard let user = user else { return }
-            self.userProfilInformation = .init(lastName: user.lastName, firstName: user.firstname)
-            
-            self.userInformationFieldViewModels = [
-                .init(description: "Date de naissance", value: user.dateOfBirth, iconImageName: "gift"),
-                .init(description: "Sexe", value: user.gender, iconImageName: "male-and-female-avatars"),
-                .init(description: "État civil", value: user.civilStatus, iconImageName: "newlyweds"),
-                .init(description: "Phone Number", value: user.phoneNumber, iconImageName: "phone-call"),
-                .init(description: "E-mail", value: user.email, iconImageName: "email"),
-                .init(description: "Adresse", value: user.address, iconImageName: "location"),
-                .init(description: "Code postale", value: user.zipCode, iconImageName: "zip-code"),
-                .init(description: "Commune", value: user.city, iconImageName: "location-pin")
-
-            ]
-            self.questionnaireIsFilled = user.isAlreadyFilled
+            createViewModels()
         }
     }
     
@@ -74,6 +84,22 @@ final class AccountViewModel: ObservableObject {
         }
     }
     
+    
+    
+    func validateProfile() {
+        guard let user = user else { return }
+        Task {
+            isLoading = true
+            do {
+                try await userService.validateProfile(user: user)
+                fetchUser()
+            } catch {
+                print("Should display error alert")
+            }
+            isLoading = false
+        }
+        
+    }
     
     
     private let userService = UserService.shared

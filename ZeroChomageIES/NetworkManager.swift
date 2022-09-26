@@ -149,7 +149,7 @@ final class NetworkManager {
         }
         
         guard let response = response as? HTTPURLResponse,
-              response.statusCode == 200
+              200...299 ~= response.statusCode 
         else {
             throw NetworkManagerError.invalidHttpUrlResponse
         }

@@ -10,7 +10,7 @@ import SwiftUI
 struct AccountTabView: View {
     var body: some View {
         NavigationView {
-            AccountView()
+            AccountView(viewModel: AccountViewModel(overrideUser: nil))
         }
         .tabItem {
             Label(Strings.accountTabTitle, systemImage: "person.crop.circle.fill")

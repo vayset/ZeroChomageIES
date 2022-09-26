@@ -11,5 +11,6 @@ import Foundation
 enum UserServiceError: LocalizedError {
     case failedToFetchUser
     case failedToFetchUsers
+    case failedToValidateUser
 }
 

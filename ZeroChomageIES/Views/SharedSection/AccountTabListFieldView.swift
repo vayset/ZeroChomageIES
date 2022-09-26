@@ -9,9 +9,9 @@ import SwiftUI
 
 struct AccountTabListFieldView: View {
     
-let imageView: String
-let descriptionView: String
-let valueView: String
+    let imageView: String
+    let descriptionView: String
+    let valueView: String
 
     
     var body: some View {
@@ -29,10 +29,11 @@ let valueView: String
             }
             .aspectRatio(contentMode: .fit)
             .font(.custom("Gilroy-Medium", size: 16))
+            
             Spacer()
             
         }
-        .listRowBackground(Color.blueBackgroundProfile)
+        //.listRowBackground(Color.blueBackgroundProfile)
         .padding()
         .border(.gray)
     }
