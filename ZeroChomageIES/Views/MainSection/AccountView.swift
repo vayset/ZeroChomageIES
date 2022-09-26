@@ -34,8 +34,9 @@ struct AccountView: View {
     var body: some View {
         VStack {
             HStack {
-                ForEach(viewModel.userProfilInformation, id: \.lastName) { user in
-                    if !isOverrideUser {
+                if let userProfilInformationBannerViewModel = viewModel.userProfilInformation {
+    
+                    if isOverrideUser {
                         Button(action: {
                             viewModel.isValidated = true
                         }) {
@@ -45,12 +46,13 @@ struct AccountView: View {
                                 .frame(width: 20, height: 20)
                         }
                     }
-                    Text(user.lastName ?? "--")
-                    Text(user.firstName ?? "--")
+                    Text(userProfilInformationBannerViewModel.lastName ?? "--")
+                    Text(userProfilInformationBannerViewModel.firstName ?? "--")
                 }
             }
             .padding(.top, 20)
             .font(.custom("Ubuntu-Medium", size: 24))
+            
             HStack {
                 if !isOverrideUser {
                     Button("Edit") {

@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct NewsListView: View {
+    @State private var showingArticleView = false
     @StateObject var viewModel = NewsListViewModel()
-    @State private var showingCredits = false
     
     var body: some View {
         NavigationLink(
@@ -36,11 +36,28 @@ struct NewsListView: View {
             await viewModel.fetchArticles()
         }
         .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                CreateArticleView(showingCredits: $showingCredits) {
-                    showingCredits.toggle()
+            
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                Button {
+                    Task {
+                        await viewModel.fetchArticles()
+                    }
+                } label: {
+                    Image(systemName: "arrow.counterclockwise")
+                        .foregroundColor(Color.blueHorizon)
                 }
+                
+                Button {
+                    showingArticleView.toggle()
+                } label: {
+                    Image(systemName: "plus.square.fill")
+                        .foregroundColor(Color.blueHorizon)
+                }
+                
             }
+        }
+        .fullScreenCover(isPresented:  $showingArticleView) {
+            CreateArticleView(showingArticleView: $showingArticleView)
         }
     }
 }

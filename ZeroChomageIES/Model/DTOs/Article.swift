@@ -12,4 +12,13 @@ struct Article: Codable {
     let titleNews: String
     let descriptionNews: String
     let bodyNews: String
+    let createdAt: String
+}
+
+
+extension Article {
+    var createdAtDate: Date {
+        let newFormatter = ISO8601DateFormatter()
+        return newFormatter.date(from: createdAt) ?? .distantPast
+    }
 }

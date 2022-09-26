@@ -39,6 +39,5 @@ struct Strings {
     static let messageFeelQuestionnaire = "messageFeelQuestionnaire".localized
     static let messageBeingReviewedQuestionnaire = "messageBeingReviewedQuestionnaire".localized
     static let messageHasBeenValidatedQuestionnaire = "messageHasBeenValidatedQuestionnaire".localized
-
     
 }

@@ -19,7 +19,7 @@ enum ApprovalStatus {
         case .questionnaireValidationPending:
             return Strings.messageBeingReviewedQuestionnaire
         case .validated:
-            return "Your profile has been selected, congrats! we will call you back soon..."
+            return Strings.messageHasBeenValidatedQuestionnaire
         }
     }
     

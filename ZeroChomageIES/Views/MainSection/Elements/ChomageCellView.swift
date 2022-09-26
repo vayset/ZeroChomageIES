@@ -44,7 +44,7 @@ struct ChomageCellView: View {
                     Image(backgroundImageName)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                    Color.black.opacity(0.7)
+                    Color.black.opacity(0.4)
                 }
             } else {
                 EmptyView()
@@ -57,10 +57,22 @@ struct ChomageCellView: View {
 struct ChomageCellView_Previews: PreviewProvider {
     static var previews: some View {
         ChomageCellView(
-            viewModel: .init(article: .init(backgroundImageName: "work_image", titleNews: "Test Title", descriptionNews: "test Description", bodyNews: "Test Body"), iconSystemName: "doc.plaintext", buttonTitle: "test Button title", buttonAction: {
-            print("Test button action")
-        }))
+            viewModel: .init(
+                article: .init(
+                    backgroundImageName: "work_image",
+                    titleNews: "Test Title",
+                    descriptionNews: "test Description",
+                    bodyNews: "Test Body",
+                    createdAt: "2019-09-07T-15:50+00"
+                ),
+                iconSystemName: "doc.plaintext",
+                buttonTitle: "test Button title",
+                buttonAction: {
+                    print("Test button action")
+                }
+            )
+        )
         .previewInterfaceOrientation(.portrait)
-
+        
     }
 }

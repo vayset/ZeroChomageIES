@@ -8,30 +8,22 @@
 import SwiftUI
 
 struct CreateArticleView: View {
-    @Binding var showingCredits: Bool
-    @State private var showingSheet = false
-    let action: () -> Void
-    
     @StateObject var viewModel = CreateArticleViewModel()
-
-    
-    
+    @Binding var showingArticleView: Bool
     
     var body: some View {
-        Button(action: action) {
-            Image(systemName: "plus.square.fill")
-                .foregroundColor(Color.blueHorizon)
-        }
-        .sheet(isPresented: $showingCredits) {
+        NavigationView {
             VStack(spacing: 50) {
                 Image("IllustrationSignIn")
                 VStack(spacing: 20) {
                     CustomTextField(input: $viewModel.title, placeHolder: Strings.articleCreateFormTitlePlaceHolder)
                     CustomTextField(input: $viewModel.description, placeHolder: Strings.articleCreateFormDescriptionPlaceHolder)
                     CustomTextField(input: $viewModel.bodyArticle, placeHolder: Strings.articleCreateFormBodyPlaceHolder)
-                    ImportPhoto(showSheet: $showingSheet) {
-                        self.showingSheet.toggle()
-                    }
+                    
+                    // TODO: To be implemented when deployed over Heroku
+                    // ImportPhoto(showSheet: $showingSheet) {
+                    //     self.showingSheet.toggle()
+                    // }
                     MainButton(isLoading: $viewModel.isLoading, title: Strings.articleCreateFormButtonTitle) {
                         viewModel.onCreateNewsArticleButtonTapped()
                     }
@@ -39,21 +31,24 @@ struct CreateArticleView: View {
             }
             .alert(viewModel.alertTitle, isPresented: $viewModel.isAlertPresented) {
                 Button(role: .cancel) {
-                    
+                    showingArticleView.toggle()
                 } label: {
                     Text("OK")
                 }
+                
+            }
+            .navigationTitle("Create Article")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        showingArticleView.toggle()
+                    } label: {
+                        Image(systemName: "xmark")
+                    }
 
+                }
             }
         }
-    }
-    
-    init(
-        showingCredits: Binding<Bool> = .constant(false),
-        action: @escaping () -> Void
-    ){
-        self._showingCredits = showingCredits
-        self.action = action
     }
 }
 

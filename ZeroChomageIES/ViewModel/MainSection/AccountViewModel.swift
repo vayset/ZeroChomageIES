@@ -12,7 +12,7 @@ final class AccountViewModel: ObservableObject {
     
     
     @Published var userInformationFieldViewModels: [UserInformationFieldViewModel] = []
-    @Published var userProfilInformation: [UserProfilInformation] = []
+    @Published var userProfilInformation: UserProfilInformation?
     
     
     func setOverrideUser(user: User?) {
@@ -23,9 +23,8 @@ final class AccountViewModel: ObservableObject {
     private var user: User? {
         didSet {
             guard let user = user else { return }
-            self.userProfilInformation = [
-                .init(lastName: user.lastName, firstName: user.firstname)
-            ]
+            self.userProfilInformation = .init(lastName: user.lastName, firstName: user.firstname)
+            
             self.userInformationFieldViewModels = [
                 .init(description: "Date de naissance", value: user.dateOfBirth, iconImageName: "gift"),
                 .init(description: "Sexe", value: user.gender, iconImageName: "male-and-female-avatars"),

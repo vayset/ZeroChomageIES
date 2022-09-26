@@ -14,7 +14,7 @@ final class ChomageCellViewModel: ObservableObject {
         buttonTitle: String,
         buttonAction: @escaping () -> Void
     ) {
-        self.backgroundImageName = article.backgroundImageName
+        self.backgroundImageName = article.backgroundImageName ?? "PlaceholderNewsImage"
         self.iconSystemName = iconSystemName
         self.title = article.titleNews
         self.description = article.descriptionNews

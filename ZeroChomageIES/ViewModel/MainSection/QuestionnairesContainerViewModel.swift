@@ -26,7 +26,6 @@ final class QuestionnairesContainerViewModel: ObservableObject {
         } else {
             createQuestionnaireViewModels(user: nil)
         }
- 
     }
 
     
