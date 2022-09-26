@@ -15,9 +15,9 @@ enum ApprovalStatus {
     var description: String {
         switch self {
         case .needToFeelQuestionnaire:
-            return "You have to feel the questionnaire first!"
+            return Strings.messageFeelQuestionnaire
         case .questionnaireValidationPending:
-            return "Your questionnaire is being reviewed... please wait a little more"
+            return Strings.messageBeingReviewedQuestionnaire
         case .validated:
             return "Your profile has been selected, congrats! we will call you back soon..."
         }

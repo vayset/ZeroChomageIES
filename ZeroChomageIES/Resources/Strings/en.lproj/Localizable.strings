@@ -34,5 +34,9 @@
 "cellControlPanelTitle" = "Panel control";
 "cellControlPanelDescription" = "You can view the entire list of users, as well as vaild user folders";
 "cellButtonTitle" = "Read";
+"messageFeelQuestionnaire" = "You have to feel the questionnaire first !";
+"messageBeingReviewedQuestionnaire" = "Your questionnaire is being reviewed... please wait a little more";
+"messageHasBeenValidatedQuestionnaire" = "Your profile has been validated, congratulations! we will call you back soon...";
+
 
 

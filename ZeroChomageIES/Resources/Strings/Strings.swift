@@ -36,5 +36,9 @@ struct Strings {
     static let cellControlPanelTitle = "cellControlPanelTitle".localized
     static let cellControlPanelDescription = "cellControlPanelDescription".localized
     static let cellButtonTitle = "cellButtonTitle".localized
+    static let messageFeelQuestionnaire = "messageFeelQuestionnaire".localized
+    static let messageBeingReviewedQuestionnaire = "messageBeingReviewedQuestionnaire".localized
+    static let messageHasBeenValidatedQuestionnaire = "messageHasBeenValidatedQuestionnaire".localized
+
     
 }
