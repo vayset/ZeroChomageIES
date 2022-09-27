@@ -9,10 +9,11 @@ import SwiftUI
 
 struct AccountTabListFieldView: View {
     
+    // MARK: - Properties
+
     let imageView: String
     let descriptionView: String
     let valueView: String
-
     
     var body: some View {
         HStack(alignment: .center) {
@@ -31,9 +32,7 @@ struct AccountTabListFieldView: View {
             .font(.custom("Gilroy-Medium", size: 16))
             
             Spacer()
-            
         }
-        //.listRowBackground(Color.blueBackgroundProfile)
         .padding()
         .border(.gray)
     }

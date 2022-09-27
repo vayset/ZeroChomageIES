@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - Strings
 
 struct Strings {
     static let loginPasswordPlaceHolder = "loginPasswordPlaceHolder".localized

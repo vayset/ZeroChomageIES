@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct CustomTextField: View {
+    
+    // MARK: - Properties
+    
     @Binding var input: String
     let placeHolder: String
     
@@ -30,10 +33,8 @@ struct CustomTextField: View {
                 Spacer()
             }
             .allowsHitTesting(false)
-            
         }
     }
-    
 }
 
 struct CustomTextField_Previews: PreviewProvider {

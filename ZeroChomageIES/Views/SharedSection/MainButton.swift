@@ -9,11 +9,11 @@ import SwiftUI
 
 struct MainButton: View {
     
-    @Binding var isLoading: Bool
+    // MARK: - Properties
     
+    @Binding var isLoading: Bool
     let title: String
     let action: () -> Void
-    
     
     var body: some View {
         Button(action: action) {
@@ -29,7 +29,6 @@ struct MainButton: View {
             .frame(maxWidth: .infinity)
             
         }
-      
         .background(Color.blueHorizon)
         .foregroundColor(Color.white)
         .transition(.slide)
@@ -44,7 +43,6 @@ struct MainButton: View {
         self.title = title
         self.action = action
     }
-    
 }
 
 struct MainButton_Previews: PreviewProvider {

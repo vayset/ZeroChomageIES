@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TextButton: View {
     
+    // MARK: - Properties
+    
     let titleForButton: String
     let colorForButton: Color
     let action: () -> Void
@@ -23,8 +25,6 @@ struct TextButton: View {
                 .font(.custom("Ubuntu-Medium", size: 18))
         }
         .foregroundColor(colorForButton)
-        
-        
     }
 }
 

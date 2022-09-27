@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ImportPhoto: View {
+    
+    // MARK: - Properties
+    
     @State private var image = UIImage()
     @Binding  var showSheet: Bool
     let action: () -> Void

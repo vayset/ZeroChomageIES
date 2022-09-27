@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct CustomSecureTextField: View {
+    
+    // MARK: - Properties
+
     @Binding var input: String
     let placeHolder: String
     @State var isVisible = false

@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// MARK: - RootView
+
 struct RootView: View {
     
     @StateObject var viewModel = RootViewModel()
@@ -22,7 +24,5 @@ struct RootView: View {
                 MainView()
             }
         }.environmentObject(viewModel)
-
     }
-    
 }

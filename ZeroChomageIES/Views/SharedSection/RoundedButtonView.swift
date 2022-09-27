@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct RoundedButtonView: View {
+    
+    // MARK: - Properties
+    
     let action: () -> Void
     
     var body: some View {
