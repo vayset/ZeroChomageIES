@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AccountView: View {
     
-
+    
     @StateObject var questionnairesContainerViewModel = QuestionnairesContainerViewModel(shouldPrefillWithUserData: true)
     
     @StateObject var viewModel: AccountViewModel
@@ -42,10 +42,7 @@ struct AccountView: View {
                     HStack {
                         if !viewModel.isOverrideUser {
                             Button("Edit") {
-                                
                                 questionnairesContainerViewModel.isQuestionnairePresented = true
-                                
-                                
                             }
                             .font(.custom("Gilroy-Semibold", size: 16))
                             .foregroundColor(.orange)

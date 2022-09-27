@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CustomWithViewModelTextField: View {
     
+    // MARK: - Properties
+    
     @ObservedObject var viewModel: FormTextFieldViewModel
     
     var body: some View {
@@ -30,7 +32,6 @@ struct CustomWithViewModelTextField: View {
                 Spacer()
             }
             .allowsHitTesting(false)
-            
         }
     }
 }

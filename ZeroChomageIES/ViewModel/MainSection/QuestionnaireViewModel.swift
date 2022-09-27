@@ -43,9 +43,4 @@ final class QuestionnaireViewModel: ObservableObject {
             isNextFormPresented.toggle()
         }
     }
-    
-    
-    
-    // rajouter info dépendente du formulaire
-    // let imageName: String
 }

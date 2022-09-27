@@ -36,3 +36,4 @@
 "messageFeelQuestionnaire" = "Vous devez d'abord remplir le questionnaire !";
 "messageBeingReviewedQuestionnaire" = "Votre questionnaire est en cours d'examen... veuillez patienter encore un peu";
 "messageHasBeenValidatedQuestionnaire" = "Votre profil a été validée, félicitations ! nous vous rappellerons bientôt...";
+"nextText" = "Suivant";

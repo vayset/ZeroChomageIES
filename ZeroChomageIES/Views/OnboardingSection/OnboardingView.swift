@@ -26,7 +26,7 @@ struct OnboardingView: View {
             .tabViewStyle(PageTabViewStyle())
             
             if !viewModel.isLastSlide {
-                MainButton(title: "Suivant") {
+                MainButton(title: Strings.nextText) {
                     withAnimation {
                         viewModel.incrementSlideIndex()
                     }
@@ -34,15 +34,11 @@ struct OnboardingView: View {
                 .padding()
                 .scaleEffect(scale)
                 .animation(.easeIn, value: scale)
-//                .matchedGeometryEffect(id: "OnboardingButton", in: nameSpace)
-                
             } else {
                 
                 Button("+") {
                     viewModel.didFinishOnboarding()
                     rootViewModel.updateCurrentRootType()
-                    print("should leave onboarding")
-                    
                 }
                 .frame(width: 50, height: 50, alignment: .center)
                 .background(Color.blueHorizon)
@@ -51,20 +47,9 @@ struct OnboardingView: View {
                 .padding()
                 .scaleEffect(scale)
                 .animation(.easeIn, value: scale)
-//                .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
-//                .matchedGeometryEffect(id: "OnboardingButton", in: nameSpace, isSource: false)
             }
         }
     }
-    
-    
-//    private var titleView: some View {
-//        Text(viewModel.currentSlide.title)
-//            .font(.custom("Ubuntu-Medium", size: 40))
-//            .foregroundColor(.textMainColor)
-//            .multilineTextAlignment(.center)
-//    }
-    
 }
 
 struct OnboardingView_Previews: PreviewProvider {

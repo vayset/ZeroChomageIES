@@ -52,14 +52,12 @@ struct QuestionnaireView: View {
                 }
                 Spacer()
             }
-            //.padding(.horizontal)
         }
         .listStyle(.plain)
         .navigationTitle(
             viewModel.title
         )
         .navigationBarTitleDisplayMode(.inline)
-        //            .background(Color.white.edgesIgnoringSafeArea(.all))
         NavigationLink(
             isActive: $viewModel.isNextFormPresented
         ) {

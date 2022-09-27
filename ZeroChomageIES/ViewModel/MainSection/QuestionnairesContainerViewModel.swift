@@ -90,7 +90,7 @@ final class QuestionnairesContainerViewModel: ObservableObject {
             .init(
                 title: "Info 1",
                 imageName: "Illustration1",
-                buttonTitle: "Suivant",
+                buttonTitle: Strings.nextText,
                 formTextFieldViewModels: [
                     .init(
                         placeHolder: "Nom",
@@ -118,7 +118,7 @@ final class QuestionnairesContainerViewModel: ObservableObject {
             .init(// TODO: Should handle prefill information for other questionnaire pages as well
                 title: "Info 2",
                 imageName: "Illustration3",
-                buttonTitle: "Suivant",
+                buttonTitle: Strings.nextText,
                 formTextFieldViewModels: [
                     .init(placeHolder: "Numero de tel"),
                     .init(placeHolder: "Date de naissance"),
@@ -148,8 +148,6 @@ final class QuestionnairesContainerViewModel: ObservableObject {
             
             questionnaireViewModels.last?.isLoading = false
         }
-        
-        
     }
     
     private func sendQuestionnaire() async throws {
