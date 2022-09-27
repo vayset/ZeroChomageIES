@@ -14,6 +14,17 @@ final class UserService: ObservableObject{
     
     @Published var cachedUser: User?
     
+    
+    init(
+        networkManager: NetworkManagerProtocol = NetworkManager.shared,
+        keychainService: KeychainServiceProtocol = KeychainService.shared,
+        jsonEncoder: JSONEncoderProtocol = JSONEncoder()
+    ) {
+        self.networkManager = networkManager
+        self.keychainService = keychainService
+        self.jsonEncoder = jsonEncoder
+    }
+    
     func fetchUser() async throws -> User {
         let url = URL(string: "http://localhost:8080/api/v1/user-account-info/")!
         
@@ -64,7 +75,7 @@ final class UserService: ObservableObject{
         
         let requestBody = ValidateUserBody(userToValidateEmail: user.email)
         
-        guard let encodedBody = try? JSONEncoder().encode(requestBody) else {
+        guard let encodedBody = try? jsonEncoder.encode(requestBody) else {
             throw NewsArticlesServiceError.createNewsArticleFailedEncoding
         }
         
@@ -81,8 +92,10 @@ final class UserService: ObservableObject{
         }
     }
     
-    private let networkManager = NetworkManager.shared
-    private let keychainService = KeychainService.shared
+    private let networkManager: NetworkManagerProtocol
+    private let keychainService: KeychainServiceProtocol
+    private let jsonEncoder: JSONEncoderProtocol
+    
 }
 
 

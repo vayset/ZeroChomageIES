@@ -100,6 +100,16 @@
 		3FDD8E3828E3699A0092BA21 /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD8E3728E3699A0092BA21 /* SignUpRequest.swift */; };
 		3FDD8E3B28E369D50092BA21 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD8E3A28E369D50092BA21 /* AuthenticationService.swift */; };
 		3FDD8E3D28E369E90092BA21 /* AuthenticationServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD8E3C28E369E90092BA21 /* AuthenticationServiceError.swift */; };
+		3FDD8E3F28E36B670092BA21 /* NewsArticlesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD8E3E28E36B670092BA21 /* NewsArticlesServiceTests.swift */; };
+		3FDD8E4128E36F080092BA21 /* JsonEncoderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD8E4028E36F080092BA21 /* JsonEncoderMock.swift */; };
+		3FDD8E4328E36FCC0092BA21 /* NetworkManagerArticleMockSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD8E4228E36FCC0092BA21 /* NetworkManagerArticleMockSuccess.swift */; };
+		3FDD8E4528E36FE70092BA21 /* NetworkManagerMockFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD8E4428E36FE70092BA21 /* NetworkManagerMockFailure.swift */; };
+		3FDD8E4728E3707C0092BA21 /* AuthenticationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD8E4628E3707C0092BA21 /* AuthenticationServiceTests.swift */; };
+		3FDD8E4928E3708D0092BA21 /* KeychainServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD8E4828E3708D0092BA21 /* KeychainServiceMock.swift */; };
+		3FDD8E4B28E371E20092BA21 /* NetworkManagerAuthenticationMockSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD8E4A28E371E20092BA21 /* NetworkManagerAuthenticationMockSuccess.swift */; };
+		3FDD8E4D28E373E60092BA21 /* KeychainServiceFailureMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD8E4C28E373E60092BA21 /* KeychainServiceFailureMock.swift */; };
+		3FDD8E4F28E376C60092BA21 /* UserServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD8E4E28E376C60092BA21 /* UserServiceTests.swift */; };
+		3FDD8E5128E377C70092BA21 /* NetworkManagerUserMockSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD8E5028E377C70092BA21 /* NetworkManagerUserMockSuccess.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -217,6 +227,16 @@
 		3FDD8E3728E3699A0092BA21 /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		3FDD8E3A28E369D50092BA21 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		3FDD8E3C28E369E90092BA21 /* AuthenticationServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationServiceError.swift; sourceTree = "<group>"; };
+		3FDD8E3E28E36B670092BA21 /* NewsArticlesServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticlesServiceTests.swift; sourceTree = "<group>"; };
+		3FDD8E4028E36F080092BA21 /* JsonEncoderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonEncoderMock.swift; sourceTree = "<group>"; };
+		3FDD8E4228E36FCC0092BA21 /* NetworkManagerArticleMockSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerArticleMockSuccess.swift; sourceTree = "<group>"; };
+		3FDD8E4428E36FE70092BA21 /* NetworkManagerMockFailure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerMockFailure.swift; sourceTree = "<group>"; };
+		3FDD8E4628E3707C0092BA21 /* AuthenticationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationServiceTests.swift; sourceTree = "<group>"; };
+		3FDD8E4828E3708D0092BA21 /* KeychainServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServiceMock.swift; sourceTree = "<group>"; };
+		3FDD8E4A28E371E20092BA21 /* NetworkManagerAuthenticationMockSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerAuthenticationMockSuccess.swift; sourceTree = "<group>"; };
+		3FDD8E4C28E373E60092BA21 /* KeychainServiceFailureMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServiceFailureMock.swift; sourceTree = "<group>"; };
+		3FDD8E4E28E376C60092BA21 /* UserServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceTests.swift; sourceTree = "<group>"; };
+		3FDD8E5028E377C70092BA21 /* NetworkManagerUserMockSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerUserMockSuccess.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +270,13 @@
 			children = (
 				3F3A73AE28E35BE700886A70 /* RegularExpressionFactoryMock.swift */,
 				3FDD8E2E28E365E70092BA21 /* NewsArticlesServiceMock.swift */,
+				3FDD8E4028E36F080092BA21 /* JsonEncoderMock.swift */,
+				3FDD8E4228E36FCC0092BA21 /* NetworkManagerArticleMockSuccess.swift */,
+				3FDD8E4428E36FE70092BA21 /* NetworkManagerMockFailure.swift */,
+				3FDD8E4828E3708D0092BA21 /* KeychainServiceMock.swift */,
+				3FDD8E4A28E371E20092BA21 /* NetworkManagerAuthenticationMockSuccess.swift */,
+				3FDD8E4C28E373E60092BA21 /* KeychainServiceFailureMock.swift */,
+				3FDD8E5028E377C70092BA21 /* NetworkManagerUserMockSuccess.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -504,6 +531,9 @@
 				3FCA86AB2713631100275A66 /* OnboardingViewModelTests.swift */,
 				3F537B5F28703A7C002D70CC /* FormValidatorServiceTests.swift */,
 				3F3A73B028E35F7800886A70 /* NewsListViewModelTests.swift */,
+				3FDD8E3E28E36B670092BA21 /* NewsArticlesServiceTests.swift */,
+				3FDD8E4628E3707C0092BA21 /* AuthenticationServiceTests.swift */,
+				3FDD8E4E28E376C60092BA21 /* UserServiceTests.swift */,
 			);
 			path = ZeroChomageIESTests;
 			sourceTree = "<group>";
@@ -816,9 +846,19 @@
 			files = (
 				3FDD8E2F28E365E70092BA21 /* NewsArticlesServiceMock.swift in Sources */,
 				3F537B6028703A7C002D70CC /* FormValidatorServiceTests.swift in Sources */,
+				3FDD8E4928E3708D0092BA21 /* KeychainServiceMock.swift in Sources */,
+				3FDD8E4D28E373E60092BA21 /* KeychainServiceFailureMock.swift in Sources */,
+				3FDD8E5128E377C70092BA21 /* NetworkManagerUserMockSuccess.swift in Sources */,
+				3FDD8E4328E36FCC0092BA21 /* NetworkManagerArticleMockSuccess.swift in Sources */,
 				3FCA86AC2713631100275A66 /* OnboardingViewModelTests.swift in Sources */,
+				3FDD8E4F28E376C60092BA21 /* UserServiceTests.swift in Sources */,
 				3F3A73AF28E35BE700886A70 /* RegularExpressionFactoryMock.swift in Sources */,
 				3F3A73B128E35F7800886A70 /* NewsListViewModelTests.swift in Sources */,
+				3FDD8E4128E36F080092BA21 /* JsonEncoderMock.swift in Sources */,
+				3FDD8E4B28E371E20092BA21 /* NetworkManagerAuthenticationMockSuccess.swift in Sources */,
+				3FDD8E4528E36FE70092BA21 /* NetworkManagerMockFailure.swift in Sources */,
+				3FDD8E4728E3707C0092BA21 /* AuthenticationServiceTests.swift in Sources */,
+				3FDD8E3F28E36B670092BA21 /* NewsArticlesServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

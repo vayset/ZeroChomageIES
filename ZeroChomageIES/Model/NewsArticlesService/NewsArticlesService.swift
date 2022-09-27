@@ -18,10 +18,12 @@ final class NewsArticlesService: NewsArticlesServiceProtocol {
     
     init(
         networkManager: NetworkManagerProtocol = NetworkManager.shared,
-        keychainService: KeychainServiceProtocol = KeychainService.shared
+        keychainService: KeychainServiceProtocol = KeychainService.shared,
+        jsonEncoder: JSONEncoderProtocol = JSONEncoder()
     ) {
         self.networkManager = networkManager
         self.keychainService = keychainService
+        self.jsonEncoder = jsonEncoder
     }
     
     
@@ -32,7 +34,7 @@ final class NewsArticlesService: NewsArticlesServiceProtocol {
         request.httpMethod = HTTPMethod.post.rawValue
         
         
-        guard let encodedBody = try? JSONEncoder().encode(requestBody) else {
+        guard let encodedBody = try? jsonEncoder.encode(requestBody) else {
             throw NewsArticlesServiceError.createNewsArticleFailedEncoding
         }
         
@@ -70,5 +72,14 @@ final class NewsArticlesService: NewsArticlesServiceProtocol {
     
     private let networkManager: NetworkManagerProtocol
     private let keychainService: KeychainServiceProtocol
+    private let jsonEncoder: JSONEncoderProtocol
     
+}
+
+
+protocol JSONEncoderProtocol {
+    func encode<T>(_ value: T) throws -> Data where T : Encodable
+}
+
+extension JSONEncoder: JSONEncoderProtocol {
 }
