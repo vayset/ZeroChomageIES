@@ -10,7 +10,9 @@ import SwiftUI
 
 
 struct KeychainTestView: View {
-    
+        
+    // MARK: - Properties
+
     @State var tokenToStore = ""
     @State var retrievedToken = ""
     @State var error: KeychainServiceError?
@@ -33,11 +35,8 @@ struct KeychainTestView: View {
                 } catch {
                     self.error = (error as? KeychainServiceError)
                 }
-                
             }
-            
             Text("Last error: \(error.debugDescription)")
-            
         }
     }
 }

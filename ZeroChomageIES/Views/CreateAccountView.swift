@@ -8,30 +8,25 @@
 import SwiftUI
 
 struct CreateAccountView: View {
+    
+    // MARK: - Properties
+    
     @State var email = ""
     @State var password = ""
     @State var confirmPassword = ""
     @State var isLoading = false
-    
-    
     @State var isAlertPresented = false
-    
     @State var errorTitle: String?
-    
-    
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var rootViewModel: RootViewModel
     
-    
     var body: some View {
-        
         ScrollView {
             VStack(spacing: 15) {
                 Image("IllustrationSignIn")
                 Spacer()
-                
                 CustomTextField(input: $email, placeHolder: "E-mail")
-                CustomSecureTextField(input: $password, placeHolder: "Mots de passe")
+                CustomSecureTextField(input: $password, placeHolder: Strings.password)
                 Text(
 """
    \(Strings.passwordRespectRulesTitle)
@@ -44,11 +39,10 @@ struct CreateAccountView: View {
                 )
                 .foregroundColor(.gray)
                 .font(.custom("Gilroy-Medium", size: 12))
-                CustomSecureTextField(input: $confirmPassword, placeHolder: "Confirmer votre mots de passe")
-                
+                CustomSecureTextField(input: $confirmPassword, placeHolder: Strings.confirmPassword)
                 MainButton(
                     isLoading: $isLoading,
-                    title: "Inscription",
+                    title: Strings.sigUpShortTitle,
                     action: {
                         Task {
                             isLoading = true
@@ -64,7 +58,6 @@ struct CreateAccountView: View {
                                 rootViewModel.updateCurrentRootType()
                             } catch {
                                 errorTitle = (error as? LocalizedError)?.errorDescription
-                                print("Failed to login")
                                 self.isAlertPresented.toggle()
                             }
                             isLoading = false
@@ -73,27 +66,24 @@ struct CreateAccountView: View {
                 )
                 Spacer()
                 HStack {
-                    Text("Vous avez déjà un compte ?")
+                    Text(Strings.alreadyAccount)
                         .foregroundColor(Color.textPasswordAndSignUpColor)
                         .font(.custom("Gilroy-Medium", size: 16))
                     TextButton(
-                        titleForButton: "Connexion",
+                        titleForButton: Strings.loginText,
                         colorForButton: .secondTextColor,
                         action: {
                             dismiss()
-                            
                         }
                     )
                     .foregroundColor(Color.secondTextColor)
                     .font(.custom("Gilroy-Semibold", size: 16))
-                    
                 }
-                
             }
         }
         .padding(.horizontal)
         .navigationTitle(
-            "Inscription"
+            Strings.sigUpShortTitle
         )
         .navigationBarTitleDisplayMode(.inline)
         .alert(
@@ -106,7 +96,6 @@ struct CreateAccountView: View {
             })
         .background(Color.white.edgesIgnoringSafeArea(.all))
     }
-    
 }
 
 

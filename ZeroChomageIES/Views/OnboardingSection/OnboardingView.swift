@@ -9,11 +9,12 @@ import SwiftUI
 
 struct OnboardingView: View {
     
+    // MARK: - Properties
+    
     @StateObject var viewModel = OnboardingViewModel()
     @EnvironmentObject var rootViewModel: RootViewModel
     @State private var scale: CGFloat = 1
     @Namespace var nameSpace
-    
     
     var body: some View {
         VStack {

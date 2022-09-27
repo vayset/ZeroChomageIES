@@ -41,5 +41,13 @@ struct Strings {
     static let messageBeingReviewedQuestionnaire = "messageBeingReviewedQuestionnaire".localized
     static let messageHasBeenValidatedQuestionnaire = "messageHasBeenValidatedQuestionnaire".localized
     static let nextText = "nextText".localized
+    static let passwordForgotButonTitle = "passwordForgotButonTitle".localized
+    static let loginText = "loginText".localized
+    static let sigUpText = "sigUpText".localized
+    static let sigUpShortTitle = "sigUpShortTitle".localized
+    static let password = "password".localized
+    static let confirmPassword = "confirmPassword".localized
+    static let alreadyAccount = "alreadyAccount".localized
 
 }
+

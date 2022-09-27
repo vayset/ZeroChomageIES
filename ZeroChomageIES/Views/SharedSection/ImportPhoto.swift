@@ -37,9 +37,3 @@ struct ImportPhoto: View {
         self.action = action
     }
 }
-
-//struct ImportPhoto_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ImportPhoto()
-//    }
-//}

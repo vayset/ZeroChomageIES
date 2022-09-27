@@ -37,3 +37,12 @@
 "messageBeingReviewedQuestionnaire" = "Votre questionnaire est en cours d'examen... veuillez patienter encore un peu";
 "messageHasBeenValidatedQuestionnaire" = "Votre profil a été validée, félicitations ! nous vous rappellerons bientôt...";
 "nextText" = "Suivant";
+"passwordForgotButonTitle" = "Mots de passe oublié ?";
+"loginText" = "Connexion";
+"sigUpText" = "Vous n'avez pas de compte ?";
+"sigUpShortTitle" = "Inscription";
+"password" = "Mots de passe";
+"confirmPassword" = "Confirmer vos mots de passe";
+"alreadyAccount" = "Vous avez déjà un compte ?";
+
+

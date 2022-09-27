@@ -8,25 +8,25 @@
 import SwiftUI
 
 struct LoginView: View {
+    
+    // MARK: - Properties
+
     @EnvironmentObject var rootViewModel: RootViewModel
-    //    @State private var email = ""
     @State var email = ""
     @State var password = ""
-    
     @State var errorTitle: String?
-    
     @State var isResetPasswordViewPresented = false
     @State var isCreateAccountViewPresented = false
+    @State var isAlertPresented = false
+    @State var isLoading = false
     
     var body: some View {
         NavigationView {
             VStack(spacing: 15) {
-                
                 Image("IllustrationLogin")
                 Spacer()
                 VStack(spacing: 20) {
                     CustomTextField(input: $email, placeHolder: "E-MAIL")
-                    
                     CustomSecureTextField(input: $password, placeHolder: Strings.loginPasswordPlaceHolder)
                 }
                 
@@ -37,7 +37,6 @@ struct LoginView: View {
                         EmptyView()
                     }
                 
-                
                 NavigationLink(
                     isActive: $isCreateAccountViewPresented) {
                         CreateAccountView()
@@ -45,10 +44,8 @@ struct LoginView: View {
                         EmptyView()
                     }
                 
-                
-                
                 TextButton(
-                    titleForButton: "Mots de passe oublié ?",
+                    titleForButton: Strings.passwordForgotButonTitle,
                     colorForButton: .textPasswordAndSignUpColor,
                     action: {
                         isResetPasswordViewPresented = true
@@ -57,10 +54,8 @@ struct LoginView: View {
                     .font(.custom("Gilroy-Semibold", size: 16))
                     .frame(maxWidth: .infinity, alignment: .trailing)
                 
-                
-                MainButton(isLoading: $isLoading, title: "Connexion", action: {
+                MainButton(isLoading: $isLoading, title: Strings.loginText, action: {
                     Task {
-        
                         do {
                             try FormValidatorService.shared.validate(email: email)
                             try FormValidatorService.shared.validateNotEmptyPassword(password: password)
@@ -72,21 +67,20 @@ struct LoginView: View {
                             rootViewModel.updateCurrentRootType()
                         } catch {
                             errorTitle = (error as? LocalizedError)?.errorDescription
-                            print("Failed to login")
                             self.isAlertPresented.toggle()
                         }
                         isLoading = false
                     }
                 })
                     .padding(.top, 20)
-                
+        
                 Spacer()
                 HStack {
-                    Text("Vous n'avez pas de compte ?")
+                    Text(Strings.sigUpText)
                         .foregroundColor(Color.textPasswordAndSignUpColor)
                         .font(.custom("Gilroy-Medium", size: 16))
                     TextButton(
-                        titleForButton: "Inscription",
+                        titleForButton: Strings.sigUpShortTitle,
                         colorForButton: .secondTextColor,
                         action: {
                             isCreateAccountViewPresented = true
@@ -107,16 +101,13 @@ struct LoginView: View {
                 })
             .padding(.horizontal)
             .navigationTitle(
-                Text("Connexion")
+                Text(Strings.loginText)
             )
             .navigationBarTitleDisplayMode(.inline)
             .background(Color.white.edgesIgnoringSafeArea(.all))
 
         }
     }
-    
-    @State var isAlertPresented = false
-    @State var isLoading = false
 }
 
 struct LoginView_Previews: PreviewProvider {

@@ -38,6 +38,10 @@
 "messageBeingReviewedQuestionnaire" = "Your questionnaire is being reviewed... please wait a little more";
 "messageHasBeenValidatedQuestionnaire" = "Your profile has been validated, congratulations! we will call you back soon...";
 "nextText" = "Next";
-
-
-
+"passwordForgotButonTitle" = "Forgot passwords ?";
+"loginText" = "Login";
+"sigUpText" = "You do not have an account ?";
+"sigUpShortTitle" = "Sign up";
+"password" = "Password";
+"confirmPassword" = "Confirm your passwords";
+"alreadyAccount" = "Already have an account ?";

@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct TabSlideView: View {
-    @ObservedObject var onboardingViewModel: OnboardingViewModel
-
-    @State private var isAnimating: Bool = true
     
+    // MARK: - Properties
+    
+    @ObservedObject var onboardingViewModel: OnboardingViewModel
+    @State private var isAnimating: Bool = true
     @ObservedObject var viewModel: TabSlideViewModel
     
     var body: some View {
-        
-        
         VStack {
             Text(viewModel.title)
                 .font(.custom("Ubuntu-Medium", size: 40))
@@ -37,10 +36,7 @@ struct TabSlideView: View {
         }
         .background(Color.white.edgesIgnoringSafeArea(.all))
         .padding(.horizontal)
-        
-        
     }
-    
 }
 
 //struct TabView_Previews: PreviewProvider {

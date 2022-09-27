@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ResetPasswordView: View {
+    
+    // MARK: - Properties
+    
     @EnvironmentObject var rootViewModel: RootViewModel
     
     var body: some View {
@@ -16,7 +19,7 @@ struct ResetPasswordView: View {
                 Spacer()
                 Image("IllustrationLogin")
                 Spacer()
-                    Text(Strings.emailFordResetPassword)
+                Text(Strings.emailFordResetPassword)
                 Spacer()
             }
             .padding(.horizontal)
