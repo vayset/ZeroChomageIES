@@ -143,10 +143,3 @@ class FormValidatorServiceTests: XCTestCase {
 }
 
 
-final class RegularExpressionFactoryMock: RegularExpressionFactoryProtocol {
-    func createRegularExpressionFrom(pattern: String) -> NSRegularExpression? {
-        return nil
-    }
-    
-    
-}

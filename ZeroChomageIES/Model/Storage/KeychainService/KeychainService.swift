@@ -7,8 +7,13 @@
 
 import Foundation
 
+protocol KeychainServiceProtocol {
+    func save(token: String) throws
+    func getToken() throws -> String
+    func deleteToken() throws
+}
 
-final class KeychainService {
+final class KeychainService: KeychainServiceProtocol {
     
     static let shared = KeychainService()
     

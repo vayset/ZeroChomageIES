@@ -1,47 +1,13 @@
 //
-//  NetworkManager.swift
+//  AuthenticationService.swift
 //  ZeroChomageIES
 //
-//  Created by Saddam Satouyev on 27/01/2022.
+//  Created by Saddam Satouyev on 27/09/2022.
 //
 
 import Foundation
 import ZeroChomageWebShared
 
-enum AuthenticationServiceError: LocalizedError {
-    case loginFailed
-    case loginFailedEncodingError
-    case loginFailedCouldNotStoreUserToken
-    
-    case signUpFailedPasswordAndConfirmationDontMatch
-    case signUpFailedNetworkError
-    case signUpFailedEncodingError
-    case signUpFailedCouldNotStoreUserToken
-    
-    case unknownError
-    
-    var errorDescription: String? {
-        switch self {
-        case .loginFailed:
-            return "La connexion a échoué."
-        case .loginFailedEncodingError:
-            return "L'encodage de la requête a échoué."
-        case .loginFailedCouldNotStoreUserToken:
-            return "Impossible de stocker le jeton d'identification"
-        case .signUpFailedPasswordAndConfirmationDontMatch:
-            return "Le mot de passe et sa confirmation ne correspondent pas."
-        case .signUpFailedNetworkError:
-            return "La création du compte a échoué."
-        case .signUpFailedEncodingError:
-            return "L'encodage de la requête a échoué."
-        case .signUpFailedCouldNotStoreUserToken:
-            return "Impossible de stocker le jeton d'identification"
-        case .unknownError:
-            return "Erreur inconnue."
-        }
-    }
-    
-}
 
 final class AuthenticationService {
     static let shared = AuthenticationService()
@@ -107,60 +73,4 @@ final class AuthenticationService {
             throw AuthenticationServiceError.signUpFailedCouldNotStoreUserToken
         }
     }
-}
-    
-
-struct SignUpRequest: Encodable {
-    let email: String
-    let password: String
-    let passwordConfirmation: String
-}
-
-struct SignUpResponse: Codable {
-    let userToken: String
-}
-
-
-enum NetworkManagerError: Error {
-    case unknownError
-    case invalidHttpUrlResponse
-}
-
-final class NetworkManager {
-    
-    static let shared = NetworkManager()
-    
-    
-    func fetch<T: Codable>(urlRequest: URLRequest) async throws -> T {
-        
-        let (data, _) = try await URLSession.shared.data(for: urlRequest)
-        
-        let decodedData = try JSONDecoder().decode(T.self, from: data)
-        
-        return decodedData
-        
-    }
-    
-    
-    func send(urlRequest: URLRequest) async throws {
-        
-        guard let (_, response) = try? await URLSession.shared.data(for: urlRequest) else {
-            throw NetworkManagerError.unknownError
-        }
-        
-        guard let response = response as? HTTPURLResponse,
-              200...299 ~= response.statusCode 
-        else {
-            throw NetworkManagerError.invalidHttpUrlResponse
-        }
-        
-    }
-}
-
-
-
-
-enum HTTPMethod: String {
-    case get = "GET"
-    case post = "POST"
 }

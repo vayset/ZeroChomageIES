@@ -10,6 +10,16 @@ import Foundation
 @MainActor
 final class NewsListViewModel: ObservableObject {
     
+    init(
+        newsArticlesService: NewsArticlesServiceProtocol = NewsArticlesService.shared
+    ) {
+        self.newsArticlesService = newsArticlesService
+    }
+
+    
+    var alertTitle = ""
+    @Published var isAlertPresented = false
+    
     func fetchArticles() async {
         isLoading = true
         
@@ -33,7 +43,8 @@ final class NewsListViewModel: ObservableObject {
             
             
         } catch {
-            return // TODO: Should display alert
+            alertTitle = error.localizedDescription
+            isAlertPresented.toggle()
         }
         
         
@@ -53,6 +64,6 @@ final class NewsListViewModel: ObservableObject {
     
     lazy var articleChomageCellViewModels: [ChomageCellViewModel] = []
     
-    private let newsArticlesService = NewsArticlesService.shared
+    private let newsArticlesService: NewsArticlesServiceProtocol
     
 }
