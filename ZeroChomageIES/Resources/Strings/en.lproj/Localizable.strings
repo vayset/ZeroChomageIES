@@ -45,3 +45,7 @@
 "password" = "Password";
 "confirmPassword" = "Confirm your passwords";
 "alreadyAccount" = "Already have an account ?";
+"editText" = "Edit profile";
+"createArticleTitle" = "Create Article";
+
+

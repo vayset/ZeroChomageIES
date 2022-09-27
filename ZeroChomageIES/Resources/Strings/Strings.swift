@@ -48,6 +48,10 @@ struct Strings {
     static let password = "password".localized
     static let confirmPassword = "confirmPassword".localized
     static let alreadyAccount = "alreadyAccount".localized
+    static let editText = "editText".localized
+    static let createArticleTitle = "createArticleTitle".localized
 
+    
 }
+
 

@@ -1,5 +1,5 @@
 //
-//  ChomageCellView.swift
+//  GenericCellView.swift
 //  ZeroChomageIES
 //
 //  Created by Saddam Satouyev on 04/09/2022.
@@ -7,12 +7,14 @@
 
 import SwiftUI
 
-struct ChomageCellView: View {
+struct GenericCellView: View {
+    
+    // MARK: - Properties
+    
     @ObservedObject var viewModel: ChomageCellViewModel
     
     var body: some View {
         VStack {
-            
             VStack {
                 HStack(alignment: .top) {
                     Image(systemName: viewModel.iconSystemName)
@@ -56,7 +58,7 @@ struct ChomageCellView: View {
 
 struct ChomageCellView_Previews: PreviewProvider {
     static var previews: some View {
-        ChomageCellView(
+        GenericCellView(
             viewModel: .init(
                 article: .init(
                     backgroundImageName: "work_image",

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct AdminPanelView: View {
+    
+    // MARK: - Properties
+
     @StateObject var viewModel = AdminPanelViewModel()
     
     var body: some View {
@@ -31,7 +34,7 @@ struct AdminPanelView: View {
             } label: {
                 Text("Ok")
             }
-
+            
         })
         .refreshable {
             await viewModel.fetchUsers()

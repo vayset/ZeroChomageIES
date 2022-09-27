@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct QuestionnaireView: View {
-    let index: Int
     
+    // MARK: - Properties
+    
+    let index: Int
+    @ObservedObject var questionnairesContainerViewModel: QuestionnairesContainerViewModel
+    @ObservedObject var viewModel: QuestionnaireViewModel
+    
+    // init
     init(
         index: Int,
         questionnairesContainerViewModel: QuestionnairesContainerViewModel
@@ -20,12 +26,8 @@ struct QuestionnaireView: View {
         self.viewModel = questionnairesContainerViewModel.questionnaireViewModels[index]
     }
     
-    @ObservedObject var questionnairesContainerViewModel: QuestionnairesContainerViewModel
-    @ObservedObject var viewModel: QuestionnaireViewModel
-    
     var body: some View {
         List {
-            
             VStack(spacing: 15) {
                 Image(viewModel.imageName)
                     .resizable()
@@ -46,7 +48,6 @@ struct QuestionnaireView: View {
                         action: {
                             viewModel.performAction()
                         }
-                        
                     )
                     .buttonStyle(.plain)
                 }
@@ -74,6 +75,7 @@ struct QuestionnaireView: View {
         }
     }
 }
+
 //
 //struct QuestionnaireView_Previews: PreviewProvider {
 //    static var previews: some View {

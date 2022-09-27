@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct CheckStatusView: View {
+    
+    // MARK: - Properties
+    
     @StateObject var viewModel = CheckStatusViewModel()
     
     var body: some View {
-        
         Group {
             if viewModel.isLoading {
                 ProgressView()
@@ -49,9 +51,7 @@ struct CheckStatusView: View {
         )
         .navigationBarTitleDisplayMode(.inline)
         .background(Color.blueHorizon.edgesIgnoringSafeArea(.all))
-        
     }
-
 }
 
 

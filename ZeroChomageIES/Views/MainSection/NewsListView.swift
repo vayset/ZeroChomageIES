@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct NewsListView: View {
+    
+    // MARK: - Properties
+
     @State private var showingArticleView = false
     @StateObject var viewModel = NewsListViewModel()
     
@@ -19,7 +22,7 @@ struct NewsListView: View {
             }
         
         List(viewModel.articleChomageCellViewModels, id: \.title) { viewModel in
-            ChomageCellView(viewModel: viewModel)
+            GenericCellView(viewModel: viewModel)
                 .listRowSeparator(.hidden)
         }
         .listStyle(.plain)
@@ -53,7 +56,6 @@ struct NewsListView: View {
                     Image(systemName: "plus.square.fill")
                         .foregroundColor(Color.blueHorizon)
                 }
-                
             }
         }
         .fullScreenCover(isPresented:  $showingArticleView) {

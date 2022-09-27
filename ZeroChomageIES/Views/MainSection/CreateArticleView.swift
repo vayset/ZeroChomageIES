@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct CreateArticleView: View {
+    
+    // MARK: - Properties
+    
     @StateObject var viewModel = CreateArticleViewModel()
     @Binding var showingArticleView: Bool
     
@@ -35,9 +38,8 @@ struct CreateArticleView: View {
                 } label: {
                     Text("OK")
                 }
-                
             }
-            .navigationTitle("Create Article")
+            .navigationTitle(Strings.createArticleTitle)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
@@ -45,7 +47,6 @@ struct CreateArticleView: View {
                     } label: {
                         Image(systemName: "xmark")
                     }
-
                 }
             }
         }

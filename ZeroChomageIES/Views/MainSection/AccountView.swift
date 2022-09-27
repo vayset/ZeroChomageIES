@@ -9,9 +9,7 @@ import SwiftUI
 
 struct AccountView: View {
     
-    
     @StateObject var questionnairesContainerViewModel = QuestionnairesContainerViewModel(shouldPrefillWithUserData: true)
-    
     @StateObject var viewModel: AccountViewModel
     @EnvironmentObject var rootViewModel: RootViewModel
     
@@ -41,7 +39,7 @@ struct AccountView: View {
                     
                     HStack {
                         if !viewModel.isOverrideUser {
-                            Button("Edit") {
+                            Button(Strings.editText) {
                                 questionnairesContainerViewModel.isQuestionnairePresented = true
                             }
                             .font(.custom("Gilroy-Semibold", size: 16))
@@ -98,9 +96,7 @@ struct AccountView: View {
                         Image("logout")
                     }
                 }
-                
             }
-            
         }
         .onReceive(viewModel.$shoudUpdateCurrentRootType) { shoudUpdateCurrentRootType  in
             if shoudUpdateCurrentRootType {

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ArticleDetailsView: View {
+    
+    // MARK: - Properties
+
     let viewModel: Article?
     
     var body: some View {

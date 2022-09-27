@@ -44,5 +44,7 @@
 "password" = "Mots de passe";
 "confirmPassword" = "Confirmer vos mots de passe";
 "alreadyAccount" = "Vous avez déjà un compte ?";
+"editText" = "Modifier les informations";
+"createArticleTitle" = "Créer un article";
 
 

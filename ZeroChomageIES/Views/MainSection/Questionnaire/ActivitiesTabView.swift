@@ -10,7 +10,9 @@ import SwiftUI
 
 
 struct ActivitiesTabView: View {
-    
+        
+    // MARK: - Properties
+
     @StateObject var questionnairesContainerViewModel = QuestionnairesContainerViewModel(shouldPrefillWithUserData: false)
     @StateObject var viewModel = ActivitiesTabViewModel()
     
@@ -66,11 +68,11 @@ struct ActivitiesTabView: View {
     private var questionnaireNotFilledView: some View {
         VStack {
             
-            ChomageCellView(viewModel: questionnairesContainerViewModel.startCell)
+            GenericCellView(viewModel: questionnairesContainerViewModel.startCell)
             if viewModel.userIsAdmin {
-                ChomageCellView(viewModel: questionnairesContainerViewModel.adminPanelCell)
+                GenericCellView(viewModel: questionnairesContainerViewModel.adminPanelCell)
             } else {
-                ChomageCellView(viewModel: questionnairesContainerViewModel.statusCell)
+                GenericCellView(viewModel: questionnairesContainerViewModel.statusCell)
             }
             NavigationLink(
                 isActive: $questionnairesContainerViewModel.isQuestionnairePresented
@@ -89,13 +91,13 @@ struct ActivitiesTabView: View {
     
     private var questionnaireAlreadyFilledView: some View {
         VStack {
-            ChomageCellView(viewModel: questionnairesContainerViewModel.newsCell)
+            GenericCellView(viewModel: questionnairesContainerViewModel.newsCell)
             if viewModel.userIsAdmin {
-                ChomageCellView(viewModel: questionnairesContainerViewModel.adminPanelCell)
+                GenericCellView(viewModel: questionnairesContainerViewModel.adminPanelCell)
             } else {
-                ChomageCellView(viewModel: questionnairesContainerViewModel.statusCell)
+                GenericCellView(viewModel: questionnairesContainerViewModel.statusCell)
             }
-                        
+            
             NavigationLink(
                 destination: NewsListView(),
                 isActive: $questionnairesContainerViewModel.isNewsListPresented) {

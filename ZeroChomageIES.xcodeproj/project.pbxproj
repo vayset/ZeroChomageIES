@@ -88,7 +88,7 @@
 		3FD8BB9428C41E80000FB6D0 /* UserProfilInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BB9328C41E80000FB6D0 /* UserProfilInformation.swift */; };
 		3FD8BB9628C41ED1000FB6D0 /* CheckStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BB9528C41ED1000FB6D0 /* CheckStatusViewModel.swift */; };
 		3FD8BB9928C41F16000FB6D0 /* ApprovalStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BB9828C41F16000FB6D0 /* ApprovalStatus.swift */; };
-		3FD8BB9B28C42006000FB6D0 /* ChomageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BB9A28C42006000FB6D0 /* ChomageCellView.swift */; };
+		3FD8BB9B28C42006000FB6D0 /* GenericCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BB9A28C42006000FB6D0 /* GenericCellView.swift */; };
 		3FD8BBBA28C54455000FB6D0 /* CreateArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BBB928C54455000FB6D0 /* CreateArticleView.swift */; };
 		3FD8BBBC28C6919D000FB6D0 /* ImportPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BBBB28C6919D000FB6D0 /* ImportPhoto.swift */; };
 		3FD8BBBE28C69254000FB6D0 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8BBBD28C69254000FB6D0 /* ImagePickerView.swift */; };
@@ -109,6 +109,7 @@
 		3FDD8E4D28E373E60092BA21 /* KeychainServiceFailureMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD8E4C28E373E60092BA21 /* KeychainServiceFailureMock.swift */; };
 		3FDD8E4F28E376C60092BA21 /* UserServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD8E4E28E376C60092BA21 /* UserServiceTests.swift */; };
 		3FDD8E5128E377C70092BA21 /* NetworkManagerUserMockSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD8E5028E377C70092BA21 /* NetworkManagerUserMockSuccess.swift */; };
+		3FDD8E5B28E3BDEF0092BA21 /* RootType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD8E5A28E3BDEF0092BA21 /* RootType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -214,7 +215,7 @@
 		3FD8BB9328C41E80000FB6D0 /* UserProfilInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilInformation.swift; sourceTree = "<group>"; };
 		3FD8BB9528C41ED1000FB6D0 /* CheckStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckStatusViewModel.swift; sourceTree = "<group>"; };
 		3FD8BB9828C41F16000FB6D0 /* ApprovalStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalStatus.swift; sourceTree = "<group>"; };
-		3FD8BB9A28C42006000FB6D0 /* ChomageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChomageCellView.swift; sourceTree = "<group>"; };
+		3FD8BB9A28C42006000FB6D0 /* GenericCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCellView.swift; sourceTree = "<group>"; };
 		3FD8BBB928C54455000FB6D0 /* CreateArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateArticleView.swift; sourceTree = "<group>"; };
 		3FD8BBBB28C6919D000FB6D0 /* ImportPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportPhoto.swift; sourceTree = "<group>"; };
 		3FD8BBBD28C69254000FB6D0 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
@@ -235,6 +236,7 @@
 		3FDD8E4C28E373E60092BA21 /* KeychainServiceFailureMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServiceFailureMock.swift; sourceTree = "<group>"; };
 		3FDD8E4E28E376C60092BA21 /* UserServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceTests.swift; sourceTree = "<group>"; };
 		3FDD8E5028E377C70092BA21 /* NetworkManagerUserMockSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerUserMockSuccess.swift; sourceTree = "<group>"; };
+		3FDD8E5A28E3BDEF0092BA21 /* RootType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				3FCA86E327186CDF00275A66 /* RootViewModel.swift */,
+				3FDD8E5A28E3BDEF0092BA21 /* RootType.swift */,
 				3F537B8028706A5F002D70CC /* OnboardingSection */,
 				3F537B7F28706A4C002D70CC /* MainSection */,
 				3F537B7E28706A33002D70CC /* SharedSection */,
@@ -471,7 +474,7 @@
 		3F8101B028A7265B00257299 /* Elements */ = {
 			isa = PBXGroup;
 			children = (
-				3FD8BB9A28C42006000FB6D0 /* ChomageCellView.swift */,
+				3FD8BB9A28C42006000FB6D0 /* GenericCellView.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -766,7 +769,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F8DEB6F27A32BBF00436BD2 /* NetworkManager.swift in Sources */,
-				3FD8BB9B28C42006000FB6D0 /* ChomageCellView.swift in Sources */,
+				3FD8BB9B28C42006000FB6D0 /* GenericCellView.swift in Sources */,
 				3F4FF08728DA6B770038A8D0 /* AdminPanelView.swift in Sources */,
 				3FD8BBBA28C54455000FB6D0 /* CreateArticleView.swift in Sources */,
 				3FBB6BE428DD0E5F007020AF /* AccountView.swift in Sources */,
@@ -822,6 +825,7 @@
 				3FD8BB9428C41E80000FB6D0 /* UserProfilInformation.swift in Sources */,
 				3FCA86E82718718800275A66 /* LoginView.swift in Sources */,
 				3FD8BB8828C127F0000FB6D0 /* NewsListView.swift in Sources */,
+				3FDD8E5B28E3BDEF0092BA21 /* RootType.swift in Sources */,
 				3F3A73B628E3611100886A70 /* CreateArticleViewModel.swift in Sources */,
 				3F537B8428706DC7002D70CC /* ActivitiesTabView.swift in Sources */,
 				3F537B7B28706A08002D70CC /* User.swift in Sources */,
