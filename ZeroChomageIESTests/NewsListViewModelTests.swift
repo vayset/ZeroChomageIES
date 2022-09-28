@@ -23,19 +23,19 @@ class NewsListViewModelTests: XCTestCase {
         let newsArticlesServiceMock = NewsArticlesServiceMock(isFetchArticlesFailing: false)
         
         let sut = NewsListViewModel(newsArticlesService: newsArticlesServiceMock)
-        XCTAssertTrue(sut.articleChomageCellViewModels.isEmpty)
+        XCTAssertTrue(sut.articleGenericCellViewModels.isEmpty)
         await sut.fetchArticles()
         
-        XCTAssertFalse(sut.articleChomageCellViewModels.isEmpty)
+        XCTAssertFalse(sut.articleGenericCellViewModels.isEmpty)
     }
     
     func test_givenNewsListWi_whenFetchArticles_thenNotEmptyArticles() async throws {
         
         let newsArticlesServiceMock = NewsArticlesServiceMock(isFetchArticlesFailing: false)
         let sut = NewsListViewModel(newsArticlesService: newsArticlesServiceMock)
-        XCTAssertTrue(sut.articleChomageCellViewModels.isEmpty)
+        XCTAssertTrue(sut.articleGenericCellViewModels.isEmpty)
         await sut.fetchArticles()
-        let firstFetchedArticle = try XCTUnwrap(sut.articleChomageCellViewModels.first)
+        let firstFetchedArticle = try XCTUnwrap(sut.articleGenericCellViewModels.first)
         
         firstFetchedArticle.buttonAction()
         

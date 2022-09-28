@@ -52,7 +52,9 @@ final class NewsListViewModel: ObservableObject {
                     iconSystemName: "doc.plaintext",
                     buttonTitle: Strings.cellButtonTitle,
                     buttonAction: { [weak self] in
-                        self?.presentedArticle = article
+                        DispatchQueue.main.async {
+                            self?.presentedArticle = article
+                        }
                     }
                 )
             }
