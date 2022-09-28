@@ -10,10 +10,11 @@ import SwiftUI
 struct NewsListView: View {
     
     // MARK: - Properties
-
+    
     @State private var showingArticleView = false
     @StateObject var viewModel = NewsListViewModel()
-    
+    @StateObject var activitiesTabViewModel = ActivitiesTabViewModel()
+
     var body: some View {
         NavigationLink(
             destination: ArticleDetailsView(viewModel: viewModel.presentedArticle),
@@ -49,12 +50,13 @@ struct NewsListView: View {
                     Image(systemName: "arrow.counterclockwise")
                         .foregroundColor(Color.blueHorizon)
                 }
-                
-                Button {
-                    showingArticleView.toggle()
-                } label: {
-                    Image(systemName: "plus.square.fill")
-                        .foregroundColor(Color.blueHorizon)
+                if activitiesTabViewModel.userIsAdmin {
+                    Button {
+                        showingArticleView.toggle()
+                    } label: {
+                        Image(systemName: "plus.square.fill")
+                            .foregroundColor(Color.blueHorizon)
+                    }
                 }
             }
         }
