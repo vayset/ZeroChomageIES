@@ -49,7 +49,7 @@
 "createArticleTitle" = "Create Article";
 "createArticlePopUpTitle" = "Your Article has been successfully created";
 "createArticlePopUpTitleFailed" = "Your Article is not created";
-
+"statusTextTitle" = "Here is the current status:";
 
 
 

@@ -52,8 +52,5 @@ struct Strings {
     static let createArticleTitle = "createArticleTitle".localized
     static let createArticlePopUpTitle = "createArticlePopUpTitle".localized
     static let createArticlePopUpTitleFailed = "createArticlePopUpTitleFailed".localized
-
-    
+    static let statusTextTitle = "statusTextTitle".localized
 }
-
-

@@ -24,10 +24,10 @@ struct CheckStatusView: View {
                     Image(viewModel.approvalStatus.imageName)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 120, height: 120)
+                        .padding()
                     Spacer()
                     VStack(alignment: .center, spacing: 16) {
-                        Text("Here estis the current status:")
+                        Text(Strings.statusTextTitle)
                             .padding()
                             .font(.custom("Gilroy-Medium", size: 18))
                         Text(viewModel.approvalStatus.description)

@@ -48,5 +48,6 @@
 "createArticleTitle" = "Créer un article";
 "createArticlePopUpTitle" = "Votre Article à été crée avec succes";
 "createArticlePopUpTitleFailed" = "Votre Article n'est pas créé";
+"statusTextTitle" = "Voici l'état actuel :";
 
 
