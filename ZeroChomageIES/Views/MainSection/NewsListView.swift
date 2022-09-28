@@ -22,7 +22,7 @@ struct NewsListView: View {
                 EmptyView()
             }
         
-        List(viewModel.articleChomageCellViewModels, id: \.title) { viewModel in
+        List(viewModel.articleGenericCellViewModels, id: \.title) { viewModel in
             GenericCellView(viewModel: viewModel)
                 .listRowSeparator(.hidden)
         }
