@@ -32,7 +32,7 @@ final class NewsListViewModel: ObservableObject {
     @Published var isAlertPresented = false
     @Published var isArticleDetailsPresented = false
     @Published var isLoading = false
-    lazy var articleChomageCellViewModels: [GenericCellViewModel] = []
+    lazy var articleGenericCellViewModels: [GenericCellViewModel] = []
     var presentedArticle: Article? {
         didSet {
             isArticleDetailsPresented.toggle()
@@ -46,7 +46,7 @@ final class NewsListViewModel: ObservableObject {
         do {
             let articles = try await newsArticlesService.fetchArticles()
             let sortedArticled = articles.sorted { $0.createdAtDate > $1.createdAtDate }
-            self.articleChomageCellViewModels = sortedArticled.map { article in
+            self.articleGenericCellViewModels = sortedArticled.map { article in
                 GenericCellViewModel(
                     article: article,
                     iconSystemName: "doc.plaintext",
