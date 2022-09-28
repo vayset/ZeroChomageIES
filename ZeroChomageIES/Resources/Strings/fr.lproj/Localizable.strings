@@ -46,5 +46,7 @@
 "alreadyAccount" = "Vous avez déjà un compte ?";
 "editText" = "Modifier les informations";
 "createArticleTitle" = "Créer un article";
+"createArticlePopUpTitle" = "Votre Article à été crée avec succes";
+"createArticlePopUpTitleFailed" = "Votre Article n'est pas créé";
 
 

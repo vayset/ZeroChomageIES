@@ -8,6 +8,15 @@
 import Foundation
 
 final class QuestionnaireViewModel: ObservableObject {
+    
+    // MARK: - Private
+    
+    // MARK: - Properties - Private
+    
+    private let action: (() -> Void)?
+    
+    // MARK: - Init
+    
     init(
         title: String,
         imageName: String,
@@ -22,19 +31,19 @@ final class QuestionnaireViewModel: ObservableObject {
         self.action = action
     }
     
-    let formTextFieldViewModels: [FormTextFieldViewModel]
+    // MARK: - Internal
     
-    @Published var isNextFormPresented = false
+    // MARK: - Properties
+    
+    let formTextFieldViewModels: [FormTextFieldViewModel]
     let title: String
     let imageName: String
     let buttonTitle: String
     
-    
-    
+    @Published var isNextFormPresented = false
     @Published var isLoading = false
     
-    
-    private let action: (() -> Void)?
+    // MARK: - Methods
     
     func performAction() {
         if let action = action {

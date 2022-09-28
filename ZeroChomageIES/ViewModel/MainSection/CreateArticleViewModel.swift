@@ -10,41 +10,43 @@ import Foundation
 @MainActor
 final class CreateArticleViewModel: ObservableObject {
     
+    
+    // MARK: - Private
+    
+    // MARK: - Properties - Private
+    
+    private let newsArticlesService = NewsArticlesService.shared
+
+    
+    // MARK: - Internal
+    
+    // MARK: - Properties
+    
     @Published var title = ""
     @Published var description = ""
     @Published var bodyArticle = ""
     @Published var isLoading = false
-    
-    var alertTitle = ""
     @Published var isAlertPresented = false
-    
-    
-    
+    var alertTitle = ""
+
+    // MARK: - Methods
+
     func onCreateNewsArticleButtonTapped() {
         let requestBody = CreateNewsArticleRequestBody(
             titleNews: title,
             descriptionNews: description,
             bodyNews: bodyArticle
         )
-        
-        
         Task {
             do {
                 try await newsArticlesService.createNewsArticle(requestBody: requestBody)
-                alertTitle = "SUCCESS"
+                alertTitle = Strings.createArticlePopUpTitle
                 isAlertPresented = true
-                // TODO: Should display news article creation confirmation (or dismiss of the sheet)
             } catch {
                 print("News article creation failed")
-                alertTitle = "FAILED"
+                alertTitle = Strings.createArticlePopUpTitleFailed
                 isAlertPresented = true
-                // TODO: Should display error alert
             }
         }
-        
     }
-    
-    
-    
-    private let newsArticlesService = NewsArticlesService.shared
 }

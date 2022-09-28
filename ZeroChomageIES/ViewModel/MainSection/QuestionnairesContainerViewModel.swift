@@ -12,78 +12,17 @@ import Combine
 @MainActor
 final class QuestionnairesContainerViewModel: ObservableObject {
     
-
-    init(shouldPrefillWithUserData: Bool) {
-        self.shouldPrefillWithUserData = shouldPrefillWithUserData
-        
-        if shouldPrefillWithUserData {
-            userService.$cachedUser
-                .receive(on: DispatchQueue.main)
-                .sink { [weak self] cachedUser in
-                    self?.createQuestionnaireViewModels(user: cachedUser)
-                }
-                .store(in: &subscriptions)
-        } else {
-            createQuestionnaireViewModels(user: nil)
-        }
-    }
-
+    // MARK: - Private
+    
+    // MARK: - Properties - Private
     
     private var subscriptions: Set<AnyCancellable> = []
-    
-    lazy var startCell = ChomageCellViewModel(
-        iconSystemName: "doc.plaintext",
-        title: Strings.cellProvideInformation,
-        description: Strings.cellProvideInformationDescription,
-        buttonTitle: Strings.cellProvideInformationStart,
-        buttonAction: { [weak self] in
-            self?.isQuestionnairePresented.toggle()
-        }
-    )
-        
-    lazy var statusCell = ChomageCellViewModel(
-        iconSystemName: "doc.plaintext",
-        title: Strings.cellCheckStatusTitle,
-        description: Strings.cellCheckStatusDescription,
-        buttonTitle: Strings.cellCheckButtonTitle,
-        buttonAction: { [weak self] in
-            self?.isCheckStatusPresented.toggle()
-        }
-    )
-    
-    lazy var adminPanelCell = ChomageCellViewModel(
-        iconSystemName: "doc.plaintext",
-        title: Strings.cellControlPanelTitle,
-        description: Strings.cellControlPanelDescription,
-        buttonTitle: Strings.cellCheckButtonTitle,
-        buttonAction: { [weak self] in
-            self?.isAdminPanelPresented.toggle()
-        }
-    )
-    
-    lazy var newsCell = ChomageCellViewModel(
-        iconSystemName: "doc.plaintext",
-        title: Strings.cellCheckNewsTitle,
-        description: Strings.cellCheckNewsDescription,
-        buttonTitle: Strings.cellCheckButtonTitle,
-        buttonAction: { [weak self] in
-            self?.isNewsListPresented.toggle()
-        }
-    )
-    
-    @Published var isNewsListPresented = false
-    @Published var isCheckStatusPresented = false
-    @Published var isAdminPanelPresented = false
-
-    @Published var isQuestionnairePresented = false
-    
-    @Published var isAlertPresented = false
-    @Published var alertTitle = ""
-    
     private let shouldPrefillWithUserData: Bool
-    
     private let userService = UserService.shared
+    private let networkManager = NetworkManager.shared
+    private let keychainService = KeychainService.shared
     
+    // MARK: - Methods - Private
     
     private func createQuestionnaireViewModels(user: User?) {
         self.questionnaireViewModels = [
@@ -115,24 +54,31 @@ final class QuestionnairesContainerViewModel: ObservableObject {
                 ],
                 action: nil
             ),
-            .init(// TODO: Should handle prefill information for other questionnaire pages as well
+            .init(
                 title: "Info 2",
                 imageName: "Illustration3",
                 buttonTitle: Strings.nextText,
                 formTextFieldViewModels: [
-                    .init(placeHolder: "Numero de tel"),
-                    .init(placeHolder: "Date de naissance"),
-                    .init(placeHolder: "Sexe"),
-                    .init(placeHolder: "Situation familiale")
-
+                    .init(
+                        placeHolder: "Numero de tel",
+                        prefilledText: shouldPrefillWithUserData ? user?.phoneNumber : ""
+                    ),
+                    .init(
+                        placeHolder: "Date de naissance",
+                        prefilledText: shouldPrefillWithUserData ? user?.dateOfBirth : ""
+                    ),
+                    .init(
+                        placeHolder: "Sexe",
+                        prefilledText: shouldPrefillWithUserData ? user?.gender : ""
+                    ),
+                    .init(
+                        placeHolder: "Situation familiale")
+                    
                 ],
                 action:  { [weak self] in self?.submitQuestionnairesInformation() }
             )
         ]
     }
-
-    
-    @Published var questionnaireViewModels: [QuestionnaireViewModel] = []
     
     private func submitQuestionnairesInformation() {
         questionnaireViewModels.last?.isLoading = true
@@ -143,19 +89,15 @@ final class QuestionnairesContainerViewModel: ObservableObject {
             } catch {
                 alertTitle = "Failed to submit questionnaire"
                 isAlertPresented = true
-                
             }
-            
             questionnaireViewModels.last?.isLoading = false
         }
     }
     
     private func sendQuestionnaire() async throws {
         let questionnaireRequestBody = getQuestionnaireRequestBody()
-        
         guard
             let url = URL(string: "http://www.localhost:8080/api/v1/questionnaire-upload") else { return }
-        
         var urlRequest = URLRequest(url: url)
         
         urlRequest.httpMethod = "POST"
@@ -163,20 +105,15 @@ final class QuestionnairesContainerViewModel: ObservableObject {
         
         let userToken = try keychainService.getToken()
         urlRequest.addValue("Bearer \(userToken)", forHTTPHeaderField: "Authorization")
-        
         let jsonEncoder = JSONEncoder()
         let body = try jsonEncoder.encode(questionnaireRequestBody)
-        
         urlRequest.httpBody = body
-        
-        
         try await networkManager.send(urlRequest: urlRequest)
     }
     
     private func dismissCompleteQuestionnaire() {
         questionnaireViewModels.forEach { $0.isNextFormPresented = false }
         isQuestionnairePresented = false
-
     }
     
     private func getQuestionnaireRequestBody() -> QuestionnaireRequestBody {
@@ -192,11 +129,75 @@ final class QuestionnairesContainerViewModel: ObservableObject {
             civilStatus: questionnaireViewModels[1].formTextFieldViewModels[3].input,
             isAlreadyFilled: true
         )
-        
         return questionnaireRequestBody
     }
     
+    // MARK: - Init
     
-    private let networkManager = NetworkManager.shared
-    private let keychainService = KeychainService.shared
+    init(shouldPrefillWithUserData: Bool) {
+        self.shouldPrefillWithUserData = shouldPrefillWithUserData
+        
+        if shouldPrefillWithUserData {
+            userService.$cachedUser
+                .receive(on: DispatchQueue.main)
+                .sink { [weak self] cachedUser in
+                    self?.createQuestionnaireViewModels(user: cachedUser)
+                }
+                .store(in: &subscriptions)
+        } else {
+            createQuestionnaireViewModels(user: nil)
+        }
+    }
+    
+    // MARK: - Internal
+    
+    // MARK: - Properties
+    
+    @Published var isNewsListPresented = false
+    @Published var isCheckStatusPresented = false
+    @Published var isAdminPanelPresented = false
+    @Published var isQuestionnairePresented = false
+    @Published var isAlertPresented = false
+    @Published var alertTitle = ""
+    @Published var questionnaireViewModels: [QuestionnaireViewModel] = []
+    
+    lazy var startCell = GenericCellViewModel(
+        iconSystemName: "doc.plaintext",
+        title: Strings.cellProvideInformation,
+        description: Strings.cellProvideInformationDescription,
+        buttonTitle: Strings.cellProvideInformationStart,
+        buttonAction: { [weak self] in
+            self?.isQuestionnairePresented.toggle()
+        }
+    )
+    
+    lazy var statusCell = GenericCellViewModel(
+        iconSystemName: "doc.plaintext",
+        title: Strings.cellCheckStatusTitle,
+        description: Strings.cellCheckStatusDescription,
+        buttonTitle: Strings.cellCheckButtonTitle,
+        buttonAction: { [weak self] in
+            self?.isCheckStatusPresented.toggle()
+        }
+    )
+    
+    lazy var adminPanelCell = GenericCellViewModel(
+        iconSystemName: "doc.plaintext",
+        title: Strings.cellControlPanelTitle,
+        description: Strings.cellControlPanelDescription,
+        buttonTitle: Strings.cellCheckButtonTitle,
+        buttonAction: { [weak self] in
+            self?.isAdminPanelPresented.toggle()
+        }
+    )
+    
+    lazy var newsCell = GenericCellViewModel(
+        iconSystemName: "doc.plaintext",
+        title: Strings.cellCheckNewsTitle,
+        description: Strings.cellCheckNewsDescription,
+        buttonTitle: Strings.cellCheckButtonTitle,
+        buttonAction: { [weak self] in
+            self?.isNewsListPresented.toggle()
+        }
+    )
 }

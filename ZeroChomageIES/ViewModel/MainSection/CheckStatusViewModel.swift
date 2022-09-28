@@ -9,17 +9,23 @@ import Foundation
 
 @MainActor
 final class CheckStatusViewModel: ObservableObject {
-
-    // TODO: Should assign the value depending on the actual state
-    @Published var approvalStatus: ApprovalStatus = .needToFeelQuestionnaire
+    
+    // MARK: - Private
+    
+    // MARK: - Properties - Private
     
     private let userService = UserService.shared
     
+    // MARK: - Internal
     
+    // MARK: - Properties
+    
+    @Published var approvalStatus: ApprovalStatus = .needToFeelQuestionnaire
     @Published var isLoading = false
     
+    // MARK: - Methods
+
     func fetchApprovalStatus() async {
-        
         isLoading = true
         do {
             let user = try await userService.fetchUser()
@@ -35,8 +41,5 @@ final class CheckStatusViewModel: ObservableObject {
             print("Failed to fetch user")
         }
         isLoading = false
-        
     }
-    
-
 }

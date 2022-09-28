@@ -11,6 +11,15 @@ import Combine
 @MainActor
 final class AdminPanelViewModel: ObservableObject {
     
+    // MARK: - Private
+    
+    // MARK: - Properties - Private
+    
+    private let userService = UserService.shared
+    private var subscriptions: Set<AnyCancellable> = []
+    
+    // MARK: - Init
+    
     init() {
         Publishers.CombineLatest(
             $nonAdminUsers.eraseToAnyPublisher(),
@@ -28,23 +37,21 @@ final class AdminPanelViewModel: ObservableObject {
         
     }
     
-    private var subscriptions: Set<AnyCancellable> = []
+    // MARK: - Internal
+    
+    // MARK: - Properties
     
     @Published var isLoading = false
-    
-    
     @Published var filteredNonAdminUsers: [User] = []
     @Published var nonAdminUsers: [User] = []
-    
-    var alertTitle = ""
     @Published var isAlertPresented = false
-    
     @Published var searchText = ""
+    var alertTitle = ""
     
+    // MARK: - Metohds
     
     func fetchUsers() async {
         isLoading = true
-        
         do {
             let users = try await userService.fetchUsers()
             self.nonAdminUsers = users
@@ -53,9 +60,6 @@ final class AdminPanelViewModel: ObservableObject {
             alertTitle = "Failed to fetch Users"
             isAlertPresented = true
         }
-        
         isLoading = false
     }
-    
-    private let userService = UserService.shared
 }

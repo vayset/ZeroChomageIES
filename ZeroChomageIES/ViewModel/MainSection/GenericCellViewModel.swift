@@ -1,5 +1,5 @@
 //
-//  ChomageCellViewModel.swift
+//  GenericCellViewModel.swift
 //  ZeroChomageIES
 //
 //  Created by Saddam Satouyev on 24/09/2022.
@@ -7,7 +7,21 @@
 
 import Foundation
 
-final class ChomageCellViewModel: ObservableObject {
+final class GenericCellViewModel: ObservableObject {
+    
+    // MARK: - Internal
+    
+    // MARK: - Properties
+    
+    let backgroundImageName: String?
+    let iconSystemName: String
+    let title: String
+    let description: String
+    let buttonTitle: String
+    let buttonAction: () -> Void
+    
+    // MARK: - Init
+
     init(
         article: Article,
         iconSystemName: String,
@@ -22,6 +36,8 @@ final class ChomageCellViewModel: ObservableObject {
         self.buttonAction = buttonAction
     }
     
+    // MARK: - Internal Init
+
     internal init(
         iconSystemName: String,
         title: String,
@@ -36,12 +52,4 @@ final class ChomageCellViewModel: ObservableObject {
         self.buttonTitle = buttonTitle
         self.buttonAction = buttonAction
     }
-    
-    let backgroundImageName: String?
-    let iconSystemName: String
-    let title: String
-    let description: String
-    let buttonTitle: String
-    let buttonAction: () -> Void
-    
 }

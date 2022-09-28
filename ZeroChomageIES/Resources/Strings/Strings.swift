@@ -50,6 +50,8 @@ struct Strings {
     static let alreadyAccount = "alreadyAccount".localized
     static let editText = "editText".localized
     static let createArticleTitle = "createArticleTitle".localized
+    static let createArticlePopUpTitle = "createArticlePopUpTitle".localized
+    static let createArticlePopUpTitleFailed = "createArticlePopUpTitleFailed".localized
 
     
 }

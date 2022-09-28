@@ -33,6 +33,8 @@ class OnboardingViewModel: ObservableObject {
             .store(in: &subscriptions)
     }
     
+    // MARK: - Init
+
     init() {
         subscribeToAssignCurrenSlide()
     }

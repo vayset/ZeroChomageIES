@@ -11,7 +11,7 @@ struct GenericCellView: View {
     
     // MARK: - Properties
     
-    @ObservedObject var viewModel: ChomageCellViewModel
+    @ObservedObject var viewModel: GenericCellViewModel
     
     var body: some View {
         VStack {
