@@ -1,32 +1,37 @@
 import Foundation
 
-
-enum FormValidatorServiceError: LocalizedError {
-    case failedToValidateEmail
-    case failedToValidatePasswordWrongFormat
-    case failedToValidatePasswordEmpty
-    case failedToValidateField
-    
-    
-    var errorDescription: String? {
-        switch self {
-        case .failedToValidateEmail:
-            return "Failed to validate email"
-        case .failedToValidatePasswordWrongFormat:
-            return "Failed to validate password"
-        case .failedToValidatePasswordEmpty:
-            return "Password is empty"
-        case .failedToValidateField:
-            return "Failed to validate field"
-        }
-    }
-}
-
-
 final class FormValidatorService {
     
-    static let shared = FormValidatorService()
+    // MARK: - Private
     
+    // MARK: - Properties - Private
+    
+    private let regularExpressionFactory: RegularExpressionFactoryProtocol
+    
+    // MARK: - Methods - Private
+    
+    private func validateNotEmpty(field: String) throws {
+        guard !field.isEmpty else {
+            throw FormValidatorServiceError.failedToValidateField
+        }
+    }
+    
+    private func validate(stringField: String, regexString: String) throws {
+        guard let regex = regularExpressionFactory.createRegularExpressionFrom(pattern: regexString) else {
+            throw FormValidatorServiceError.failedToValidateField
+        }
+        
+        let results = regex.matches(
+            in: stringField,
+            range: NSRange(location: 0, length: stringField.count)
+        )
+        
+        guard !results.isEmpty else {
+            throw FormValidatorServiceError.failedToValidateField
+        }
+    }
+    
+    // MARK: - Init
     
     init(
         regularExpressionFactory: RegularExpressionFactoryProtocol = RegularExpressionFactory.shared
@@ -34,6 +39,13 @@ final class FormValidatorService {
         self.regularExpressionFactory = regularExpressionFactory
     }
     
+    // MARK: - Internal
+    
+    // MARK: - Properties
+    
+    static let shared = FormValidatorService()
+    
+    // MARK: - Methods
     
     /// Validate email.
     /// Example of valid email: test@gmail.com
@@ -44,8 +56,6 @@ final class FormValidatorService {
             throw FormValidatorServiceError.failedToValidateEmail
         }
     }
-    
-    
     
     /// Validate a password with multiple rules.
     /// 1. Ensure string has 1 uppercase letter.
@@ -62,37 +72,9 @@ final class FormValidatorService {
         }
     }
     
-    
     func validateNotEmptyPassword(password: String) throws {
         guard let _ = try? validateNotEmpty(field: password) else {
             throw FormValidatorServiceError.failedToValidatePasswordEmpty
-        }
-    }
-    
-    
-    private func validateNotEmpty(field: String) throws {
-        guard !field.isEmpty else {
-            throw FormValidatorServiceError.failedToValidateField
-        }
-    }
-    
-    
-    
-    private let regularExpressionFactory: RegularExpressionFactoryProtocol
-    
-    
-    private func validate(stringField: String, regexString: String) throws {
-        guard let regex = regularExpressionFactory.createRegularExpressionFrom(pattern: regexString) else {
-            throw FormValidatorServiceError.failedToValidateField
-        }
-        
-        let results = regex.matches(
-            in: stringField,
-            range: NSRange(location: 0, length: stringField.count)
-        )
-        
-        guard !results.isEmpty else {
-            throw FormValidatorServiceError.failedToValidateField
         }
     }
 }

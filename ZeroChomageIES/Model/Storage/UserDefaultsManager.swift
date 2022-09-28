@@ -9,11 +9,21 @@ import Foundation
 
 class UserDefaultsManager {
     
+    // MARK: - Private
+    
+    // MARK: - Properties - Private
+    
     private init() { }
+    private let hasSeenOnboardingKey = "hasSeenOnboardingKey"
+    private let isNotFirstAppLaunch = "isNotFirstAppLaunch"
+    
+    // MARK: - Internal
+    
+    // MARK: - Properties
     
     static let shared = UserDefaultsManager()
     
-    private let hasSeenOnboardingKey = "hasSeenOnboardingKey"
+    // MARK: - Methods
     
     func setHasSeenOnboarding(value: Bool) {
         UserDefaults.standard.set(value, forKey: hasSeenOnboardingKey)
@@ -23,11 +33,6 @@ class UserDefaultsManager {
         UserDefaults.standard.bool(forKey: hasSeenOnboardingKey)
     }
     
-    
-    
-    
-    private let isNotFirstAppLaunch = "isNotFirstAppLaunch"
-    
     func setIsNotFirstAppLaunch(value: Bool) {
         UserDefaults.standard.set(value, forKey: isNotFirstAppLaunch)
     }
@@ -35,6 +40,4 @@ class UserDefaultsManager {
     func getIsNotFirstAppLaunch() -> Bool {
         UserDefaults.standard.bool(forKey: isNotFirstAppLaunch)
     }
-    
-    
 }

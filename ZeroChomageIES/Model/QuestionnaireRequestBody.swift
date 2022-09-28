@@ -18,6 +18,5 @@ struct QuestionnaireRequestBody: Encodable {
     let gender: String
     let civilStatus: String
     let isAlreadyFilled: Bool
-
 }
 

@@ -110,6 +110,8 @@
 		3FDD8E4F28E376C60092BA21 /* UserServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD8E4E28E376C60092BA21 /* UserServiceTests.swift */; };
 		3FDD8E5128E377C70092BA21 /* NetworkManagerUserMockSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD8E5028E377C70092BA21 /* NetworkManagerUserMockSuccess.swift */; };
 		3FDD8E5B28E3BDEF0092BA21 /* RootType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD8E5A28E3BDEF0092BA21 /* RootType.swift */; };
+		3FDD8E5F28E3CDFC0092BA21 /* ValidateUserBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD8E5E28E3CDFC0092BA21 /* ValidateUserBody.swift */; };
+		3FDD8E6128E3CEC80092BA21 /* FormValidatorServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD8E6028E3CEC80092BA21 /* FormValidatorServiceError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -237,6 +239,8 @@
 		3FDD8E4E28E376C60092BA21 /* UserServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceTests.swift; sourceTree = "<group>"; };
 		3FDD8E5028E377C70092BA21 /* NetworkManagerUserMockSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerUserMockSuccess.swift; sourceTree = "<group>"; };
 		3FDD8E5A28E3BDEF0092BA21 /* RootType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootType.swift; sourceTree = "<group>"; };
+		3FDD8E5E28E3CDFC0092BA21 /* ValidateUserBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateUserBody.swift; sourceTree = "<group>"; };
+		3FDD8E6028E3CEC80092BA21 /* FormValidatorServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidatorServiceError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,6 +338,7 @@
 			children = (
 				3F537B5D28703969002D70CC /* FormValidatorService.swift */,
 				3F537B62287044E6002D70CC /* RegularExpressionFactory.swift */,
+				3FDD8E6028E3CEC80092BA21 /* FormValidatorServiceError.swift */,
 			);
 			path = FormValidatorService;
 			sourceTree = "<group>";
@@ -414,6 +419,7 @@
 			children = (
 				3F537B77287069DF002D70CC /* UserService.swift */,
 				3F537B7C28706A1B002D70CC /* UserServiceError.swift */,
+				3FDD8E5E28E3CDFC0092BA21 /* ValidateUserBody.swift */,
 			);
 			path = UserService;
 			sourceTree = "<group>";
@@ -769,6 +775,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F8DEB6F27A32BBF00436BD2 /* NetworkManager.swift in Sources */,
+				3FDD8E6128E3CEC80092BA21 /* FormValidatorServiceError.swift in Sources */,
 				3FD8BB9B28C42006000FB6D0 /* GenericCellView.swift in Sources */,
 				3F4FF08728DA6B770038A8D0 /* AdminPanelView.swift in Sources */,
 				3FD8BBBA28C54455000FB6D0 /* CreateArticleView.swift in Sources */,
@@ -776,6 +783,7 @@
 				3F537B6D28705A8D002D70CC /* Strings.swift in Sources */,
 				3F5AFC93271EE1E00021C0DF /* TextButton.swift in Sources */,
 				3FD8BB9928C41F16000FB6D0 /* ApprovalStatus.swift in Sources */,
+				3FDD8E5F28E3CDFC0092BA21 /* ValidateUserBody.swift in Sources */,
 				3F537B6F28705BBC002D70CC /* Strings+Localizable.swift in Sources */,
 				3FBE7A0927B3177700D29FAA /* QuestionnaireView.swift in Sources */,
 				3FA1E5F728CFCC76005A1BB3 /* CreateNewsArticleRequestBody.swift in Sources */,

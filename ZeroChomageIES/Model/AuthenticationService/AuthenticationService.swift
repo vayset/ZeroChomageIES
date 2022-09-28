@@ -10,7 +10,16 @@ import ZeroChomageWebShared
 
 
 final class AuthenticationService {
-    static let shared = AuthenticationService()
+    
+    // MARK: - Private
+    
+    // MARK: - Properties - Private
+    
+    private let networkManager: NetworkManagerProtocol
+    private let keychainService: KeychainServiceProtocol
+    private let jsonEncoder: JSONEncoderProtocol
+    
+    // MARK: - Init
     
     init(
         networkManager: NetworkManagerProtocol = NetworkManager.shared,
@@ -22,9 +31,13 @@ final class AuthenticationService {
         self.jsonEncoder = jsonEncoder
     }
     
-    private let networkManager: NetworkManagerProtocol
-    private let keychainService: KeychainServiceProtocol
-    private let jsonEncoder: JSONEncoderProtocol
+    // MARK: - Internal
+    
+    // MARK: - Properties
+    
+    static let shared = AuthenticationService()
+    
+    // MARK: - Methods
     
     func login(email: String, password: String) async throws {
         let url = URL(string: "http://localhost:8080/api/v1/login/")!
@@ -50,7 +63,6 @@ final class AuthenticationService {
         }
     }
     
-    
     func signUp(email: String, password: String, passwordConfirmation: String) async throws {
         
         guard password == passwordConfirmation else {
@@ -75,7 +87,7 @@ final class AuthenticationService {
         request.httpBody = encodedBody
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-
+        
         guard let response: SignUpResponse = try? await networkManager.fetch(urlRequest: request) else {
             throw AuthenticationServiceError.signUpFailedNetworkError
         }

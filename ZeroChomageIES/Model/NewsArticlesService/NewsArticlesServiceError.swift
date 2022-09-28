@@ -10,6 +10,5 @@ import Foundation
 enum NewsArticlesServiceError: Error {
     case createNewsArticleFailedEncoding
     case createNewsArticleFailedNetwork
-    
     case failedToFetchNewsArticles
 }

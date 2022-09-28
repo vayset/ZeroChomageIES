@@ -9,11 +9,19 @@ import Foundation
 
 
 
-final class UserService: ObservableObject{
-    static let shared = UserService()
+final class UserService: ObservableObject {
     
-    @Published var cachedUser: User?
+    // MARK: - Private
     
+    // MARK: - Properties - Private
+    
+    private let networkManager: NetworkManagerProtocol
+    private let keychainService: KeychainServiceProtocol
+    private let jsonEncoder: JSONEncoderProtocol
+    
+    
+    
+    // MARK: - Init
     
     init(
         networkManager: NetworkManagerProtocol = NetworkManager.shared,
@@ -25,13 +33,21 @@ final class UserService: ObservableObject{
         self.jsonEncoder = jsonEncoder
     }
     
+    // MARK: - Internal
+    
+    // MARK: - Properties
+    
+    @Published var cachedUser: User?
+    static let shared = UserService()
+    
+    // MARK: - Methods
+    
     func fetchUser() async throws -> User {
         let url = URL(string: "http://localhost:8080/api/v1/user-account-info/")!
         
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethod.get.rawValue
-
-    
+        
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let userToken = try keychainService.getToken()
         request.addValue("Bearer \(userToken)", forHTTPHeaderField: "Authorization")
@@ -39,23 +55,15 @@ final class UserService: ObservableObject{
         guard let user: User = try? await networkManager.fetch(urlRequest: request) else {
             throw UserServiceError.failedToFetchUser
         }
-        
-        
         self.cachedUser = user
-        
         return user
     }
-    
-    
     
     func fetchUsers() async throws -> [User] {
         let url = URL(string: "http://localhost:8080/api/v1/users/")!
         
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethod.get.rawValue
-        
-        
-        
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let userToken = try keychainService.getToken()
         request.addValue("Bearer \(userToken)", forHTTPHeaderField: "Authorization")
@@ -80,9 +88,6 @@ final class UserService: ObservableObject{
         }
         
         request.httpBody = encodedBody
-        
-        
-        
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let userToken = try keychainService.getToken()
         request.addValue("Bearer \(userToken)", forHTTPHeaderField: "Authorization")
@@ -91,14 +96,4 @@ final class UserService: ObservableObject{
             throw UserServiceError.failedToValidateUser
         }
     }
-    
-    private let networkManager: NetworkManagerProtocol
-    private let keychainService: KeychainServiceProtocol
-    private let jsonEncoder: JSONEncoderProtocol
-    
-}
-
-
-struct ValidateUserBody: Encodable {
-    let userToValidateEmail: String
 }

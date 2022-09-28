@@ -8,6 +8,9 @@
 import Foundation
 
 struct SignUpRequest: Encodable {
+    // MARK: - Internal
+    
+    // MARK: - Properties
     let email: String
     let password: String
     let passwordConfirmation: String

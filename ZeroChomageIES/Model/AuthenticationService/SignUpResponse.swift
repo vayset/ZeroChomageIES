@@ -9,5 +9,9 @@ import Foundation
 
 
 struct SignUpResponse: Codable {
+    // MARK: - Internal
+    
+    // MARK: - Properties
+    
     let userToken: String
 }

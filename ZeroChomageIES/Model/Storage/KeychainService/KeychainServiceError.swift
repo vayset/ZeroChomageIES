@@ -11,11 +11,8 @@ import Foundation
 enum KeychainServiceError: Error {
     case failedToStoreDataDuplicate
     case failedToStoreDataUnknownError
-    
     case failedToGetTokenNotFound
     case failedToGetTokenUnknownError
     case failedToGetTokenInvalidStoredItemDataType
-    
     case failedToDeleteToken
-    
 }

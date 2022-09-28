@@ -15,17 +15,18 @@ protocol KeychainServiceProtocol {
 
 final class KeychainService: KeychainServiceProtocol {
     
-    static let shared = KeychainService()
+    // MARK: - Internal
     
+    // MARK: - Properties
+    
+    static let shared = KeychainService()
     let tokenKey = "tokenKey"
     
-    
-    
+    // MARK: - Methods
+
     func save(token: String) throws {
         try? deleteToken()
-        
         let tokenData = token.data(using: .utf8)!
-        
         let attributes: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrAccount as String: tokenKey as AnyObject,
@@ -34,7 +35,6 @@ final class KeychainService: KeychainServiceProtocol {
         ]
         
         let query = attributes as CFDictionary
-        
         let status = SecItemAdd(query, nil)
         
         guard status != errSecDuplicateItem else {
@@ -45,7 +45,6 @@ final class KeychainService: KeychainServiceProtocol {
             throw KeychainServiceError.failedToStoreDataUnknownError
         }
     }
-    
     
     func getToken() throws -> String {
         let query: [String: AnyObject] = [
@@ -76,10 +75,8 @@ final class KeychainService: KeychainServiceProtocol {
             throw KeychainServiceError.failedToGetTokenInvalidStoredItemDataType
         }
         
-        
         return token
     }
-    
     
     func deleteToken() throws {
         let query: [String: AnyObject] = [
@@ -89,12 +86,9 @@ final class KeychainService: KeychainServiceProtocol {
         ]
 
         let status = SecItemDelete(query as CFDictionary)
-
-
+        
         guard status == errSecSuccess else {
             throw KeychainServiceError.failedToDeleteToken
         }
     }
-
-    
 }
